@@ -1,0 +1,28 @@
+Designator,Value,Footprint,Qty,MPN,Manufacturer,LCSC,Role,Role detail
+"C1,C2,C3,C4,C5,C19,C20,C21,C22",100nF,C_0805_2012Metric,9,,,,"Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor","Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense"
+"C13,C14,C15,C16,C17,C18",10uF,C_0805_2012Metric,6,,,,Bulk Capacitor,Bulk rail decoupling and transient load support
+Card1,SMN-305,SMN-305_Nano_SIM,1,SMN-305,XUNPU(讯普),C266890,SIM Socket,Nano SIM holder for cellular modem provisioning
+"D1,D2",ESD0P2RF-02LRH-TP,D_SOD-323,2,ESD0P2RF-02LRH-TP,TECH PUBLIC(台舟),C907863,RF TVS,Low-capacitance protection for antenna RF lines
+D3,BAT54HT1G,D_SOD-323,1,BAT54HT1G,onsemi,,Bootstrap Diode,Bootstrap charge diode from REGN to BTST for BQ24650 gate drive supply
+H1,825433-3,PinHeader_1x03_P2.54mm_Vertical,1,825433-3,TE Connectivity(泰科电子),C306148,PIR Header,"3-pin 2.54mm connector carrying 3.3V, ground, and PIR signal"
+IC1,SIM7080G,LCC-42_SIM7080G,1,SIM7080G,SIMCom Wireless Solutions Limited,,Cellular Modem,UART-connected SIM7080G modem for LTE-M and NB-IoT backhaul
+IC2,BQ24650RVAR,VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm,1,BQ24650RVAR,Texas Instruments Inc.,,Solar Charger,Configurable charger for 5V to 12V solar input and single-cell LiFePO4 battery charging to 3.6V
+IC3,TPS63070RNMR,QFN-15-1EP_3x4mm_P0.5mm_EP1.45x2.45mm,1,TPS63070RNMR,Texas Instruments Inc.,,3.3V Regulator,Battery-powered buck-boost regulator producing the main 3.3V logic rail
+IC4,MAX98357AETE+T,QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm,1,MAX98357AETE+T,Analog Devices Inc./Maxim Integrated,,Audio Amplifier,I2S audio interface from ESP32-S3 to external 8 ohm speaker header
+"J1,J2",U.FL-R-SMT-1,U.FL_Hirose_U.FL-R-SMT-1_Vertical,2,U.FL-R-SMT-1,Hirose Electric Co Ltd,,RF Connector,50 ohm coax connector for external antenna feed
+J3,61300211121,PinHeader_1x02_P2.54mm_Vertical,1,61300211121,Wurth Elektronik,,Speaker Header,2-pin 2.54mm speaker output header for external 8 ohm speaker
+L1,4.7uH,L_Taiyo-Yuden_NR-60xx_HandSoldering,1,,,,,
+L3,74437346015,L_APV_ANR4012,1,74437346015,Würth,,Buck-Boost Inductor,1.5uH shielded high-current inductor for TPS63070 between L1 and L2 pins
+Q1,DMG9926UDM,SOT-23-6,1,DMG9926UDM,,,Charger Power MOSFET,High-side and low-side switching MOSFET pair for BQ24650 HIDRV and LODRV stage
+"R1,R3,R4,R5,R10",10kΩ,R_0805_2012Metric,5,,,,"Bias Resistor,BQ24650 VFB Bottom Resistor,Pull-up Resistor","Charge status pull-up for STAT1,BQ24650 TS sense placeholder,Bottom leg of charger voltage feedback divider from VFB to GND,Charge status pull-up for STAT2,TPS63070 PG pull-up to 3.3V with MCU monitor on PG_MON"
+"R2,R15",100kΩ,R_0805_2012Metric,2,,,,"Enable Pull-up,BQ24650 VFB Top Resistor","Series/pull-up style EN termination from input rail to TPS63070 enable net,Temporary top leg / sense link from battery node toward charger VFB divider pending final value confirmation"
+R11,1MΩ,R_0805_2012Metric,1,,,,Feedback Resistor,Upper resistor in TPS63070 3.3V feedback divider
+R12,180kΩ,R_0805_2012Metric,1,,,,Feedback Resistor,Lower resistor and FB2 link option for TPS63070 3.3V feedback network
+"R13,R14",4.7kΩ,R_0805_2012Metric,2,,,,I2C Pullup,"I2C SDA pull-up to 3.3V,I2C SCL pull-up to 3.3V"
+RSNS?,20m,R_2512_6332Metric,1,,,,,
+"TP1,TP2,TP3,TP4,TP5",5002,TestPoint_Pad_D1.5mm,5,5002,Keystone,,Test Point,2.54mm-access debug point for rails and interfaces
+U1,113991115,XIAO_ESP32S3_SENSE,1,113991115,seeed studio,,Main MCU,"Primary controller for WiFi/BLE, radio coordination, audio streaming, sensing, and system control"
+U2,Ai-Thinker-Ra-01,Ai-Thinker-Ra-01-LoRa,1,Ai-Thinker-Ra-01,Semtech,,LoRa Radio,SPI-connected sub-GHz LoRa transceiver for local mesh or long-range telemetry
+U3,M138 Modem,Swarm_M138,1,M138 Modem,SWARM,,Satellite Modem,UART-connected Swarm M138 satellite modem for remote fallback messaging
+U4,MCP23017_SO,SOIC-28W_7.5x17.9mm_P1.27mm,1,MCP23017_SO,Microchip Technology Inc.,,GPIO Expander,"Low-speed control and monitoring expander for PIR, resets, status, and debug signals"
+U5,SRV05-4-P-T7,SOT-23-6,1,SRV05-4-P-T7,ProTek Devices,,Power TVS,TVS protection for solar and external power input lines

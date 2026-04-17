@@ -1,0 +1,35 @@
+---
+description: Warden Apex Master — KiCad rebuild, Flux archive, MCP, and seed data
+alwaysApply: true
+---
+
+# Warden Apex Master (hardware)
+
+## Canonical project
+
+- **KiCad project:** `hardware/warden-apex-master/` (`*.kicad_pro`, `*.kicad_sch`, `*.kicad_pcb`).
+- **Rebuild plan and gaps:** `hardware/warden-apex-master/PLAN.md` (phases, missing parts, net renames).
+- **Seed data (regenerate if Flux exports change):**
+  - `flux-netlist.json` — `python3 tools/parse_flux_edif.py`
+  - `flux-bom.json` — `python3 tools/parse_flux_bom.py`
+
+## Flux archive (read-only source)
+
+- **`flux-archive/`** — original Flux exports (EDIF, IPC-2581, ODB++, Gerbers, etc.). Do not treat the Flux PCB as the design to “finish”; it was unrouted / high ERC-DRC error count. **Authoritative connectivity** is the EDIF → `flux-netlist.json`; **parts/roles** are the Flux BOM CSV under `flux-archive/seed/BOM/`.
+
+## Environment (this repo / WSL)
+
+- **KiCad 9** with `kicad-cli` and system `pcbnew` (Python: `import pcbnew`).
+- **KiCad MCP:** configured in `.cursor/mcp.json` (Node runs `tools/KiCAD-MCP-Server/dist/index.js` after `npm install && npm run build` in that repo). Use MCP for schematic/board ops, Freerouting (Docker), exports.
+- **`.gitignore`** ignores cloned `tools/KiCAD-MCP-Server/` except `.gitkeep`; clone/build locally if missing.
+
+## Workflow default
+
+1. Schematic from `flux-netlist.json` + `flux-bom.json` (+ `PLAN.md` additions: e.g. charger **L1**, sense **RSNS**).
+2. ERC clean, then PCB placement/stackup per `PLAN.md`.
+3. Route (hand RF first), DRC clean, then fab outputs (Gerber/drill/pos/BOM).
+
+## Don’t repeat
+
+- Don’t re-import Flux IPC-2581/ODB++ into KiCad as the primary path; use the JSON seed + fresh schematic unless debugging import specifically.
+- Don’t expand scope beyond the task; match existing naming and stackup intent in `PLAN.md`.

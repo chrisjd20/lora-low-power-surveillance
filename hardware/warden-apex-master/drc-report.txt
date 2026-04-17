@@ -1,0 +1,14 @@
+** Drc report for warden-apex-master.kicad_pcb **
+** Created on 2026-04-17T08:36:28-0400 **
+
+** Found 0 DRC violations **
+
+** Found 1 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(46.6500 mm, 80.2500 mm): Pad 3 [/3V3] of IC3 on F.Cu
+    @(46.2483 mm, 78.8483 mm): Track [/3V3] on F.Cu, length 0.5681 mm
+
+** Found 0 Footprint errors **
+
+** End of Report **

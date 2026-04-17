@@ -1,0 +1,1004 @@
+{
+  "components": [
+    {
+      "ref": "C1",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -22.7756,
+        "y_mm": -55.0343,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C2",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 3.6668,
+        "y_mm": 11.1848,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C3",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -10.7059,
+        "y_mm": -24.0349,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C4",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -17.0618,
+        "y_mm": 27.4585,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C5",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -10.3959,
+        "y_mm": -27.3856,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C13",
+      "value": "10uF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bulk Capacitor",
+      "role_detail": "Bulk rail decoupling and transient load support",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -14.0483,
+        "y_mm": -27.5307,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10uF"
+      }
+    },
+    {
+      "ref": "C14",
+      "value": "10uF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bulk Capacitor",
+      "role_detail": "Bulk rail decoupling and transient load support",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -33.4711,
+        "y_mm": -29.101,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10uF"
+      }
+    },
+    {
+      "ref": "C15",
+      "value": "10uF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bulk Capacitor",
+      "role_detail": "Bulk rail decoupling and transient load support",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -24.0822,
+        "y_mm": -52.5833,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10uF"
+      }
+    },
+    {
+      "ref": "C16",
+      "value": "10uF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bulk Capacitor",
+      "role_detail": "Bulk rail decoupling and transient load support",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -2.8613,
+        "y_mm": -17.9869,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10uF"
+      }
+    },
+    {
+      "ref": "C17",
+      "value": "10uF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bulk Capacitor",
+      "role_detail": "Bulk rail decoupling and transient load support",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -2.9512,
+        "y_mm": -20.6594,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10uF"
+      }
+    },
+    {
+      "ref": "C18",
+      "value": "10uF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bulk Capacitor",
+      "role_detail": "Bulk rail decoupling and transient load support",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 1.7455,
+        "y_mm": -5.8318,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10uF"
+      }
+    },
+    {
+      "ref": "C19",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -6.9354,
+        "y_mm": -47.2309,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C20",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -27.4264,
+        "y_mm": -61.9343,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C21",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 15.6836,
+        "y_mm": 14.0068,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "C22",
+      "value": "100nF",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Non-Polarized Capacitor",
+      "role": "Bootstrap Capacitor,Decoupling Capacitor,Sense Filter Capacitor",
+      "role_detail": "Bootstrap capacitor between PH and BTST for BQ24650,Local 100nF bypass capacitor placed near each IC supply pin group,Common-mode filter from SRP to GND for BQ24650 current sense,Optional common-mode filter from SRN to GND for BQ24650 current sense,Differential filter capacitor between SRP and SRN for BQ24650 current sense",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 26.705,
+        "y_mm": 31.1644,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100nF"
+      }
+    },
+    {
+      "ref": "Card1",
+      "value": "SMN-305",
+      "mpn": "SMN-305",
+      "lcsc": "C266890",
+      "manufacturer": "XUNPU(\u8baf\u666e)",
+      "package": "SMD",
+      "part_type": "SIM Card Connectors",
+      "role": "SIM Socket",
+      "role_detail": "Nano SIM holder for cellular modem provisioning",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 4.6209,
+        "y_mm": 28.5231,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SIM-SMD_SMN-305",
+        "value": null
+      }
+    },
+    {
+      "ref": "D1",
+      "value": "ESD0P2RF-02LRH-TP",
+      "mpn": "ESD0P2RF-02LRH-TP",
+      "lcsc": "C907863",
+      "manufacturer": "TECH PUBLIC(\u53f0\u821f)",
+      "package": "DFN1006-2",
+      "part_type": "TVS",
+      "role": "RF TVS",
+      "role_detail": "Low-capacitance protection for antenna RF lines",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 18.454,
+        "y_mm": 28.853,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "X1-DFN1006-2_L1.0-W0.6-BI",
+        "value": null
+      }
+    },
+    {
+      "ref": "D2",
+      "value": "ESD0P2RF-02LRH-TP",
+      "mpn": "ESD0P2RF-02LRH-TP",
+      "lcsc": "C907863",
+      "manufacturer": "TECH PUBLIC(\u53f0\u821f)",
+      "package": "DFN1006-2",
+      "part_type": "TVS",
+      "role": "RF TVS",
+      "role_detail": "Low-capacitance protection for antenna RF lines",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -32.0579,
+        "y_mm": -51.5223,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "X1-DFN1006-2_L1.0-W0.6-BI",
+        "value": null
+      }
+    },
+    {
+      "ref": "D3",
+      "value": "BAT54HT1G",
+      "mpn": "BAT54HT1G",
+      "lcsc": null,
+      "manufacturer": "onsemi",
+      "package": "SOD-323",
+      "part_type": "Diode",
+      "role": "Bootstrap Diode",
+      "role_detail": "Bootstrap charge diode from REGN to BTST for BQ24650 gate drive supply",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 4.4018,
+        "y_mm": -18.8517,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SOD-323",
+        "value": null
+      }
+    },
+    {
+      "ref": "H1",
+      "value": "825433-3",
+      "mpn": "825433-3",
+      "lcsc": "C306148",
+      "manufacturer": "TE Connectivity(\u6cf0\u79d1\u7535\u5b50)",
+      "package": "Through Hole",
+      "part_type": "Pin Headers",
+      "role": "PIR Header",
+      "role_detail": "3-pin 2.54mm connector carrying 3.3V, ground, and PIR signal",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -8.6175,
+        "y_mm": 52.2298,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "HDR-TH_3P-P2.54-V-M",
+        "value": null
+      }
+    },
+    {
+      "ref": "IC1",
+      "value": "SIM7080G",
+      "mpn": "SIM7080G",
+      "lcsc": null,
+      "manufacturer": "SIMCom Wireless Solutions Limited",
+      "package": "LCC-SMD",
+      "part_type": "Integrated Circuit",
+      "role": "Cellular Modem",
+      "role_detail": "UART-connected SIM7080G modem for LTE-M and NB-IoT backhaul",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 12.5451,
+        "y_mm": 54.2094,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "LCC-SMD",
+        "value": null
+      }
+    },
+    {
+      "ref": "IC2",
+      "value": "BQ24650RVAR",
+      "mpn": "BQ24650RVAR",
+      "lcsc": null,
+      "manufacturer": "Texas Instruments Inc.",
+      "package": "VQFN-16",
+      "part_type": "Integrated Circuit",
+      "role": "Solar Charger",
+      "role_detail": "Configurable charger for 5V to 12V solar input and single-cell LiFePO4 battery charging to 3.6V",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -6.2307,
+        "y_mm": -55.1277,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "VQFN-16",
+        "value": null
+      }
+    },
+    {
+      "ref": "IC3",
+      "value": "TPS63070RNMR",
+      "mpn": "TPS63070RNMR",
+      "lcsc": null,
+      "manufacturer": "Texas Instruments Inc.",
+      "package": "QFN",
+      "part_type": "Integrated Circuit",
+      "role": "3.3V Regulator",
+      "role_detail": "Battery-powered buck-boost regulator producing the main 3.3V logic rail",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 15.6988,
+        "y_mm": 22.923,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "QFN",
+        "value": null
+      }
+    },
+    {
+      "ref": "IC4",
+      "value": "MAX98357AETE+T",
+      "mpn": "MAX98357AETE+T",
+      "lcsc": null,
+      "manufacturer": "Analog Devices Inc./Maxim Integrated",
+      "package": "TQFN-16",
+      "part_type": "Integrated Circuit",
+      "role": "Audio Amplifier",
+      "role_detail": "I2S audio interface from ESP32-S3 to external 8 ohm speaker header",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -40.9887,
+        "y_mm": -20.2212,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "TQFN-16",
+        "value": null
+      }
+    },
+    {
+      "ref": "J1",
+      "value": "U.FL-R-SMT-1",
+      "mpn": "U.FL-R-SMT-1",
+      "lcsc": null,
+      "manufacturer": "Hirose Electric Co Ltd",
+      "package": "SMD",
+      "part_type": "Connector",
+      "role": "RF Connector",
+      "role_detail": "50 ohm coax connector for external antenna feed",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 24.641,
+        "y_mm": 9.7987,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD",
+        "value": null
+      }
+    },
+    {
+      "ref": "J2",
+      "value": "U.FL-R-SMT-1",
+      "mpn": "U.FL-R-SMT-1",
+      "lcsc": null,
+      "manufacturer": "Hirose Electric Co Ltd",
+      "package": "SMD",
+      "part_type": "Connector",
+      "role": "RF Connector",
+      "role_detail": "50 ohm coax connector for external antenna feed",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 3.1192,
+        "y_mm": 33.6995,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD",
+        "value": null
+      }
+    },
+    {
+      "ref": "J3",
+      "value": "61300211121",
+      "mpn": "61300211121",
+      "lcsc": null,
+      "manufacturer": "Wurth Elektronik",
+      "package": "Through Hole",
+      "part_type": "Connector",
+      "role": "Speaker Header",
+      "role_detail": "2-pin 2.54mm speaker output header for external 8 ohm speaker",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -3.3344,
+        "y_mm": -7.9145,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Through Hole",
+        "value": null
+      }
+    },
+    {
+      "ref": "L3",
+      "value": "74437346015",
+      "mpn": "74437346015",
+      "lcsc": null,
+      "manufacturer": "W\u00fcrth",
+      "package": "SMD",
+      "part_type": "Inductor",
+      "role": "Buck-Boost Inductor",
+      "role_detail": "1.5uH shielded high-current inductor for TPS63070 between L1 and L2 pins",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -8.5927,
+        "y_mm": -42.0415,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD",
+        "value": null
+      }
+    },
+    {
+      "ref": "Q1",
+      "value": "DMG9926UDM",
+      "mpn": "DMG9926UDM",
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SOT-23-6",
+      "part_type": null,
+      "role": "Charger Power MOSFET",
+      "role_detail": "High-side and low-side switching MOSFET pair for BQ24650 HIDRV and LODRV stage",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 7.113,
+        "y_mm": 3.6335,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SOT-23-6",
+        "value": null
+      }
+    },
+    {
+      "ref": "R1",
+      "value": "10k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Bias Resistor,BQ24650 VFB Bottom Resistor,Pull-up Resistor",
+      "role_detail": "Charge status pull-up for STAT1,BQ24650 TS sense placeholder,Bottom leg of charger voltage feedback divider from VFB to GND,Charge status pull-up for STAT2,TPS63070 PG pull-up to 3.3V with MCU monitor on PG_MON",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 5.3085,
+        "y_mm": -28.8264,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10k\u03a9"
+      }
+    },
+    {
+      "ref": "R2",
+      "value": "100k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Enable Pull-up,BQ24650 VFB Top Resistor",
+      "role_detail": "Series/pull-up style EN termination from input rail to TPS63070 enable net,Temporary top leg / sense link from battery node toward charger VFB divider pending final value confirmation",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 27.4413,
+        "y_mm": -14.3692,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100k\u03a9"
+      }
+    },
+    {
+      "ref": "R3",
+      "value": "10k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Bias Resistor,BQ24650 VFB Bottom Resistor,Pull-up Resistor",
+      "role_detail": "Charge status pull-up for STAT1,BQ24650 TS sense placeholder,Bottom leg of charger voltage feedback divider from VFB to GND,Charge status pull-up for STAT2,TPS63070 PG pull-up to 3.3V with MCU monitor on PG_MON",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 23.9058,
+        "y_mm": 46.8813,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10k\u03a9"
+      }
+    },
+    {
+      "ref": "R4",
+      "value": "10k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Bias Resistor,BQ24650 VFB Bottom Resistor,Pull-up Resistor",
+      "role_detail": "Charge status pull-up for STAT1,BQ24650 TS sense placeholder,Bottom leg of charger voltage feedback divider from VFB to GND,Charge status pull-up for STAT2,TPS63070 PG pull-up to 3.3V with MCU monitor on PG_MON",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -4.0369,
+        "y_mm": 17.4836,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10k\u03a9"
+      }
+    },
+    {
+      "ref": "R5",
+      "value": "10k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Bias Resistor,BQ24650 VFB Bottom Resistor,Pull-up Resistor",
+      "role_detail": "Charge status pull-up for STAT1,BQ24650 TS sense placeholder,Bottom leg of charger voltage feedback divider from VFB to GND,Charge status pull-up for STAT2,TPS63070 PG pull-up to 3.3V with MCU monitor on PG_MON",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -3.3814,
+        "y_mm": -20.8311,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10k\u03a9"
+      }
+    },
+    {
+      "ref": "R10",
+      "value": "10k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Bias Resistor,BQ24650 VFB Bottom Resistor,Pull-up Resistor",
+      "role_detail": "Charge status pull-up for STAT1,BQ24650 TS sense placeholder,Bottom leg of charger voltage feedback divider from VFB to GND,Charge status pull-up for STAT2,TPS63070 PG pull-up to 3.3V with MCU monitor on PG_MON",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -2.326,
+        "y_mm": -24.4042,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "10k\u03a9"
+      }
+    },
+    {
+      "ref": "R11",
+      "value": "1M\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Feedback Resistor",
+      "role_detail": "Upper resistor in TPS63070 3.3V feedback divider",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 26.3165,
+        "y_mm": 13.0311,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "1M\u03a9"
+      }
+    },
+    {
+      "ref": "R12",
+      "value": "180k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Feedback Resistor",
+      "role_detail": "Lower resistor and FB2 link option for TPS63070 3.3V feedback network",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 10.7598,
+        "y_mm": -4.0103,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "180k\u03a9"
+      }
+    },
+    {
+      "ref": "R13",
+      "value": "4.7k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "I2C Pullup",
+      "role_detail": "I2C SDA pull-up to 3.3V,I2C SCL pull-up to 3.3V",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 21.953,
+        "y_mm": 16.2416,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "4.7k\u03a9"
+      }
+    },
+    {
+      "ref": "R14",
+      "value": "4.7k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "I2C Pullup",
+      "role_detail": "I2C SDA pull-up to 3.3V,I2C SCL pull-up to 3.3V",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 25.0748,
+        "y_mm": 34.2573,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "4.7k\u03a9"
+      }
+    },
+    {
+      "ref": "R15",
+      "value": "100k\u03a9",
+      "mpn": null,
+      "lcsc": null,
+      "manufacturer": null,
+      "package": "SMD_0805_2012Metric",
+      "part_type": "Resistor",
+      "role": "Enable Pull-up,BQ24650 VFB Top Resistor",
+      "role_detail": "Series/pull-up style EN termination from input rail to TPS63070 enable net,Temporary top leg / sense link from battery node toward charger VFB divider pending final value confirmation",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -2.2417,
+        "y_mm": -3.1314,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SMD_0805_2012Metric",
+        "value": "100k\u03a9"
+      }
+    },
+    {
+      "ref": "TP1",
+      "value": "5002",
+      "mpn": "5002",
+      "lcsc": null,
+      "manufacturer": "Keystone",
+      "package": "Through Hole",
+      "part_type": "Connector",
+      "role": "Test Point",
+      "role_detail": "2.54mm-access debug point for rails and interfaces",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -3.6107,
+        "y_mm": 10.4073,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Through Hole",
+        "value": null
+      }
+    },
+    {
+      "ref": "TP2",
+      "value": "5002",
+      "mpn": "5002",
+      "lcsc": null,
+      "manufacturer": "Keystone",
+      "package": "Through Hole",
+      "part_type": "Connector",
+      "role": "Test Point",
+      "role_detail": "2.54mm-access debug point for rails and interfaces",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 7.6507,
+        "y_mm": 35.2804,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Through Hole",
+        "value": null
+      }
+    },
+    {
+      "ref": "TP3",
+      "value": "5002",
+      "mpn": "5002",
+      "lcsc": null,
+      "manufacturer": "Keystone",
+      "package": "Through Hole",
+      "part_type": "Connector",
+      "role": "Test Point",
+      "role_detail": "2.54mm-access debug point for rails and interfaces",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -2.7102,
+        "y_mm": -13.661,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Through Hole",
+        "value": null
+      }
+    },
+    {
+      "ref": "TP4",
+      "value": "5002",
+      "mpn": "5002",
+      "lcsc": null,
+      "manufacturer": "Keystone",
+      "package": "Through Hole",
+      "part_type": "Connector",
+      "role": "Test Point",
+      "role_detail": "2.54mm-access debug point for rails and interfaces",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 16.0203,
+        "y_mm": 17.7156,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Through Hole",
+        "value": null
+      }
+    },
+    {
+      "ref": "TP5",
+      "value": "5002",
+      "mpn": "5002",
+      "lcsc": null,
+      "manufacturer": "Keystone",
+      "package": "Through Hole",
+      "part_type": "Connector",
+      "role": "Test Point",
+      "role_detail": "2.54mm-access debug point for rails and interfaces",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 40.0037,
+        "y_mm": 47.3095,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Through Hole",
+        "value": null
+      }
+    },
+    {
+      "ref": "U1",
+      "value": "113991115",
+      "mpn": "113991115",
+      "lcsc": null,
+      "manufacturer": "seeed studio",
+      "package": "Module",
+      "part_type": "Microcontroller",
+      "role": "Main MCU",
+      "role_detail": "Primary controller for WiFi/BLE, radio coordination, audio streaming, sensing, and system control",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -2.6164,
+        "y_mm": 65.8264,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Module",
+        "value": null
+      }
+    },
+    {
+      "ref": "U2",
+      "value": "Ai-Thinker-Ra-01",
+      "mpn": "Ai-Thinker-Ra-01",
+      "lcsc": null,
+      "manufacturer": "Semtech",
+      "package": "Module",
+      "part_type": "RF module",
+      "role": "LoRa Radio",
+      "role_detail": "SPI-connected sub-GHz LoRa transceiver for local mesh or long-range telemetry",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -37.0308,
+        "y_mm": -40.0785,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Module",
+        "value": null
+      }
+    },
+    {
+      "ref": "U3",
+      "value": "M138 Modem",
+      "mpn": "M138 Modem",
+      "lcsc": null,
+      "manufacturer": "SWARM",
+      "package": "Mini-PCIe Module",
+      "part_type": "Integrated Circuit",
+      "role": "Satellite Modem",
+      "role_detail": "UART-connected Swarm M138 satellite modem for remote fallback messaging",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -8.1969,
+        "y_mm": 28.3091,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "Mini-PCIe Module",
+        "value": null
+      }
+    },
+    {
+      "ref": "U4",
+      "value": "MCP23017_SO",
+      "mpn": "MCP23017_SO",
+      "lcsc": null,
+      "manufacturer": "Microchip Technology Inc.",
+      "package": "SOIC-28",
+      "part_type": null,
+      "role": "GPIO Expander",
+      "role_detail": "Low-speed control and monitoring expander for PIR, resets, status, and debug signals",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": 27.1793,
+        "y_mm": 59.7904,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SOIC-28W_7.5x17.9mm_P1.27mm",
+        "value": null
+      }
+    },
+    {
+      "ref": "U5",
+      "value": "SRV05-4-P-T7",
+      "mpn": "SRV05-4-P-T7",
+      "lcsc": null,
+      "manufacturer": "ProTek Devices",
+      "package": "SOT-23-6",
+      "part_type": "Integrated Circuit",
+      "role": "Power TVS",
+      "role_detail": "TVS protection for solar and external power input lines",
+      "datasheet": null,
+      "pnp": {
+        "x_mm": -5.0714,
+        "y_mm": 36.2322,
+        "layer": "Top",
+        "rotation": 0.0,
+        "package": "SOT-23-6",
+        "value": null
+      }
+    }
+  ]
+}

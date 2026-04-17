@@ -1,0 +1,20 @@
+## Tooling
+tools/KiCAD-MCP-Server/
+!tools/KiCAD-MCP-Server/.gitkeep
+
+## KiCad user/cache
+**/*-backups/
+**/fp-info-cache
+**/*.kicad_prl
+**/*.lck
+
+## Python
+__pycache__/
+*.pyc
+
+## Freerouting
+**/*.ses
+**/*.dsn
+
+## Scratch
+/tmp/

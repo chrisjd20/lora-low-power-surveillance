@@ -1,0 +1,67 @@
+# Warden Apex Master — per-tier assembly variants
+# Source of truth for tools/phase12_variants.py
+#
+# Three tiers populate the same PCB with different components.
+# Gerbers / drill / IPC-D-356 are identical across all three.
+# Only the BOM and the Pick-and-Place file differ.
+#
+# DNP ("do not populate"): listed refdes are left UNPOPULATED for the tier.
+# Everything else gets stuffed.
+
+drone:
+  description: |
+    Tier 1. LoRa + BLE/WiFi only. Distributed sensor node. ~$35.
+    No cellular, no satellite, no modem rail, no I2C-UART bridge.
+    Default solder-jumper config: JP1 OPEN (no modem rail), JP2 OPEN
+    (SIM holder disconnected), JP3 / JP4 irrelevant (both modems DNP).
+  dnp:
+    # Cellular modem
+    - IC1      # SIM7080G
+    - Card1    # Nano-SIM holder
+    - J1       # cellular U.FL antenna
+    - D1       # cellular TVS
+    - U5       # SRV05-4 TVS cluster for cellular
+    # Satellite modem
+    - U3       # Swarm M138
+    - U6       # SC16IS740 I2C-UART bridge
+    - X1       # 14.7456 MHz crystal for U6
+    - C23      # crystal load cap
+    - C24      # crystal load cap
+    - C25      # U6 decoupler 100 nF
+    - C26      # U6 decoupler 10 uF
+    # Modem rail (not needed without any modem)
+    - Q2       # P-MOSFET load switch
+    - Q3       # N-MOSFET driver
+    - R16      # Q2 gate pull-up
+    - R18      # UART2_RX pull-down
+    - R19      # UART2_TX pull-down
+    # Solder jumpers that relate to absent components
+    - JP1      # JP_MODEM_RAIL
+    - JP2      # JP_SIM_VCC
+    - JP3      # JP_SAT_UART_TX
+    - JP4      # JP_SAT_UART_RX
+
+cell_master:
+  description: |
+    Tier 2. LoRa + BLE/WiFi + Cellular (SIM7080G). Town-wide gateway. ~$55.
+    Default solder-jumper config: JP1 OPEN (firmware-gated modem rail),
+    JP2 CLOSED (SIM VCC connected), JP3/JP4 OPEN (Swarm absent).
+  dnp:
+    # Satellite-only components are DNP for Cell Master
+    - U3       # Swarm M138
+    - U6       # SC16IS740 I2C-UART bridge
+    - X1       # 14.7456 MHz crystal
+    - C23      # crystal load cap
+    - C24      # crystal load cap
+    - C25      # U6 decoupler 100 nF
+    - C26      # U6 decoupler 10 uF
+    - JP3      # JP_SAT_UART_TX
+    - JP4      # JP_SAT_UART_RX
+
+apex:
+  description: |
+    Tier 3. LoRa + BLE/WiFi + Cellular + Satellite. Full global fallback. ~$95.
+    Default solder-jumper config: JP1 OPEN (Q2 gates modem rail under firmware),
+    JP2 CLOSED (SIM VCC connected), JP3 CLOSED (SC16→Swarm TX),
+    JP4 CLOSED (Swarm→SC16 RX).
+  dnp: []

@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "kicad": {
+      "command": "node",
+      "args": [
+        "/home/admin/github/lora-low-power-surveillance/tools/KiCAD-MCP-Server/dist/index.js"
+      ],
+      "env": {
+        "KICAD_PYTHON": "/usr/bin/python3",
+        "PYTHONPATH": "/usr/lib/python3/dist-packages",
+        "LOG_LEVEL": "info"
+      }
+    }
+  }
+}

@@ -1,0 +1,1433 @@
+{
+  "source": "flux-archive/chrisjd20-warden-apex-master.edif",
+  "components": [
+    {
+      "ref": "C1",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C10",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C11",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C12",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C13",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C14",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C15",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C16",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C17",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C18",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C19",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C2",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C20",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C21",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C22",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C3",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C4",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C5",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C6",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C7",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C8",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "C9",
+      "cell": "Generic Capacitor"
+    },
+    {
+      "ref": "Card1",
+      "cell": "SMN-305"
+    },
+    {
+      "ref": "D1",
+      "cell": "ESD0P2RF-02LRH-TP"
+    },
+    {
+      "ref": "D2",
+      "cell": "ESD0P2RF-02LRH-TP"
+    },
+    {
+      "ref": "D3",
+      "cell": "BAT54HT1G"
+    },
+    {
+      "ref": "H1",
+      "cell": "825433-3"
+    },
+    {
+      "ref": "IC1",
+      "cell": "SIM7080G"
+    },
+    {
+      "ref": "IC2",
+      "cell": "BQ24650RVAR"
+    },
+    {
+      "ref": "IC3",
+      "cell": "TPS63070RNMR"
+    },
+    {
+      "ref": "IC4",
+      "cell": "MAX98357AETE+T"
+    },
+    {
+      "ref": "J1",
+      "cell": "U.FL-R-SMT-1"
+    },
+    {
+      "ref": "J2",
+      "cell": "U.FL-R-SMT-1"
+    },
+    {
+      "ref": "J3",
+      "cell": "Pin Header 01x02 2.54mm Vertical"
+    },
+    {
+      "ref": "L3",
+      "cell": "74437346015"
+    },
+    {
+      "ref": "Q1",
+      "cell": "DMG9926UDM"
+    },
+    {
+      "ref": "R1",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R10",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R11",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R12",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R13",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R14",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R15",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R2",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R3",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R4",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R5",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R6",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R7",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R8",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "R9",
+      "cell": "Generic Resistor"
+    },
+    {
+      "ref": "TP1",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP10",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP11",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP12",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP2",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP3",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP4",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP5",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP6",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP7",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP8",
+      "cell": "5002"
+    },
+    {
+      "ref": "TP9",
+      "cell": "5002"
+    },
+    {
+      "ref": "U1",
+      "cell": "Seeed Studio XIAO ESP32S3 Sense"
+    },
+    {
+      "ref": "U2",
+      "cell": "Ai-Thinker-Ra-01"
+    },
+    {
+      "ref": "U3",
+      "cell": "M138_MODEM"
+    },
+    {
+      "ref": "U4",
+      "cell": "MCP23017_SO"
+    },
+    {
+      "ref": "U5",
+      "cell": "SRV05-4-P-T7"
+    }
+  ],
+  "nets": [
+    {
+      "name": "3V3",
+      "nodes": [
+        [
+          "H1",
+          "1"
+        ],
+        [
+          "IC4",
+          "VDD_1"
+        ],
+        [
+          "IC3",
+          "PS/S"
+        ],
+        [
+          "R14",
+          "P1"
+        ],
+        [
+          "R11",
+          "P1"
+        ],
+        [
+          "IC4",
+          "VDD_2"
+        ],
+        [
+          "IC3",
+          "VOUT_1"
+        ],
+        [
+          "R13",
+          "P1"
+        ],
+        [
+          "U5",
+          "REF"
+        ],
+        [
+          "C18",
+          "P1"
+        ],
+        [
+          "U2",
+          "3.3V"
+        ],
+        [
+          "U4",
+          "VDD"
+        ],
+        [
+          "TP5",
+          "~"
+        ],
+        [
+          "TP1",
+          "~"
+        ],
+        [
+          "C4",
+          "P1"
+        ],
+        [
+          "IC3",
+          "VOUT_2"
+        ],
+        [
+          "IC1",
+          "VDD_EXT"
+        ]
+      ]
+    },
+    {
+      "name": "CELL_RF",
+      "nodes": [
+        [
+          "D1",
+          "1"
+        ],
+        [
+          "J1",
+          "1"
+        ],
+        [
+          "IC1",
+          "RF_ANT"
+        ]
+      ]
+    },
+    {
+      "name": "CHG_REF",
+      "nodes": [
+        [
+          "IC2",
+          "TERM_EN"
+        ],
+        [
+          "C1",
+          "P1"
+        ],
+        [
+          "IC2",
+          "VREF"
+        ]
+      ]
+    },
+    {
+      "name": "CHG_SENSE_NEG",
+      "nodes": [
+        [
+          "IC2",
+          "SRN"
+        ],
+        [
+          "R2",
+          "P1"
+        ],
+        [
+          "C21",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "CHG_STAT1",
+      "nodes": [
+        [
+          "R4",
+          "P1"
+        ],
+        [
+          "IC2",
+          "STAT1"
+        ]
+      ]
+    },
+    {
+      "name": "CHG_STAT2",
+      "nodes": [
+        [
+          "R5",
+          "P1"
+        ],
+        [
+          "IC2",
+          "STAT2"
+        ]
+      ]
+    },
+    {
+      "name": "CHG_VFB",
+      "nodes": [
+        [
+          "IC2",
+          "VFB"
+        ],
+        [
+          "R1",
+          "P1"
+        ]
+      ]
+    },
+    {
+      "name": "FB2_LINK",
+      "nodes": [
+        [
+          "IC3",
+          "FB2"
+        ],
+        [
+          "R12",
+          "P1"
+        ]
+      ]
+    },
+    {
+      "name": "FB_DIV",
+      "nodes": [
+        [
+          "R12",
+          "P2"
+        ],
+        [
+          "IC3",
+          "FB"
+        ],
+        [
+          "R11",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "GND",
+      "nodes": [
+        [
+          "IC2",
+          "GND"
+        ],
+        [
+          "C3",
+          "P2"
+        ],
+        [
+          "U3",
+          "SHIELD"
+        ],
+        [
+          "IC2",
+          "EP"
+        ],
+        [
+          "IC1",
+          "GND_22"
+        ],
+        [
+          "IC1",
+          "GND_12"
+        ],
+        [
+          "R3",
+          "P2"
+        ],
+        [
+          "C14",
+          "P2"
+        ],
+        [
+          "U3",
+          "GND_18"
+        ],
+        [
+          "C15",
+          "P2"
+        ],
+        [
+          "IC1",
+          "GND_7"
+        ],
+        [
+          "IC1",
+          "GND_3"
+        ],
+        [
+          "IC1",
+          "GND_15"
+        ],
+        [
+          "IC1",
+          "GND_17"
+        ],
+        [
+          "Card1",
+          "EP"
+        ],
+        [
+          "IC1",
+          "GND_14"
+        ],
+        [
+          "J2",
+          "3"
+        ],
+        [
+          "IC1",
+          "GND_21"
+        ],
+        [
+          "IC1",
+          "GND_13"
+        ],
+        [
+          "U3",
+          "GND_35"
+        ],
+        [
+          "U3",
+          "GND_4"
+        ],
+        [
+          "U1",
+          "GND"
+        ],
+        [
+          "U3",
+          "GND_9"
+        ],
+        [
+          "IC4",
+          "GND_2"
+        ],
+        [
+          "IC4",
+          "GND_3"
+        ],
+        [
+          "D2",
+          "2"
+        ],
+        [
+          "IC1",
+          "GND_2"
+        ],
+        [
+          "U4",
+          "~{RESET}"
+        ],
+        [
+          "C16",
+          "P2"
+        ],
+        [
+          "IC1",
+          "GND_5"
+        ],
+        [
+          "IC3",
+          "PGND"
+        ],
+        [
+          "C22",
+          "P2"
+        ],
+        [
+          "U2",
+          "GND"
+        ],
+        [
+          "U3",
+          "GND_26"
+        ],
+        [
+          "IC1",
+          "GND_11"
+        ],
+        [
+          "C18",
+          "P2"
+        ],
+        [
+          "IC1",
+          "GND_4"
+        ],
+        [
+          "IC1",
+          "GND_1"
+        ],
+        [
+          "J2",
+          "2"
+        ],
+        [
+          "IC1",
+          "GND_8"
+        ],
+        [
+          "Card1",
+          "GND"
+        ],
+        [
+          "C13",
+          "P2"
+        ],
+        [
+          "J1",
+          "3"
+        ],
+        [
+          "U4",
+          "A0"
+        ],
+        [
+          "U5",
+          "GND"
+        ],
+        [
+          "C17",
+          "P2"
+        ],
+        [
+          "IC1",
+          "GND_16"
+        ],
+        [
+          "U3",
+          "GND_37"
+        ],
+        [
+          "IC4",
+          "THERMAL_PAD"
+        ],
+        [
+          "IC1",
+          "GND_20"
+        ],
+        [
+          "H1",
+          "2"
+        ],
+        [
+          "IC1",
+          "GND_19"
+        ],
+        [
+          "IC1",
+          "GND_23"
+        ],
+        [
+          "U3",
+          "GND_27"
+        ],
+        [
+          "U3",
+          "GND_21"
+        ],
+        [
+          "U4",
+          "VSS"
+        ],
+        [
+          "U3",
+          "GND_40"
+        ],
+        [
+          "IC3",
+          "GND"
+        ],
+        [
+          "C4",
+          "P2"
+        ],
+        [
+          "U4",
+          "A1"
+        ],
+        [
+          "D1",
+          "2"
+        ],
+        [
+          "C2",
+          "P2"
+        ],
+        [
+          "IC1",
+          "GND_6"
+        ],
+        [
+          "R5",
+          "P2"
+        ],
+        [
+          "C5",
+          "P2"
+        ],
+        [
+          "U3",
+          "GND_29"
+        ],
+        [
+          "U4",
+          "A2"
+        ],
+        [
+          "R4",
+          "P2"
+        ],
+        [
+          "J1",
+          "2"
+        ],
+        [
+          "IC1",
+          "GND_9"
+        ],
+        [
+          "IC1",
+          "GND_18"
+        ],
+        [
+          "U3",
+          "GND_43"
+        ],
+        [
+          "IC4",
+          "GND_1"
+        ],
+        [
+          "U3",
+          "GND_15"
+        ],
+        [
+          "C20",
+          "P2"
+        ],
+        [
+          "IC1",
+          "GND_10"
+        ],
+        [
+          "U3",
+          "GND_50"
+        ],
+        [
+          "C1",
+          "P2"
+        ],
+        [
+          "Card1",
+          "Vpp"
+        ],
+        [
+          "IC4",
+          "~SD_MODE"
+        ],
+        [
+          "IC4",
+          "GAIN_SLOT"
+        ],
+        [
+          "IC4",
+          "N.C._4"
+        ],
+        [
+          "IC4",
+          "N.C._3"
+        ],
+        [
+          "IC4",
+          "N.C._2"
+        ],
+        [
+          "IC4",
+          "N.C._1"
+        ],
+        [
+          "U3",
+          "GND_34"
+        ],
+        [
+          "R1",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "I2C_SCL",
+      "nodes": [
+        [
+          "U1",
+          "TOUCH6_GPIO6_SCL_A5_D5"
+        ],
+        [
+          "U4",
+          "SCK"
+        ],
+        [
+          "R13",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "I2C_SDA",
+      "nodes": [
+        [
+          "U4",
+          "SDA"
+        ],
+        [
+          "U1",
+          "TOUCH5_GPIO5_SDA_A4_D4"
+        ],
+        [
+          "R14",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "I2S_BCLK",
+      "nodes": [
+        [
+          "IC4",
+          "BCLK"
+        ],
+        [
+          "U1",
+          "MTCK"
+        ]
+      ]
+    },
+    {
+      "name": "I2S_DOUT",
+      "nodes": [
+        [
+          "U1",
+          "GPIO43_TX_D6"
+        ],
+        [
+          "IC4",
+          "DIN"
+        ]
+      ]
+    },
+    {
+      "name": "I2S_LRCLK",
+      "nodes": [
+        [
+          "IC4",
+          "LRCLK"
+        ],
+        [
+          "U1",
+          "D7_RX_GPIO44"
+        ]
+      ]
+    },
+    {
+      "name": "LORA_DIO0",
+      "nodes": [
+        [
+          "U2",
+          "DIO0"
+        ],
+        [
+          "U1",
+          "TOUCH3_GPIO3_A2_D2"
+        ]
+      ]
+    },
+    {
+      "name": "LORA_DIO1",
+      "nodes": [
+        [
+          "U2",
+          "DIO1"
+        ]
+      ]
+    },
+    {
+      "name": "LORA_NSS",
+      "nodes": [
+        [
+          "U2",
+          "NSS"
+        ],
+        [
+          "U1",
+          "TOUCH1_GPIO1_A0_D0"
+        ]
+      ]
+    },
+    {
+      "name": "LORA_RESET",
+      "nodes": [
+        [
+          "U2",
+          "RESET"
+        ],
+        [
+          "U1",
+          "TOUCH2_GPIO2_A1_D1"
+        ]
+      ]
+    },
+    {
+      "name": "LORA_RF",
+      "nodes": [
+        [
+          "U2",
+          "ANT"
+        ],
+        [
+          "J2",
+          "1"
+        ],
+        [
+          "D2",
+          "1"
+        ]
+      ]
+    },
+    {
+      "name": "MODEM_VBAT",
+      "nodes": [
+        [
+          "U3",
+          "VDD_52"
+        ],
+        [
+          "IC1",
+          "VBAT_2"
+        ],
+        [
+          "U3",
+          "VDD_39"
+        ],
+        [
+          "U3",
+          "VDD_41"
+        ],
+        [
+          "TP4",
+          "~"
+        ],
+        [
+          "U3",
+          "VDD_2"
+        ],
+        [
+          "IC1",
+          "VBAT_1"
+        ]
+      ]
+    },
+    {
+      "name": "MPPSET",
+      "nodes": [
+        [
+          "IC2",
+          "MPPSET"
+        ],
+        [
+          "R2",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "Net 1",
+      "nodes": [
+        [
+          "IC2",
+          "LODRV"
+        ],
+        [
+          "Q1",
+          "G1"
+        ]
+      ]
+    },
+    {
+      "name": "Net 2",
+      "nodes": [
+        [
+          "IC2",
+          "HIDRV"
+        ],
+        [
+          "Q1",
+          "G2"
+        ]
+      ]
+    },
+    {
+      "name": "Net 3",
+      "nodes": [
+        [
+          "D3",
+          "K"
+        ],
+        [
+          "C19",
+          "P1"
+        ],
+        [
+          "IC2",
+          "BTST"
+        ]
+      ]
+    },
+    {
+      "name": "Net 4",
+      "nodes": [
+        [
+          "D3",
+          "A"
+        ],
+        [
+          "C15",
+          "P1"
+        ],
+        [
+          "IC2",
+          "REGN"
+        ]
+      ]
+    },
+    {
+      "name": "Net 5",
+      "nodes": [
+        [
+          "Q1",
+          "S2"
+        ],
+        [
+          "C19",
+          "P2"
+        ],
+        [
+          "IC2",
+          "PH"
+        ]
+      ]
+    },
+    {
+      "name": "PGOOD",
+      "nodes": [
+        [
+          "R10",
+          "P1"
+        ],
+        [
+          "IC3",
+          "PG"
+        ]
+      ]
+    },
+    {
+      "name": "PG_MON",
+      "nodes": [
+        [
+          "U1",
+          "TOUCH4_GPIO4_A3_D3"
+        ],
+        [
+          "R10",
+          "P2"
+        ]
+      ]
+    },
+    {
+      "name": "PIR_SIG",
+      "nodes": [
+        [
+          "U4",
+          "GPA0"
+        ],
+        [
+          "H1",
+          "3"
+        ]
+      ]
+    },
+    {
+      "name": "REG_EN",
+      "nodes": [
+        [
+          "IC3",
+          "EN"
+        ],
+        [
+          "R15",
+          "P2"
+        ],
+        [
+          "IC3",
+          "VSEL"
+        ]
+      ]
+    },
+    {
+      "name": "REG_IN",
+      "nodes": [
+        [
+          "IC3",
+          "VIN_1"
+        ],
+        [
+          "R15",
+          "P1"
+        ],
+        [
+          "C3",
+          "P1"
+        ],
+        [
+          "IC3",
+          "VIN_2"
+        ],
+        [
+          "C2",
+          "P1"
+        ]
+      ]
+    },
+    {
+      "name": "SIM_CLK",
+      "nodes": [
+        [
+          "Card1",
+          "CLK"
+        ],
+        [
+          "IC1",
+          "SIM_CLK"
+        ]
+      ]
+    },
+    {
+      "name": "SIM_DATA",
+      "nodes": [
+        [
+          "Card1",
+          "I/O"
+        ],
+        [
+          "IC1",
+          "SIM_DATA"
+        ]
+      ]
+    },
+    {
+      "name": "SIM_RST",
+      "nodes": [
+        [
+          "Card1",
+          "RST"
+        ],
+        [
+          "IC1",
+          "SIM_RST"
+        ]
+      ]
+    },
+    {
+      "name": "SIM_VDD",
+      "nodes": [
+        [
+          "Card1",
+          "VCC"
+        ],
+        [
+          "IC1",
+          "SIM_VDD"
+        ]
+      ]
+    },
+    {
+      "name": "SOLAR_IN",
+      "nodes": [
+        [
+          "C13",
+          "P1"
+        ],
+        [
+          "TP2",
+          "~"
+        ],
+        [
+          "IC2",
+          "VCC"
+        ],
+        [
+          "Q1",
+          "D1"
+        ]
+      ]
+    },
+    {
+      "name": "SPI_MISO",
+      "nodes": [
+        [
+          "U2",
+          "MISO"
+        ],
+        [
+          "U1",
+          "D9_A9_MISO_GPIO8_TOUCH8"
+        ]
+      ]
+    },
+    {
+      "name": "SPI_MOSI",
+      "nodes": [
+        [
+          "U1",
+          "D10_A10_MOSI_GPIO9_TOUCH9"
+        ],
+        [
+          "U2",
+          "MOSI"
+        ]
+      ]
+    },
+    {
+      "name": "SPI_SCK",
+      "nodes": [
+        [
+          "U2",
+          "SCK"
+        ],
+        [
+          "U1",
+          "D8_A8_SCK_GPIO7_TOUCH7"
+        ]
+      ]
+    },
+    {
+      "name": "SPK_N",
+      "nodes": [
+        [
+          "J3",
+          "P2"
+        ],
+        [
+          "IC4",
+          "OUTN"
+        ]
+      ]
+    },
+    {
+      "name": "SPK_P",
+      "nodes": [
+        [
+          "IC4",
+          "OUTP"
+        ],
+        [
+          "J3",
+          "P1"
+        ]
+      ]
+    },
+    {
+      "name": "SW_A",
+      "nodes": [
+        [
+          "IC3",
+          "L1"
+        ],
+        [
+          "L3",
+          "~"
+        ]
+      ]
+    },
+    {
+      "name": "SW_B",
+      "nodes": [
+        [
+          "L3",
+          "~"
+        ],
+        [
+          "IC3",
+          "L2"
+        ]
+      ]
+    },
+    {
+      "name": "TS_BIAS",
+      "nodes": [
+        [
+          "R3",
+          "P1"
+        ],
+        [
+          "IC2",
+          "TS"
+        ]
+      ]
+    },
+    {
+      "name": "UART1_RX",
+      "nodes": [
+        [
+          "IC1",
+          "UART1_TXD"
+        ],
+        [
+          "U3",
+          "UART_TX"
+        ]
+      ]
+    },
+    {
+      "name": "UART1_TX",
+      "nodes": [
+        [
+          "IC1",
+          "UART1_RXD"
+        ],
+        [
+          "U3",
+          "UART_RX"
+        ]
+      ]
+    },
+    {
+      "name": "VAUX",
+      "nodes": [
+        [
+          "C5",
+          "P1"
+        ],
+        [
+          "IC3",
+          "VAUX"
+        ]
+      ]
+    },
+    {
+      "name": "VBAT_SYS",
+      "nodes": [
+        [
+          "C16",
+          "P1"
+        ],
+        [
+          "C22",
+          "P1"
+        ],
+        [
+          "C17",
+          "P1"
+        ],
+        [
+          "C20",
+          "P1"
+        ],
+        [
+          "C14",
+          "P1"
+        ],
+        [
+          "TP3",
+          "~"
+        ],
+        [
+          "C21",
+          "P1"
+        ],
+        [
+          "IC2",
+          "SRP"
+        ],
+        [
+          "U1",
+          "BAT+"
+        ],
+        [
+          "Q1",
+          "S1/D2"
+        ]
+      ]
+    }
+  ],
+  "stats": {
+    "components": 68,
+    "nets": 49,
+    "nodes": 226
+  }
+}

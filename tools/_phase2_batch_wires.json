@@ -1,0 +1,2462 @@
+[
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "H1",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  H1.1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "7",
+      "netName": "3V3"
+    },
+    "label": "3V3  IC4.VDD_1\u2192pin7"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "PS/S",
+      "netName": "3V3"
+    },
+    "label": "3V3  IC3.PS/S\u2192pinPS/S"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R14",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  R14.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R11",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  R11.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "8",
+      "netName": "3V3"
+    },
+    "label": "3V3  IC4.VDD_2\u2192pin8"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "VOUT_1",
+      "netName": "3V3"
+    },
+    "label": "3V3  IC3.VOUT_1\u2192pinVOUT_1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R13",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  R13.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U5",
+      "pinName": "5",
+      "netName": "3V3"
+    },
+    "label": "3V3  U5.REF\u2192pin5"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C18",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  C18.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "3",
+      "netName": "3V3"
+    },
+    "label": "3V3  U2.3.3V\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "9",
+      "netName": "3V3"
+    },
+    "label": "3V3  U4.VDD\u2192pin9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "TP5",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  TP5.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "TP1",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  TP1.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C4",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "3V3  C4.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "VOUT_2",
+      "netName": "3V3"
+    },
+    "label": "3V3  IC3.VOUT_2\u2192pinVOUT_2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "VDD_EXT",
+      "netName": "3V3"
+    },
+    "label": "3V3  IC1.VDD_EXT\u2192pinVDD_EXT"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "D1",
+      "pinName": "1",
+      "netName": "CELL_RF"
+    },
+    "label": "CELL_RF  D1.1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J1",
+      "pinName": "1",
+      "netName": "CELL_RF"
+    },
+    "label": "CELL_RF  J1.1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "RF_ANT",
+      "netName": "CELL_RF"
+    },
+    "label": "CELL_RF  IC1.RF_ANT\u2192pinRF_ANT"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "7",
+      "netName": "CHG_REF"
+    },
+    "label": "CHG_REF  IC2.TERM_EN\u2192pin7"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C1",
+      "pinName": "1",
+      "netName": "CHG_REF"
+    },
+    "label": "CHG_REF  C1.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "6",
+      "netName": "CHG_REF"
+    },
+    "label": "CHG_REF  IC2.VREF\u2192pin6"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "9",
+      "netName": "CHG_SENSE_NEG"
+    },
+    "label": "CHG_SENSE_NEG  IC2.SRN\u2192pin9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R2",
+      "pinName": "1",
+      "netName": "CHG_SENSE_NEG"
+    },
+    "label": "CHG_SENSE_NEG  R2.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C21",
+      "pinName": "2",
+      "netName": "CHG_SENSE_NEG"
+    },
+    "label": "CHG_SENSE_NEG  C21.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R4",
+      "pinName": "1",
+      "netName": "CHG_STAT1"
+    },
+    "label": "CHG_STAT1  R4.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "3",
+      "netName": "CHG_STAT1"
+    },
+    "label": "CHG_STAT1  IC2.STAT1\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R5",
+      "pinName": "1",
+      "netName": "CHG_STAT2"
+    },
+    "label": "CHG_STAT2  R5.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "5",
+      "netName": "CHG_STAT2"
+    },
+    "label": "CHG_STAT2  IC2.STAT2\u2192pin5"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "8",
+      "netName": "CHG_VFB"
+    },
+    "label": "CHG_VFB  IC2.VFB\u2192pin8"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R1",
+      "pinName": "1",
+      "netName": "CHG_VFB"
+    },
+    "label": "CHG_VFB  R1.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "FB2",
+      "netName": "FB2_LINK"
+    },
+    "label": "FB2_LINK  IC3.FB2\u2192pinFB2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R12",
+      "pinName": "1",
+      "netName": "FB2_LINK"
+    },
+    "label": "FB2_LINK  R12.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R12",
+      "pinName": "2",
+      "netName": "FB_DIV"
+    },
+    "label": "FB_DIV  R12.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "FB",
+      "netName": "FB_DIV"
+    },
+    "label": "FB_DIV  IC3.FB\u2192pinFB"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R11",
+      "pinName": "2",
+      "netName": "FB_DIV"
+    },
+    "label": "FB_DIV  R11.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "11",
+      "netName": "GND"
+    },
+    "label": "GND  IC2.GND\u2192pin11"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C3",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C3.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "14",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin14"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "16",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin16"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "17",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin17"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "19",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin19"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "22",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin22"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "34",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin34"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "43",
+      "netName": "GND"
+    },
+    "label": "GND  U3.SHIELD\u2192pin43"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "17",
+      "netName": "GND"
+    },
+    "label": "GND  IC2.EP\u2192pin17"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_22",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_22\u2192pinGND_22"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_12",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_12\u2192pinGND_12"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R3",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  R3.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C14",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C14.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_18",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_18\u2192pinGND_18"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C15",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C15.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_7",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_7\u2192pinGND_7"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_3",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_3\u2192pinGND_3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_15",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_15\u2192pinGND_15"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_17",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_17\u2192pinGND_17"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "7",
+      "netName": "GND"
+    },
+    "label": "GND  Card1.EP\u2192pin7"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "8",
+      "netName": "GND"
+    },
+    "label": "GND  Card1.EP\u2192pin8"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "9",
+      "netName": "GND"
+    },
+    "label": "GND  Card1.EP\u2192pin9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "10",
+      "netName": "GND"
+    },
+    "label": "GND  Card1.EP\u2192pin10"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_14",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_14\u2192pinGND_14"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J2",
+      "pinName": "3",
+      "netName": "GND"
+    },
+    "label": "GND  J2.3\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_21",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_21\u2192pinGND_21"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_13",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_13\u2192pinGND_13"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_35",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_35\u2192pinGND_35"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_4",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_4\u2192pinGND_4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "13",
+      "netName": "GND"
+    },
+    "label": "GND  U1.GND\u2192pin13"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "24",
+      "netName": "GND"
+    },
+    "label": "GND  U1.GND\u2192pin24"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_9",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_9\u2192pinGND_9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "15",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.GND_2\u2192pin15"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "3",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.GND_3\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "D2",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  D2.2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_2",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_2\u2192pinGND_2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "18",
+      "netName": "GND"
+    },
+    "label": "GND  U4.~{RESET}\u2192pin18"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C16",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C16.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_5",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_5\u2192pinGND_5"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "PGND",
+      "netName": "GND"
+    },
+    "label": "GND  IC3.PGND\u2192pinPGND"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C22",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C22.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  U2.GND\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_26",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_26\u2192pinGND_26"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_11",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_11\u2192pinGND_11"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C18",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C18.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_4",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_4\u2192pinGND_4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_1",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_1\u2192pinGND_1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J2",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  J2.2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_8",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_8\u2192pinGND_8"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "GND",
+      "netName": "GND"
+    },
+    "label": "GND  Card1.GND\u2192pinGND"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C13",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C13.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J1",
+      "pinName": "3",
+      "netName": "GND"
+    },
+    "label": "GND  J1.3\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "15",
+      "netName": "GND"
+    },
+    "label": "GND  U4.A0\u2192pin15"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U5",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  U5.GND\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C17",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C17.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_16",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_16\u2192pinGND_16"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_37",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_37\u2192pinGND_37"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "17",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.THERMAL_PAD\u2192pin17"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_20",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_20\u2192pinGND_20"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "H1",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  H1.2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_19",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_19\u2192pinGND_19"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_23",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_23\u2192pinGND_23"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_27",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_27\u2192pinGND_27"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_21",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_21\u2192pinGND_21"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "10",
+      "netName": "GND"
+    },
+    "label": "GND  U4.VSS\u2192pin10"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_40",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_40\u2192pinGND_40"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "GND",
+      "netName": "GND"
+    },
+    "label": "GND  IC3.GND\u2192pinGND"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C4",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C4.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "16",
+      "netName": "GND"
+    },
+    "label": "GND  U4.A1\u2192pin16"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "D1",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  D1.2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C2",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C2.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_6",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_6\u2192pinGND_6"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R5",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  R5.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C5",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C5.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_29",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_29\u2192pinGND_29"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "17",
+      "netName": "GND"
+    },
+    "label": "GND  U4.A2\u2192pin17"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R4",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  R4.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J1",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  J1.2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_9",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_9\u2192pinGND_9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_18",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_18\u2192pinGND_18"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_43",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_43\u2192pinGND_43"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "11",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.GND_1\u2192pin11"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_15",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_15\u2192pinGND_15"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C20",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C20.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "GND_10",
+      "netName": "GND"
+    },
+    "label": "GND  IC1.GND_10\u2192pinGND_10"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_50",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_50\u2192pinGND_50"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C1",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  C1.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "Vpp",
+      "netName": "GND"
+    },
+    "label": "GND  Card1.Vpp\u2192pinVpp"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "4",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.~SD_MODE\u2192pin4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.GAIN_SLOT\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "13",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.N.C._4\u2192pin13"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "12",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.N.C._3\u2192pin12"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "6",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.N.C._2\u2192pin6"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "5",
+      "netName": "GND"
+    },
+    "label": "GND  IC4.N.C._1\u2192pin5"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "GND_34",
+      "netName": "GND"
+    },
+    "label": "GND  U3.GND_34\u2192pinGND_34"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R1",
+      "pinName": "2",
+      "netName": "GND"
+    },
+    "label": "GND  R1.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "TOUCH6_GPIO6_SCL_A5_D5",
+      "netName": "I2C_SCL"
+    },
+    "label": "I2C_SCL  U1.TOUCH6_GPIO6_SCL_A5_D5\u2192pinTOUCH6_GPIO6_SCL_A5_D5"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "12",
+      "netName": "I2C_SCL"
+    },
+    "label": "I2C_SCL  U4.SCK\u2192pin12"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R13",
+      "pinName": "2",
+      "netName": "I2C_SCL"
+    },
+    "label": "I2C_SCL  R13.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "13",
+      "netName": "I2C_SDA"
+    },
+    "label": "I2C_SDA  U4.SDA\u2192pin13"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "TOUCH5_GPIO5_SDA_A4_D4",
+      "netName": "I2C_SDA"
+    },
+    "label": "I2C_SDA  U1.TOUCH5_GPIO5_SDA_A4_D4\u2192pinTOUCH5_GPIO5_SDA_A4_D4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R14",
+      "pinName": "2",
+      "netName": "I2C_SDA"
+    },
+    "label": "I2C_SDA  R14.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "16",
+      "netName": "I2S_BCLK"
+    },
+    "label": "I2S_BCLK  IC4.BCLK\u2192pin16"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "MTCK",
+      "netName": "I2S_BCLK"
+    },
+    "label": "I2S_BCLK  U1.MTCK\u2192pinMTCK"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "GPIO43_TX_D6",
+      "netName": "I2S_DOUT"
+    },
+    "label": "I2S_DOUT  U1.GPIO43_TX_D6\u2192pinGPIO43_TX_D6"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "1",
+      "netName": "I2S_DOUT"
+    },
+    "label": "I2S_DOUT  IC4.DIN\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "14",
+      "netName": "I2S_LRCLK"
+    },
+    "label": "I2S_LRCLK  IC4.LRCLK\u2192pin14"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "D7_RX_GPIO44",
+      "netName": "I2S_LRCLK"
+    },
+    "label": "I2S_LRCLK  U1.D7_RX_GPIO44\u2192pinD7_RX_GPIO44"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "5",
+      "netName": "LORA_DIO0"
+    },
+    "label": "LORA_DIO0  U2.DIO0\u2192pin5"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "TOUCH3_GPIO3_A2_D2",
+      "netName": "LORA_DIO0"
+    },
+    "label": "LORA_DIO0  U1.TOUCH3_GPIO3_A2_D2\u2192pinTOUCH3_GPIO3_A2_D2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "6",
+      "netName": "LORA_DIO1"
+    },
+    "label": "LORA_DIO1  U2.DIO1\u2192pin6"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "15",
+      "netName": "LORA_NSS"
+    },
+    "label": "LORA_NSS  U2.NSS\u2192pin15"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "TOUCH1_GPIO1_A0_D0",
+      "netName": "LORA_NSS"
+    },
+    "label": "LORA_NSS  U1.TOUCH1_GPIO1_A0_D0\u2192pinTOUCH1_GPIO1_A0_D0"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "4",
+      "netName": "LORA_RESET"
+    },
+    "label": "LORA_RESET  U2.RESET\u2192pin4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "TOUCH2_GPIO2_A1_D1",
+      "netName": "LORA_RESET"
+    },
+    "label": "LORA_RESET  U1.TOUCH2_GPIO2_A1_D1\u2192pinTOUCH2_GPIO2_A1_D1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "1",
+      "netName": "LORA_RF"
+    },
+    "label": "LORA_RF  U2.ANT\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J2",
+      "pinName": "1",
+      "netName": "LORA_RF"
+    },
+    "label": "LORA_RF  J2.1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "D2",
+      "pinName": "1",
+      "netName": "LORA_RF"
+    },
+    "label": "LORA_RF  D2.1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "VDD_52",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  U3.VDD_52\u2192pinVDD_52"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "VBAT_2",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  IC1.VBAT_2\u2192pinVBAT_2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "VDD_39",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  U3.VDD_39\u2192pinVDD_39"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "VDD_41",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  U3.VDD_41\u2192pinVDD_41"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "TP4",
+      "pinName": "1",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  TP4.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "VDD_2",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  U3.VDD_2\u2192pinVDD_2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "VBAT_1",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "MODEM_VBAT  IC1.VBAT_1\u2192pinVBAT_1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "2",
+      "netName": "MPPSET"
+    },
+    "label": "MPPSET  IC2.MPPSET\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R2",
+      "pinName": "2",
+      "netName": "MPPSET"
+    },
+    "label": "MPPSET  R2.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "13",
+      "netName": "CHG_GATE_LO"
+    },
+    "label": "CHG_GATE_LO  IC2.LODRV\u2192pin13"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Q1",
+      "pinName": "6",
+      "netName": "CHG_GATE_LO"
+    },
+    "label": "CHG_GATE_LO  Q1.G1\u2192pin6"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "15",
+      "netName": "CHG_GATE_HI"
+    },
+    "label": "CHG_GATE_HI  IC2.HIDRV\u2192pin15"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Q1",
+      "pinName": "4",
+      "netName": "CHG_GATE_HI"
+    },
+    "label": "CHG_GATE_HI  Q1.G2\u2192pin4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "D3",
+      "pinName": "1",
+      "netName": "CHG_BST"
+    },
+    "label": "CHG_BST  D3.K\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C19",
+      "pinName": "1",
+      "netName": "CHG_BST"
+    },
+    "label": "CHG_BST  C19.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "16",
+      "netName": "CHG_BST"
+    },
+    "label": "CHG_BST  IC2.BTST\u2192pin16"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "D3",
+      "pinName": "2",
+      "netName": "CHG_REGN"
+    },
+    "label": "CHG_REGN  D3.A\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C15",
+      "pinName": "1",
+      "netName": "CHG_REGN"
+    },
+    "label": "CHG_REGN  C15.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "12",
+      "netName": "CHG_REGN"
+    },
+    "label": "CHG_REGN  IC2.REGN\u2192pin12"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Q1",
+      "pinName": "3",
+      "netName": "CHG_PH"
+    },
+    "label": "CHG_PH  Q1.S2\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C19",
+      "pinName": "2",
+      "netName": "CHG_PH"
+    },
+    "label": "CHG_PH  C19.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "14",
+      "netName": "CHG_PH"
+    },
+    "label": "CHG_PH  IC2.PH\u2192pin14"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R10",
+      "pinName": "1",
+      "netName": "PGOOD"
+    },
+    "label": "PGOOD  R10.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "PG",
+      "netName": "PGOOD"
+    },
+    "label": "PGOOD  IC3.PG\u2192pinPG"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "TOUCH4_GPIO4_A3_D3",
+      "netName": "PG_MON"
+    },
+    "label": "PG_MON  U1.TOUCH4_GPIO4_A3_D3\u2192pinTOUCH4_GPIO4_A3_D3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R10",
+      "pinName": "2",
+      "netName": "PG_MON"
+    },
+    "label": "PG_MON  R10.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U4",
+      "pinName": "21",
+      "netName": "PIR_SIG"
+    },
+    "label": "PIR_SIG  U4.GPA0\u2192pin21"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "H1",
+      "pinName": "3",
+      "netName": "PIR_SIG"
+    },
+    "label": "PIR_SIG  H1.3\u2192pin3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "EN",
+      "netName": "REG_EN"
+    },
+    "label": "REG_EN  IC3.EN\u2192pinEN"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R15",
+      "pinName": "2",
+      "netName": "REG_EN"
+    },
+    "label": "REG_EN  R15.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "VSEL",
+      "netName": "REG_EN"
+    },
+    "label": "REG_EN  IC3.VSEL\u2192pinVSEL"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "VIN_1",
+      "netName": "REG_IN"
+    },
+    "label": "REG_IN  IC3.VIN_1\u2192pinVIN_1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R15",
+      "pinName": "1",
+      "netName": "REG_IN"
+    },
+    "label": "REG_IN  R15.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C3",
+      "pinName": "1",
+      "netName": "REG_IN"
+    },
+    "label": "REG_IN  C3.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "VIN_2",
+      "netName": "REG_IN"
+    },
+    "label": "REG_IN  IC3.VIN_2\u2192pinVIN_2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C2",
+      "pinName": "1",
+      "netName": "REG_IN"
+    },
+    "label": "REG_IN  C2.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "CLK",
+      "netName": "SIM_CLK"
+    },
+    "label": "SIM_CLK  Card1.CLK\u2192pinCLK"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "SIM_CLK",
+      "netName": "SIM_CLK"
+    },
+    "label": "SIM_CLK  IC1.SIM_CLK\u2192pinSIM_CLK"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "I/O",
+      "netName": "SIM_DATA"
+    },
+    "label": "SIM_DATA  Card1.I/O\u2192pinI/O"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "SIM_DATA",
+      "netName": "SIM_DATA"
+    },
+    "label": "SIM_DATA  IC1.SIM_DATA\u2192pinSIM_DATA"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "RST",
+      "netName": "SIM_RST"
+    },
+    "label": "SIM_RST  Card1.RST\u2192pinRST"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "SIM_RST",
+      "netName": "SIM_RST"
+    },
+    "label": "SIM_RST  IC1.SIM_RST\u2192pinSIM_RST"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Card1",
+      "pinName": "VCC",
+      "netName": "SIM_VDD"
+    },
+    "label": "SIM_VDD  Card1.VCC\u2192pinVCC"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "SIM_VDD",
+      "netName": "SIM_VDD"
+    },
+    "label": "SIM_VDD  IC1.SIM_VDD\u2192pinSIM_VDD"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C13",
+      "pinName": "1",
+      "netName": "SOLAR_IN"
+    },
+    "label": "SOLAR_IN  C13.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "TP2",
+      "pinName": "1",
+      "netName": "SOLAR_IN"
+    },
+    "label": "SOLAR_IN  TP2.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "1",
+      "netName": "SOLAR_IN"
+    },
+    "label": "SOLAR_IN  IC2.VCC\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Q1",
+      "pinName": "1",
+      "netName": "SOLAR_IN"
+    },
+    "label": "SOLAR_IN  Q1.D1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "13",
+      "netName": "SPI_MISO"
+    },
+    "label": "SPI_MISO  U2.MISO\u2192pin13"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "D9_A9_MISO_GPIO8_TOUCH8",
+      "netName": "SPI_MISO"
+    },
+    "label": "SPI_MISO  U1.D9_A9_MISO_GPIO8_TOUCH8\u2192pinD9_A9_MISO_GPIO8_TOUCH8"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "D10_A10_MOSI_GPIO9_TOUCH9",
+      "netName": "SPI_MOSI"
+    },
+    "label": "SPI_MOSI  U1.D10_A10_MOSI_GPIO9_TOUCH9\u2192pinD10_A10_MOSI_GPIO9_TOUCH9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "14",
+      "netName": "SPI_MOSI"
+    },
+    "label": "SPI_MOSI  U2.MOSI\u2192pin14"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U2",
+      "pinName": "12",
+      "netName": "SPI_SCK"
+    },
+    "label": "SPI_SCK  U2.SCK\u2192pin12"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "D8_A8_SCK_GPIO7_TOUCH7",
+      "netName": "SPI_SCK"
+    },
+    "label": "SPI_SCK  U1.D8_A8_SCK_GPIO7_TOUCH7\u2192pinD8_A8_SCK_GPIO7_TOUCH7"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J3",
+      "pinName": "2",
+      "netName": "SPK_N"
+    },
+    "label": "SPK_N  J3.P2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "10",
+      "netName": "SPK_N"
+    },
+    "label": "SPK_N  IC4.OUTN\u2192pin10"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC4",
+      "pinName": "9",
+      "netName": "SPK_P"
+    },
+    "label": "SPK_P  IC4.OUTP\u2192pin9"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "J3",
+      "pinName": "1",
+      "netName": "SPK_P"
+    },
+    "label": "SPK_P  J3.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "L1",
+      "netName": "SW_A"
+    },
+    "label": "SW_A  IC3.L1\u2192pinL1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "L3",
+      "pinName": "1",
+      "netName": "SW_A"
+    },
+    "label": "SW_A  L3.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "L3",
+      "pinName": "1",
+      "netName": "SW_B"
+    },
+    "label": "SW_B  L3.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "L2",
+      "netName": "SW_B"
+    },
+    "label": "SW_B  IC3.L2\u2192pinL2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "R3",
+      "pinName": "1",
+      "netName": "TS_BIAS"
+    },
+    "label": "TS_BIAS  R3.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "4",
+      "netName": "TS_BIAS"
+    },
+    "label": "TS_BIAS  IC2.TS\u2192pin4"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "UART1_TXD",
+      "netName": "UART1_RX"
+    },
+    "label": "UART1_RX  IC1.UART1_TXD\u2192pinUART1_TXD"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "UART_TX",
+      "netName": "UART1_RX"
+    },
+    "label": "UART1_RX  U3.UART_TX\u2192pinUART_TX"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC1",
+      "pinName": "UART1_RXD",
+      "netName": "UART1_TX"
+    },
+    "label": "UART1_TX  IC1.UART1_RXD\u2192pinUART1_RXD"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U3",
+      "pinName": "UART_RX",
+      "netName": "UART1_TX"
+    },
+    "label": "UART1_TX  U3.UART_RX\u2192pinUART_RX"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C5",
+      "pinName": "1",
+      "netName": "VAUX"
+    },
+    "label": "VAUX  C5.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC3",
+      "pinName": "VAUX",
+      "netName": "VAUX"
+    },
+    "label": "VAUX  IC3.VAUX\u2192pinVAUX"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C16",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  C16.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C22",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  C22.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C17",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  C17.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C20",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  C20.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C14",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  C14.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "TP3",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  TP3.~\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "C21",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  C21.P1\u2192pin1"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "IC2",
+      "pinName": "10",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  IC2.SRP\u2192pin10"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "BAT+",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  U1.BAT+\u2192pinBAT+"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "Q1",
+      "pinName": "2",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  Q1.S1/D2\u2192pin2"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "L1",
+      "pinName": "1",
+      "netName": "CHG_PH"
+    },
+    "label": "CHG_PH  L1.pin1 (added)"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "L1",
+      "pinName": "2",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  L1.pin2 (added)"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "RSNS",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "VBAT_SYS  RSNS.pin1 (added)"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "RSNS",
+      "pinName": "2",
+      "netName": "CHG_SENSE_NEG"
+    },
+    "label": "CHG_SENSE_NEG  RSNS.pin2 (added)"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "U1",
+      "pinName": "20",
+      "netName": "LORA_DIO1"
+    },
+    "label": "LORA_DIO1  U1.pin20 (added)"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "#FLG1",
+      "pinName": "1",
+      "netName": "GND"
+    },
+    "label": "pwr_flag #FLG1\u2192GND"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "#FLG2",
+      "pinName": "1",
+      "netName": "3V3"
+    },
+    "label": "pwr_flag #FLG2\u21923V3"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "#FLG3",
+      "pinName": "1",
+      "netName": "VBAT_SYS"
+    },
+    "label": "pwr_flag #FLG3\u2192VBAT_SYS"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "#FLG4",
+      "pinName": "1",
+      "netName": "SOLAR_IN"
+    },
+    "label": "pwr_flag #FLG4\u2192SOLAR_IN"
+  },
+  {
+    "tool": "connect_to_net",
+    "args": {
+      "schematicPath": "/home/admin/github/lora-low-power-surveillance/hardware/warden-apex-master/warden-apex-master.kicad_sch",
+      "componentRef": "#FLG5",
+      "pinName": "1",
+      "netName": "MODEM_VBAT"
+    },
+    "label": "pwr_flag #FLG5\u2192MODEM_VBAT"
+  }
+]
