@@ -1,0 +1,1389 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-04-17T09:34:56-0400",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [
+        {
+            "description": "C_1206_3216Metric doesn't match footprint given by symbol (Capacitor_SMD:C_1206_3216Metric).",
+            "items": [
+                {
+                    "description": "Footprint C31",
+                    "pos": {
+                        "x": 63.06,
+                        "y": 2.9
+                    },
+                    "uuid": "b9a48dc7-249e-4fa0-8f9e-a28e0ff5dfb8"
+                }
+            ],
+            "severity": "warning",
+            "type": "footprint_symbol_mismatch"
+        },
+        {
+            "description": "No pad found for pin 3 (/GND) in schematic.",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 38.0
+                    },
+                    "uuid": "b60818f7-b9e8-43c2-a694-bb00d580611b"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        },
+        {
+            "description": "No pad found for pin 3 (/GND) in schematic.",
+            "items": [
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 30.0
+                    },
+                    "uuid": "29add3fd-dcf4-4de6-844d-71dc94d4c7ab"
+                }
+            ],
+            "severity": "warning",
+            "type": "net_conflict"
+        }
+    ],
+    "source": "warden-apex-master.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                },
+                {
+                    "description": "Track [/CHG_SENSE_NEG] on B.Cu, length 1.6448 mm",
+                    "pos": {
+                        "x": 24.0118,
+                        "y": 84.3786
+                    },
+                    "uuid": "ae2ad7e6-2d5e-4052-a138-b65e5d3a7104"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                },
+                {
+                    "description": "Track [/REG_IN] on F.Cu, length 0.6916 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 80.75
+                    },
+                    "uuid": "fd3fd2df-e0c3-4e8a-83f6-5b314401e8d5"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/PGOOD] on F.Cu, length 0.2362 mm",
+                    "pos": {
+                        "x": 49.1578,
+                        "y": 81.4422
+                    },
+                    "uuid": "3d18dd82-488b-4295-8bb9-0060241c413e"
+                },
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1600 mm)",
+            "items": [
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 13.9000 mm",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 85.0
+                    },
+                    "uuid": "a1cbcf42-38f8-48c2-b962-cc25c128a5f7"
+                },
+                {
+                    "description": "Track [/CHG_SENSE_NEG] on B.Cu, length 8.6282 mm",
+                    "pos": {
+                        "x": 32.64,
+                        "y": 84.3786
+                    },
+                    "uuid": "bca23d02-caf3-480b-83c2-ec8434874781"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "0bb4d36f-450f-46f4-b6ef-8fdd137be17d"
+                },
+                {
+                    "description": "Track [/CHG_STAT1] on F.Cu, length 0.1034 mm",
+                    "pos": {
+                        "x": 17.4894,
+                        "y": 80.3231
+                    },
+                    "uuid": "7acb5763-5d78-4056-b19b-53120037fd99"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /PGOOD and /SW_B)",
+            "items": [
+                {
+                    "description": "Track [/PGOOD] on F.Cu, length 0.5767 mm",
+                    "pos": {
+                        "x": 48.75,
+                        "y": 81.85
+                    },
+                    "uuid": "e45b6fd7-0fc7-4040-9a67-de0f8b9eab05"
+                },
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_HI' clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Via [/CHG_GATE_HI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "8c67efad-7c20-4914-8253-1bd7b115137f"
+                },
+                {
+                    "description": "Track [/CHG_BST] on F.Cu, length 1.7398 mm",
+                    "pos": {
+                        "x": 18.25,
+                        "y": 76.8227
+                    },
+                    "uuid": "b412c3ce-4a18-4bdc-bea4-52302c40b2f4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /PGOOD and /SW_B)",
+            "items": [
+                {
+                    "description": "Via [/PGOOD] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 49.394,
+                        "y": 81.4422
+                    },
+                    "uuid": "57a87683-fce8-4883-9c80-cef42fec4bda"
+                },
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets /MPPSET and /TS_BIAS)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "0bb4d36f-450f-46f4-b6ef-8fdd137be17d"
+                },
+                {
+                    "description": "Track [/TS_BIAS] on B.Cu, length 4.1794 mm",
+                    "pos": {
+                        "x": 16.2624,
+                        "y": 81.1967
+                    },
+                    "uuid": "7219ef8d-2f83-47a0-ad2f-c470cf354055"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets /TS_BIAS and /CHG_GATE_HI)",
+            "items": [
+                {
+                    "description": "Track [/TS_BIAS] on B.Cu, length 4.1794 mm",
+                    "pos": {
+                        "x": 16.2624,
+                        "y": 81.1967
+                    },
+                    "uuid": "7219ef8d-2f83-47a0-ad2f-c470cf354055"
+                },
+                {
+                    "description": "Via [/CHG_GATE_HI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "8c67efad-7c20-4914-8253-1bd7b115137f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_REF] on B.Cu, length 6.0452 mm",
+                    "pos": {
+                        "x": 19.3549,
+                        "y": 84.7361
+                    },
+                    "uuid": "36027556-c5a6-4023-89ec-b2b0d45948fd"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 5.2500 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "8513c043-fcf0-4721-b1a0-b31c837c33f1"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1979 mm)",
+            "items": [
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 13.9000 mm",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 85.0
+                    },
+                    "uuid": "a1cbcf42-38f8-48c2-b962-cc25c128a5f7"
+                },
+                {
+                    "description": "Via [/CHG_SENSE_NEG] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 33.5979,
+                        "y": 83.4207
+                    },
+                    "uuid": "dbb5ee78-3ebb-4079-90d4-6960ac2dda0d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /CHG_REF and /MPPSET)",
+            "items": [
+                {
+                    "description": "Via [/CHG_REF] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.3549,
+                        "y": 84.7361
+                    },
+                    "uuid": "594243ce-5b3a-4ff4-aac9-39cc0f2493d1"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1249 mm)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "0bb4d36f-450f-46f4-b6ef-8fdd137be17d"
+                },
+                {
+                    "description": "Track [/SOLAR_IN] on F.Cu, length 0.1187 mm",
+                    "pos": {
+                        "x": 17.4786,
+                        "y": 79.1661
+                    },
+                    "uuid": "4136695b-de03-4f97-aca0-28b88d99db26"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1100 mm)",
+            "items": [
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 78.15
+                    },
+                    "uuid": "93522ee2-b48d-4ffa-be38-a5a945ab6de2"
+                },
+                {
+                    "description": "Pad 13 [/VAUX] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 47.5,
+                        "y": 78.15
+                    },
+                    "uuid": "9de58cb9-de9b-407e-b3f2-84007262b5c1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_STAT1] on B.Cu, length 12.0587 mm",
+                    "pos": {
+                        "x": 16.5104,
+                        "y": 77.5236
+                    },
+                    "uuid": "08a31245-68bd-4e1c-8771-bc289a2f212e"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 3.9500 mm",
+                    "pos": {
+                        "x": 27.14,
+                        "y": 77.0
+                    },
+                    "uuid": "2834bc52-e362-4d2a-892a-5cd9983f8f4a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_HI' clearance 0.2000 mm; actual 0.1249 mm)",
+            "items": [
+                {
+                    "description": "Via [/CHG_GATE_HI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "8c67efad-7c20-4914-8253-1bd7b115137f"
+                },
+                {
+                    "description": "Track [/CHG_PH] on F.Cu, length 0.8626 mm",
+                    "pos": {
+                        "x": 19.25,
+                        "y": 77.6999
+                    },
+                    "uuid": "e69bdaa3-13db-4c1f-a002-1f1576d12a20"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 78.15
+                    },
+                    "uuid": "93522ee2-b48d-4ffa-be38-a5a945ab6de2"
+                },
+                {
+                    "description": "Track [/VAUX] on F.Cu, length 0.6517 mm",
+                    "pos": {
+                        "x": 47.5,
+                        "y": 78.15
+                    },
+                    "uuid": "e340221c-5f89-4720-9442-6c4c4f201677"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /CHG_PH and /CHG_GATE_HI)",
+            "items": [
+                {
+                    "description": "Via [/CHG_PH] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.1521,
+                        "y": 76.7714
+                    },
+                    "uuid": "359002c4-fa3b-47d5-b453-564eda4167da"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 8.3900 mm",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 77.0
+                    },
+                    "uuid": "9b992e93-068d-4b12-aa1e-23897af9555f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/TS_BIAS] on B.Cu, length 9.8693 mm",
+                    "pos": {
+                        "x": 19.2177,
+                        "y": 78.2414
+                    },
+                    "uuid": "0f29fdb7-4444-467d-a0ac-0e895181aee0"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 3.9500 mm",
+                    "pos": {
+                        "x": 27.14,
+                        "y": 77.0
+                    },
+                    "uuid": "2834bc52-e362-4d2a-892a-5cd9983f8f4a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Items shorting two nets (nets /TS_BIAS and /CHG_GATE_HI)",
+            "items": [
+                {
+                    "description": "Track [/TS_BIAS] on B.Cu, length 4.1794 mm",
+                    "pos": {
+                        "x": 16.2624,
+                        "y": 81.1967
+                    },
+                    "uuid": "7219ef8d-2f83-47a0-ad2f-c470cf354055"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 1.5600 mm",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "cd26c419-70b8-47b8-b12d-65483349d625"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1249 mm)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "0bb4d36f-450f-46f4-b6ef-8fdd137be17d"
+                },
+                {
+                    "description": "Track [/SOLAR_IN] on F.Cu, length 0.5670 mm",
+                    "pos": {
+                        "x": 17.5625,
+                        "y": 78.683
+                    },
+                    "uuid": "bee8ef95-5bf2-49ea-a0d6-1f5bf0216145"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 3.9500 mm",
+                    "pos": {
+                        "x": 27.14,
+                        "y": 77.0
+                    },
+                    "uuid": "2834bc52-e362-4d2a-892a-5cd9983f8f4a"
+                },
+                {
+                    "description": "Track [/CHG_REGN] on B.Cu, length 7.0057 mm",
+                    "pos": {
+                        "x": 22.1726,
+                        "y": 79.0013
+                    },
+                    "uuid": "3936cb7d-91ee-44c3-9075-79c9dc82c1f0"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/GND] on B.Cu, length 5.0061 mm",
+                    "pos": {
+                        "x": 28.4672,
+                        "y": 79.7528
+                    },
+                    "uuid": "1134073f-22f5-4c41-8a15-a3a1a7d122da"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 3.9500 mm",
+                    "pos": {
+                        "x": 27.14,
+                        "y": 77.0
+                    },
+                    "uuid": "2834bc52-e362-4d2a-892a-5cd9983f8f4a"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Items shorting two nets (nets /CHG_PH and /CHG_GATE_HI)",
+            "items": [
+                {
+                    "description": "Track [/CHG_PH] on B.Cu, length 1.6237 mm",
+                    "pos": {
+                        "x": 20.3002,
+                        "y": 75.6233
+                    },
+                    "uuid": "2544e906-29c9-4b82-84e8-aa545d6754f9"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 8.3900 mm",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 77.0
+                    },
+                    "uuid": "9b992e93-068d-4b12-aa1e-23897af9555f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets /CHG_PH and /CHG_GATE_HI)",
+            "items": [
+                {
+                    "description": "Track [/CHG_PH] on B.Cu, length 2.8961 mm",
+                    "pos": {
+                        "x": 19.1521,
+                        "y": 76.7714
+                    },
+                    "uuid": "56c632f3-c94e-418d-b8d2-ff822b4fddab"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 8.3900 mm",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 77.0
+                    },
+                    "uuid": "9b992e93-068d-4b12-aa1e-23897af9555f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_STAT1] on B.Cu, length 12.0587 mm",
+                    "pos": {
+                        "x": 16.5104,
+                        "y": 77.5236
+                    },
+                    "uuid": "08a31245-68bd-4e1c-8771-bc289a2f212e"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 1.5600 mm",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "cd26c419-70b8-47b8-b12d-65483349d625"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Items shorting two nets (nets /CHG_PH and /CHG_GATE_HI)",
+            "items": [
+                {
+                    "description": "Track [/CHG_PH] on B.Cu, length 2.8961 mm",
+                    "pos": {
+                        "x": 19.1521,
+                        "y": 76.7714
+                    },
+                    "uuid": "56c632f3-c94e-418d-b8d2-ff822b4fddab"
+                },
+                {
+                    "description": "Track [/CHG_GATE_HI] on B.Cu, length 1.5600 mm",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "cd26c419-70b8-47b8-b12d-65483349d625"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0639 mm)",
+            "items": [
+                {
+                    "description": "Track [/CHG_REF] on B.Cu, length 6.0452 mm",
+                    "pos": {
+                        "x": 19.3549,
+                        "y": 84.7361
+                    },
+                    "uuid": "36027556-c5a6-4023-89ec-b2b0d45948fd"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1395 mm)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "0bb4d36f-450f-46f4-b6ef-8fdd137be17d"
+                },
+                {
+                    "description": "Track [/SOLAR_IN] on F.Cu, length 1.1447 mm",
+                    "pos": {
+                        "x": 17.4786,
+                        "y": 79.1661
+                    },
+                    "uuid": "eab213ab-ac85-434a-a466-5bc6cde786c3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                },
+                {
+                    "description": "Track [/CHG_PH] on B.Cu, length 3.3565 mm",
+                    "pos": {
+                        "x": 23.0772,
+                        "y": 86.1071
+                    },
+                    "uuid": "b6a9a935-4d54-45f0-ac1f-edd67693eff4"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 5.2500 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "8513c043-fcf0-4721-b1a0-b31c837c33f1"
+                },
+                {
+                    "description": "Track [/CHG_PH] on B.Cu, length 6.4443 mm",
+                    "pos": {
+                        "x": 20.7038,
+                        "y": 83.7337
+                    },
+                    "uuid": "df30356b-c625-423d-98dc-d6af099d98f9"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/GND] on B.Cu, length 4.2591 mm",
+                    "pos": {
+                        "x": 19.6987,
+                        "y": 82.4534
+                    },
+                    "uuid": "2c3b91b4-330f-47e3-979f-04d42cacfda5"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 5.2500 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "8513c043-fcf0-4721-b1a0-b31c837c33f1"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 78.15
+                    },
+                    "uuid": "93522ee2-b48d-4ffa-be38-a5a945ab6de2"
+                },
+                {
+                    "description": "Track [/GND] on F.Cu, length 0.6517 mm",
+                    "pos": {
+                        "x": 48.5,
+                        "y": 78.15
+                    },
+                    "uuid": "f523d46a-70dc-4ce5-ac8d-071ef3f924ac"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets /SW_B and /SW_A)",
+            "items": [
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 7.1500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 82.0
+                    },
+                    "uuid": "a0705a72-68c8-4717-9208-f482f37e85e7"
+                },
+                {
+                    "description": "Pad 1 [/SW_A] of L3 on F.Cu",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 80.0
+                    },
+                    "uuid": "a9c68531-3ddc-4b91-9836-96fcbbf2912a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/REG_IN] on F.Cu, length 0.6916 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 80.25
+                    },
+                    "uuid": "626d22a8-1ae5-4e7e-a8c6-a2feab742727"
+                },
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0049 mm)",
+            "items": [
+                {
+                    "description": "Track [/CHG_VFB] on B.Cu, length 1.6106 mm",
+                    "pos": {
+                        "x": 33.1023,
+                        "y": 84.8225
+                    },
+                    "uuid": "183ec495-714c-42a3-860b-79b1d6cef6cf"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_VFB] on B.Cu, length 5.3730 mm",
+                    "pos": {
+                        "x": 34.2412,
+                        "y": 82.1117
+                    },
+                    "uuid": "423d5c48-f2dd-4ae2-b5fd-9b62b82d594b"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 13.9000 mm",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 85.0
+                    },
+                    "uuid": "a1cbcf42-38f8-48c2-b962-cc25c128a5f7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_VFB] on B.Cu, length 3.6219 mm",
+                    "pos": {
+                        "x": 24.7471,
+                        "y": 87.3836
+                    },
+                    "uuid": "5fa68ff3-b811-4670-8e35-546e30e90b04"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/REG_IN] on F.Cu, length 4.7940 mm",
+                    "pos": {
+                        "x": 50.1184,
+                        "y": 80.8268
+                    },
+                    "uuid": "697a53f5-6a27-474f-ab74-68eda6ee13c9"
+                },
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 7.1500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 82.0
+                    },
+                    "uuid": "a0705a72-68c8-4717-9208-f482f37e85e7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Items shorting two nets (nets /CHG_VFB and /MPPSET)",
+            "items": [
+                {
+                    "description": "Track [/CHG_VFB] on B.Cu, length 5.7941 mm",
+                    "pos": {
+                        "x": 27.3082,
+                        "y": 84.8225
+                    },
+                    "uuid": "77fe4a4a-d699-410b-929a-f1156539a6a9"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 15.4400 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 85.0
+                    },
+                    "uuid": "ac36d281-53db-48dd-b413-22b83110ccc3"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/GND] on F.Cu, length 0.6517 mm",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.75
+                    },
+                    "uuid": "58cd0ae1-7f22-4a5b-8b8a-b009bb0632dd"
+                },
+                {
+                    "description": "Track [/3V3] on F.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.25
+                    },
+                    "uuid": "b48f269e-4142-4a25-b349-9991fca2f0a5"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Items shorting two nets (nets /GND and /3V3)",
+            "items": [
+                {
+                    "description": "Pad 2 [/GND] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.75
+                    },
+                    "uuid": "0291d149-9efe-40bf-85a5-c9552d2ecdce"
+                },
+                {
+                    "description": "Track [/3V3] on F.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.25
+                    },
+                    "uuid": "b48f269e-4142-4a25-b349-9991fca2f0a5"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 5.2500 mm",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "8513c043-fcf0-4721-b1a0-b31c837c33f1"
+                },
+                {
+                    "description": "Track [/SOLAR_IN] on B.Cu, length 1.8844 mm",
+                    "pos": {
+                        "x": 18.2097,
+                        "y": 80.5759
+                    },
+                    "uuid": "ef82e1ac-79cc-4801-bbad-3cce0e37e7f0"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Tracks crossing",
+            "items": [
+                {
+                    "description": "Track [/CHG_SENSE_NEG] on B.Cu, length 1.3547 mm",
+                    "pos": {
+                        "x": 33.5979,
+                        "y": 83.4207
+                    },
+                    "uuid": "1e87f206-3deb-47f0-b6ef-61e85a8a633e"
+                },
+                {
+                    "description": "Track [/MPPSET] on B.Cu, length 13.9000 mm",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 85.0
+                    },
+                    "uuid": "a1cbcf42-38f8-48c2-b962-cc25c128a5f7"
+                }
+            ],
+            "severity": "error",
+            "type": "tracks_crossing"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.2350 mm)",
+            "items": [
+                {
+                    "description": "Pad 13 [/VAUX] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 47.5,
+                        "y": 78.15
+                    },
+                    "uuid": "9de58cb9-de9b-407e-b3f2-84007262b5c1"
+                },
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 78.15
+                    },
+                    "uuid": "93522ee2-b48d-4ffa-be38-a5a945ab6de2"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.2350 mm)",
+            "items": [
+                {
+                    "description": "Pad 15 [/GND] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 48.5,
+                        "y": 78.15
+                    },
+                    "uuid": "371ea4fe-d468-4c25-a832-0f9b6054e201"
+                },
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 78.15
+                    },
+                    "uuid": "93522ee2-b48d-4ffa-be38-a5a945ab6de2"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 48.0,
+                        "y": 78.15
+                    },
+                    "uuid": "93522ee2-b48d-4ffa-be38-a5a945ab6de2"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Via [/3V3] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.06
+                    },
+                    "uuid": "e7c59297-cb2c-4051-86c6-b2afc06ef59f"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 17.56,
+                        "y": 79.75
+                    },
+                    "uuid": "0bb4d36f-450f-46f4-b6ef-8fdd137be17d"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Via [/MPPSET] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 33.0,
+                        "y": 71.1
+                    },
+                    "uuid": "e14356de-df49-47e9-9103-63712d14cf9b"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Via [/CHG_GATE_HI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 18.75,
+                        "y": 78.56
+                    },
+                    "uuid": "8c67efad-7c20-4914-8253-1bd7b115137f"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2500 mm)",
+            "items": [
+                {
+                    "description": "Via [/CHG_GATE_HI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 27.1375,
+                        "y": 80.95
+                    },
+                    "uuid": "e9474d31-c80f-43f0-a581-3428b11b181a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/3V3] on F.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.25
+                    },
+                    "uuid": "b48f269e-4142-4a25-b349-9991fca2f0a5"
+                },
+                {
+                    "description": "Pad 2 [/GND] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 46.65,
+                        "y": 79.75
+                    },
+                    "uuid": "0291d149-9efe-40bf-85a5-c9552d2ecdce"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 7.1500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 82.0
+                    },
+                    "uuid": "a0705a72-68c8-4717-9208-f482f37e85e7"
+                },
+                {
+                    "description": "Pad 1 [/SW_A] of L3 on F.Cu",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 80.0
+                    },
+                    "uuid": "a9c68531-3ddc-4b91-9836-96fcbbf2912a"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                },
+                {
+                    "description": "Pad 7 [/REG_IN] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 80.25
+                    },
+                    "uuid": "e2adbb5d-1150-450a-991b-61a826c6ab60"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Track [/SW_B] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 79.75
+                    },
+                    "uuid": "fa2e3324-6723-447b-b188-b301ac331849"
+                },
+                {
+                    "description": "Pad 8 [/REG_IN] of IC3 on F.Cu",
+                    "pos": {
+                        "x": 49.35,
+                        "y": 80.75
+                    },
+                    "uuid": "1dc745cd-580c-4e5f-babc-011c5cc986f1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint C28",
+                    "pos": {
+                        "x": 72.5,
+                        "y": 12.0
+                    },
+                    "uuid": "03be78f3-35b2-497e-9803-da1a886aec33"
+                },
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 51.0,
+                        "y": 15.0
+                    },
+                    "uuid": "5c61c73e-0736-4cf3-a612-4c62e4e2dd70"
+                }
+            ],
+            "severity": "warning",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint IC2",
+                    "pos": {
+                        "x": 19.0,
+                        "y": 80.0
+                    },
+                    "uuid": "44089c97-6c59-416a-90b7-7dd9637dcfc9"
+                },
+                {
+                    "description": "Footprint C27",
+                    "pos": {
+                        "x": 15.3,
+                        "y": 79.25
+                    },
+                    "uuid": "82ba6e36-70f4-4f3c-bcb6-822f7f3072d4"
+                }
+            ],
+            "severity": "warning",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint U3",
+                    "pos": {
+                        "x": 51.0,
+                        "y": 15.0
+                    },
+                    "uuid": "5c61c73e-0736-4cf3-a612-4c62e4e2dd70"
+                },
+                {
+                    "description": "Footprint C31",
+                    "pos": {
+                        "x": 63.06,
+                        "y": 2.9
+                    },
+                    "uuid": "b9a48dc7-249e-4fa0-8f9e-a28e0ff5dfb8"
+                }
+            ],
+            "severity": "warning",
+            "type": "courtyards_overlap"
+        }
+    ]
+}

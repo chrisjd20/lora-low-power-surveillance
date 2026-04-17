@@ -21,6 +21,7 @@ drone:
     - J1       # cellular U.FL antenna
     - D1       # cellular TVS
     - U5       # SRV05-4 TVS cluster for cellular
+    - C29      # IC1 3V3 decoupler (B.Cu, under SIM7080G)
     # Satellite modem
     - U3       # Swarm M138
     - U6       # SC16IS740 I2C-UART bridge
@@ -29,6 +30,8 @@ drone:
     - C24      # crystal load cap
     - C25      # U6 decoupler 100 nF
     - C26      # U6 decoupler 10 uF
+    - C30      # Swarm V_BAT HF decoupler (100 nF)
+    - C31      # Swarm V_BAT bulk (47 uF / 1206)
     # Modem rail (not needed without any modem)
     - Q2       # P-MOSFET load switch
     - Q3       # N-MOSFET driver
@@ -55,6 +58,8 @@ cell_master:
     - C24      # crystal load cap
     - C25      # U6 decoupler 100 nF
     - C26      # U6 decoupler 10 uF
+    - C30      # Swarm V_BAT HF decoupler (100 nF)
+    - C31      # Swarm V_BAT bulk (47 uF / 1206)
     - JP3      # JP_SAT_UART_TX
     - JP4      # JP_SAT_UART_RX
 

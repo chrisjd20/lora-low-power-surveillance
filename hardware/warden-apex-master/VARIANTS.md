@@ -36,6 +36,10 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | LiFePO4 charger inductor | L1 | ● | ● | ● |
 | Buck inductor L3 + MOSFET Q1 + RSNS | L3, Q1, RSNS | ● | ● | ● |
 | PIR header | H1 | ● | ● | ● |
+| MAX98357A ~SD pull-up (100 kΩ) | R23 | ● | ● | ● |
+| IC2 V\_IN decoupler (100 nF) | C27 | ● | ● | ● |
+| Ra-01 3V3 decoupler (100 nF) | C28 | ● | ● | ● |
+| IC3 3V3 bulk (10 µF) | C32 | ● | ● | ● |
 
 ### Cellular modem block
 
@@ -46,6 +50,7 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | J1 cellular U.FL | ○ | ● | ● |
 | D1 cellular TVS | ○ | ● | ● |
 | U5 SRV05-4 TVS array | ○ | ● | ● |
+| C29 IC1 3V3 decoupler (B.Cu) | ○ | ● | ● |
 | **JP_SIM_VCC (JP2)** | ⚪ (open) | ⚫ (closed) | ⚫ (closed) |
 
 ### Satellite modem block
@@ -58,6 +63,8 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | C23 / C24 crystal load caps | ○ | ○ | ● |
 | C25 / C26 U6 decouplers | ○ | ○ | ● |
 | R18 / R19 UART2 pull-downs | ○ | ○ | ● |
+| C30 Swarm V\_BAT HF decoupler | ○ | ○ | ● |
+| C31 Swarm V\_BAT bulk (47 µF / 1206) | ○ | ○ | ● |
 | **JP_SAT_UART_TX (JP3)** | ⚪ | ⚪ | ⚫ |
 | **JP_SAT_UART_RX (JP4)** | ⚪ | ⚪ | ⚫ |
 

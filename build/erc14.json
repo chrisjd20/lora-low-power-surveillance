@@ -1,0 +1,150 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-04-17T08:59:15-0400",
+    "kicad_version": "9.0.7",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/9bcb1f9c-b948-4981-951f-680fa901251b",
+            "violations": [
+                {
+                    "description": "Symbol 'Ai-Thinker-Ra-01' doesn't match copy in library 'RF_Module'",
+                    "items": [
+                        {
+                            "description": "Symbol U2 [Ai-Thinker-Ra-01]",
+                            "pos": {
+                                "x": 1.016,
+                                "y": 1.524
+                            },
+                            "uuid": "0f024c55-c04c-414b-a35c-61b132e0fae8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'XIAO_ESP32S3_Sense' doesn't match copy in library 'warden_custom'",
+                    "items": [
+                        {
+                            "description": "Symbol U1 [XIAO_ESP32S3_Sense]",
+                            "pos": {
+                                "x": 2.032,
+                                "y": 1.524
+                            },
+                            "uuid": "068865bb-d0da-4cbf-a496-1008e6f58039"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'SMN-305_SIM' doesn't match copy in library 'warden_custom'",
+                    "items": [
+                        {
+                            "description": "Symbol Card1 [SMN-305_SIM]",
+                            "pos": {
+                                "x": 0.508,
+                                "y": 2.54
+                            },
+                            "uuid": "c0085ef9-f128-4679-a47a-12441c937bc3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'AO3401A' doesn't match copy in library 'Transistor_FET'",
+                    "items": [
+                        {
+                            "description": "Symbol Q2 [AO3401A]",
+                            "pos": {
+                                "x": 2.5908,
+                                "y": 0.5842
+                            },
+                            "uuid": "75b8782d-16f5-4954-acec-700c695b8c9f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'SIM7080G' doesn't match copy in library 'warden_custom'",
+                    "items": [
+                        {
+                            "description": "Symbol IC1 [SIM7080G]",
+                            "pos": {
+                                "x": 1.016,
+                                "y": 2.54
+                            },
+                            "uuid": "01006a03-fe78-418f-a658-94f72e43ee24"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol '2N7002' doesn't match copy in library 'Transistor_FET'",
+                    "items": [
+                        {
+                            "description": "Symbol Q3 [2N7002]",
+                            "pos": {
+                                "x": 2.794,
+                                "y": 0.5842
+                            },
+                            "uuid": "603d3d77-63d1-4fab-80d9-531c028c308a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'Swarm_M138' doesn't match copy in library 'warden_custom'",
+                    "items": [
+                        {
+                            "description": "Symbol U3 [Swarm_M138]",
+                            "pos": {
+                                "x": 1.778,
+                                "y": 2.54
+                            },
+                            "uuid": "623ed0f1-43e5-46b1-b47e-b501b738e6fc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'MAX98357A' doesn't match copy in library 'Audio'",
+                    "items": [
+                        {
+                            "description": "Symbol IC4 [MAX98357A]",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.524
+                            },
+                            "uuid": "38a7a042-a8f6-4c5a-97c8-a26403904282"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                },
+                {
+                    "description": "Symbol 'TPS63070' doesn't match copy in library 'warden_custom'",
+                    "items": [
+                        {
+                            "description": "Symbol IC3 [TPS63070]",
+                            "pos": {
+                                "x": 3.556,
+                                "y": 0.762
+                            },
+                            "uuid": "edf0cf13-2160-44b2-a203-a825d80645e7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "lib_symbol_mismatch"
+                }
+            ]
+        }
+    ],
+    "source": "warden-apex-master.kicad_sch"
+}
