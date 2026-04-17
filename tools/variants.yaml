@@ -16,6 +16,19 @@
 # Plus a schematic Value change (C5 100 nF -> 1 uF) and several net
 # re-wires (IC3.3 PS/SYNC -> GND, IC3.4 VSEL -> GND, R2.1 CHG_SENSE_NEG
 # -> GND, R4.2/R5.2 GND -> 3V3). No refdes added/removed.
+#
+# Phase 20 universal-recovery edits (no refdes added/removed, DNP
+# set unchanged; topology fixes only):
+#   - SIM7080G VDD_EXT (IC1.69 + C29.1) moved to its own /SIM_VDD_EXT
+#     net; no longer destructively tied to /3V3.
+#   - /UART1_TX / /UART1_RX now dedicated cellular path:
+#     XIAO U1.19 (GPIO40) <-> SIM7080 IC1.34, and XIAO U1.18 (GPIO41)
+#     + R17 pull-down <-> SIM7080 IC1.40.  The ex-JTAG pins are
+#     explicitly repurposed for UART1.
+#   - /UART2_TX / /UART2_RX reserved for Swarm M138 behind the
+#     SC16IS740 bridge (U6) plus solder jumpers JP3 / JP4.
+#   - R17 stays populated on every tier (UART1_RX pull-down; harmless
+#     on Drone, meaningful when IC1 is stuffed).
 
 drone:
   description: |
@@ -30,7 +43,7 @@ drone:
     - J1       # cellular U.FL antenna
     - D1       # cellular TVS
     - U5       # SRV05-4 TVS cluster for cellular
-    - C29      # IC1 3V3 decoupler (B.Cu, under SIM7080G)
+    - C29      # IC1 SIM_VDD_EXT (1.8 V) decoupler (B.Cu, under SIM7080G)
     # Satellite modem
     - U3       # Swarm M138
     - U6       # SC16IS740 I2C-UART bridge
@@ -69,6 +82,8 @@ cell_master:
     - C26      # U6 decoupler 10 uF
     - C30      # Swarm V_BAT HF decoupler (100 nF)
     - C31      # Swarm V_BAT bulk (47 uF / 1206)
+    - R18      # UART2_RX pull-down (Swarm/U6 path unused on Cell Master)
+    - R19      # UART2_TX pull-down (Swarm/U6 path unused on Cell Master)
     - JP3      # JP_SAT_UART_TX
     - JP4      # JP_SAT_UART_RX
 

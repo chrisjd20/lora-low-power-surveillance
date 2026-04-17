@@ -1,11 +1,13 @@
 # Warden Apex Master — fab output package
 
-Generated at the end of Phase 5 from
-`hardware/warden-apex-master/warden-apex-master.kicad_pcb`.
+Generated from `hardware/warden-apex-master/warden-apex-master.kicad_pcb`
+after the **Phase 20 universal-PCB recovery** (see
+`tools/phase20_*.py` and `hardware/warden-apex-master/VARIANTS.md`).
 
 Board specs: **100 mm × 100 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
 plated through-holes only, min trace 0.2 mm, min via 0.3 mm drill /
-0.6 mm diameter.
+0.6 mm diameter.  Stackup assumed: F.Cu / In1.Cu (GND plane) /
+In2.Cu (VBAT_SYS plane) / B.Cu.
 
 ## Contents
 
@@ -68,23 +70,77 @@ fab/
    - DMG9926UDM (Q1) — Diodes Inc. / Digi-Key
    - BAT54HT1G (D3) — Mouser / Digi-Key
 
+## Per-tier packages
+
+`tools/phase12_variants.py` produces a dedicated folder for each tier
+plus a top-level zip bundle:
+
+```
+fab/
+├── drone/          Tier 1: LoRa + BLE only
+├── cell_master/    Tier 2: + SIM7080G cellular
+├── apex/           Tier 3: + Swarm M138 satellite
+├── warden-drone-v3.zip
+├── warden-cell-master-v3.zip
+└── warden-apex-v3.zip
+```
+
+Gerbers and drill files are byte-identical across tiers — only
+the BOM (`*-bom-jlc.csv`), the pick-and-place file (`*-pos-jlc.csv`),
+and the jumper-close instructions differ.  See
+`hardware/warden-apex-master/VARIANTS.md` for the per-tier stuffing
+tables and jumper map.
+
 ## Known caveats — READ BEFORE ORDERING
 
-See `hardware/warden-apex-master/PLAN.md` — **Phase 5 result** and
-earlier phase notes for the full carry-forward list. The most
-important:
+**1. Phase 20 manual-finish routing (required).**  The Phase 20
+universal-recovery scripts deliberately purge the stale
+`/UART1_TX`, `/UART1_RX`, and extend-points of `/UART2_TX`,
+`/UART2_RX` routing because the original topology was miswired.
+Five signal nets still need an interactive KiCad 9 routing pass
+before gerbers are re-exported:
 
-- **XIAO, SIM7080G, Swarm M138 footprints are approximations.**
-  They have the correct pin count and body size, but individual
-  pad geometries have not been cross-checked against the official
-  drawings. Verify dimensions before fab.
-- **TPS63070 footprint** is datasheet-correct (EP 1.45 × 2.45 mm,
-  pin 0.7 × 0.28 mm on 0.5 mm pitch) but was built by hand — inspect
-  against TI's RNM drawing before ordering.
-- **RF trace routing** is functional but not impedance-controlled
-  coplanar waveguide. Fine for LTE-M / 433 MHz proof-of-concept.
-- **The DRC still reports 29 unconnected_items + 199 net_conflict.**
-  These are all **F.Cu GND zone fragments** — the inner GND plane
-  handles the electrical path. To clear them cosmetically before fab,
-  open the project in the KiCad GUI, run Edit → Fill All Zones, and
-  re-export Gerbers.
+   | Net         | From                   | To                |
+   |-------------|------------------------|-------------------|
+   | /UART1_TX   | XIAO U1.19 (GPIO40)    | SIM7080 IC1.34    |
+   | /UART1_RX   | XIAO U1.18 (GPIO41)    | R17.1 + IC1.40    |
+   | /UART2_TX   | R19.1 (stub endpoint)  | Swarm U3.28       |
+   | /UART2_RX   | R18.1 (stub endpoint)  | Swarm U3.12       |
+   | /SIM_VDD_EXT | (already routed locally IC1.69 ↔ C29.1) | — |
+
+All are low-speed UART signals — 0.20 mm trace on F.Cu or B.Cu with
+one or two vias is sufficient.  No impedance control required.  Use
+KiCad's interactive router (`x` key) and let push-and-shove handle
+the surrounding copper.
+
+**2. Custom-footprint datasheet re-verification (required).**
+These five footprints pass ERC but have NOT been cross-checked
+against vendor mechanical drawings:
+
+  - `LCC-42_SIM7080G.kicad_mod` — SIMCom SIM7080G LCC body/pads
+    (span 15.60 × 18.70 mm center-to-center, 18.10 × 16.20 mm courtyard)
+  - `Swarm_M138.kicad_mod` — Swarm M138 edge-castellated pads
+    (span 41.20 × 22.60 mm, courtyard 43.10 × 20.20 mm; verify the
+    Y span against the 27.0 mm module body before fab)
+  - `XIAO_ESP32S3_SENSE.kicad_mod` — Seeed XIAO ESP32-S3 Sense
+    (pad span 16.10 × 24.00 mm; verify against the 21.0 × 17.5 mm
+    board footprint — the 24 mm span suggests breakout rows that
+    extend past the board edge and must be confirmed)
+  - `SMN-305_Nano_SIM.kicad_mod` — Attend SMN-305 Nano-SIM holder
+    (body 11.2 × 11.0 mm, courtyard 13.3 × 14.5 mm)
+  - `QFN-15-1EP_3x4mm_P0.5mm_EP1.45x2.45mm.kicad_mod` — TPS63070
+    buck-boost (body 3.0 × 4.0 mm EP 1.45 × 2.45 mm, datasheet-correct
+    per TI RNM drawing, but re-inspect before stencil cut).
+
+**3. RF trace routing** is functional but not impedance-controlled
+coplanar waveguide.  Fine for LTE-M / 433 MHz proof-of-concept.
+
+**4. Stale Phase 5 observations superseded.**  The earlier warnings
+about "29 unconnected_items + 199 net_conflict all being F.Cu GND
+zone fragments" were resolved in Phase 20 by remapping the `GND`
+and `VBAT_SYS` zones to `/GND` and `/VBAT_SYS` (the actual pad
+nets).  Current DRC: after the manual-finish UART routing, only
+one pre-existing warning remains — a single starved-thermal on
+`J4` pin 6 (`/GND`, B.Cu) flagged because the PTH pad has only
+one spoke instead of two.  This is cosmetic and does not affect
+continuity through the solid In1.Cu GND plane.

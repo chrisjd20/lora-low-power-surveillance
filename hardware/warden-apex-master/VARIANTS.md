@@ -55,7 +55,7 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | J1 cellular U.FL | ○ | ● | ● |
 | D1 cellular TVS | ○ | ● | ● |
 | U5 SRV05-4 TVS array | ○ | ● | ● |
-| C29 IC1 3V3 decoupler (B.Cu) | ○ | ● | ● |
+| C29 IC1 SIM\_VDD\_EXT (1.8 V) decoupler (B.Cu) | ○ | ● | ● |
 | **JP_SIM_VCC (JP2)** | ⚪ (open) | ⚫ (closed) | ⚫ (closed) |
 
 ### Satellite modem block
@@ -67,7 +67,7 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | X1 14.7456 MHz crystal | ○ | ○ | ● |
 | C23 / C24 crystal load caps | ○ | ○ | ● |
 | C25 / C26 U6 decouplers | ○ | ○ | ● |
-| R18 / R19 UART2 pull-downs | ○ | ○ | ● |
+| R18 / R19 UART2 pull-downs (Swarm/U6 path) | ○ | ○ | ● |
 | C30 Swarm V\_BAT HF decoupler | ○ | ○ | ● |
 | C31 Swarm V\_BAT bulk (47 µF / 1206) | ○ | ○ | ● |
 | **JP_SAT_UART_TX (JP3)** | ⚪ | ⚪ | ⚫ |
@@ -80,13 +80,21 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | Q2 P-MOSFET AO3401A | ○ | ● | ● |
 | Q3 N-MOSFET 2N7002 | ○ | ● | ● |
 | R16 100 kΩ gate pull-up | ○ | ● | ● |
-| R17 UART1_RX pull-down | ○ | ● | ● |
+| R17 UART1\_RX pull-down (always populated) | ● | ● | ● |
 | **JP_MODEM_RAIL (JP1)** | ⚪ | ⚪ | ⚪ |
 
 The modem rail is gated by **MODEM_EN** (MCP23017 GPB0). Firmware drives
 it HIGH after detecting a modem. JP1 exists as a bypass option if a
 builder prefers a hard-wired rail and wants to omit Q2/Q3 entirely — close
 JP1 and DNP Q2/Q3/R16. Default is firmware-controlled gating.
+
+> **Phase 20 note:** `UART1` is dedicated to the cellular modem and
+> routes through XIAO pins `GPIO40` (U1.19, TX) and `GPIO41` (U1.18, RX).
+> These pins previously carried the boot-strap JTAG signals; Phase 20
+> explicitly repurposes them and removes their `no_connect` flags.
+> `R17` is the `UART1_RX` pull-down that keeps U1.18 quiet when the SIM
+> isn't driving. It is populated on every tier because it is benign on
+> Drone and required on Cell Master / Apex.
 
 ### Expansion I/O (always populated)
 
@@ -163,7 +171,19 @@ Before hitting the JLCPCB "Submit" button:
 - [ ] Confirm `kicad-cli pcb drc --schematic-parity --severity-error`
       reports **0 violations, 0 unconnected pads, 0 footprint errors**
       (Phase 18 closed the prior IC3 pad-3 pinch via
-      `phase18_finalize.py:assign_ep_gnd` + `stamp_bridges`).
+      `phase18_finalize.py:assign_ep_gnd` + `stamp_bridges`; Phase 20
+      closed the destructive `VDD_EXT` tie, floating GND/VBAT pours,
+      and UART TX contention - see `tools/phase20_*`).
+- [ ] **Phase 20 manual-finish routing**: open the PCB in KiCad 9 and
+      interactively route the five signal nets the Phase 20 scripts
+      deliberately left unrouted, then re-run DRC:
+      - `/UART1_TX` : XIAO U1.19 → SIM7080 IC1.34
+      - `/UART1_RX` : XIAO U1.18 → R17.1 → SIM7080 IC1.40
+      - `/UART2_TX` : R19.1 → Swarm U3.28 (extends the existing stub)
+      - `/UART2_RX` : R18.1 → Swarm U3.12 (extends the existing stub)
+      All five are low-speed UART signals; 0.20 mm trace on F.Cu or
+      B.Cu with one or two vias is sufficient. No impedance control
+      required.
 - [ ] Verify the three custom footprints (XIAO, SIM7080G, Swarm M138)
       against the vendor mechanical drawing one more time.
 - [ ] Verify the expansion port headers (J4 2×7 + J5 Qwiic) are placed

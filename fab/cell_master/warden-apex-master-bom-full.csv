@@ -1,5 +1,5 @@
 Ref,Qty,Value,Footprint,MPN,LCSC,Description
-"R16,R17,R18,R19,R22,R23",6,100k,Resistor_SMD:R_0805_2012Metric,,,
+"R16,R17,R22,R23",4,100k,Resistor_SMD:R_0805_2012Metric,,,
 "R2,R15",2,100kΩ,Resistor_SMD:R_0805_2012Metric,,,
 "C1,C2,C3,C4,C19,C20,C21,C22,C27,C28,C29",11,100nF,Capacitor_SMD:C_0805_2012Metric,,,
 "R21,R24",2,10k,Resistor_SMD:R_0805_2012Metric,,,

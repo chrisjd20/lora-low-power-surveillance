@@ -1,5 +1,5 @@
 Comment,Designator,Footprint,LCSC Part #
-100k,"R16,R17,R18,R19,R22,R23",Resistor_SMD:R_0805_2012Metric,
+100k,"R16,R17,R22,R23",Resistor_SMD:R_0805_2012Metric,
 100kΩ,"R2,R15",Resistor_SMD:R_0805_2012Metric,
 100nF,"C1,C2,C3,C4,C19,C20,C21,C22,C27,C28,C29",Capacitor_SMD:C_0805_2012Metric,
 10k,"R21,R24",Resistor_SMD:R_0805_2012Metric,
