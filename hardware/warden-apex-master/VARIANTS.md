@@ -83,6 +83,23 @@ it HIGH after detecting a modem. JP1 exists as a bypass option if a
 builder prefers a hard-wired rail and wants to omit Q2/Q3 entirely — close
 JP1 and DNP Q2/Q3/R16. Default is firmware-controlled gating.
 
+### Expansion I/O (always populated)
+
+All three tiers ship with the expansion port populated so daughter-boards
+remain plug-and-play across the lineup. Full pinout, power budget, and
+firmware snippets live in [`EXPANSION.md`](EXPANSION.md).
+
+| Refdes | Purpose | Drone | Cell Master | Apex |
+|---|---|:---:|:---:|:---:|
+| J4 | 2×7 GPIO expansion header (2.54 mm) | ● | ● | ● |
+| J5 | Qwiic / STEMMA QT I²C connector (JST-SH) | ● | ● | ● |
+| F1 | 500 mA polyfuse on `EXP_VBAT` (J4 pin 2) | ● | ● | ● |
+| R24 | 10 kΩ pull-up on `EXP_IRQ` (J4 pin 14) | ● | ● | ● |
+
+The header exposes 8 MCP23017 GPIOs + shared I²C (SDA/SCL, 3V3, GND,
+fused VBAT, IRQ). None of the XIAO's native pins are consumed — any
+daughter-board can be added without firmware rework on the main MCU.
+
 ---
 
 ## Solder-jumper map
@@ -138,11 +155,14 @@ Before hitting the JLCPCB "Submit" button:
 - [ ] Open the `.kicad_pcb` in KiCad 9 GUI. Edit → Fill All Zones.
 - [ ] Verify rendered top/bottom images look clean (no silk on pads, no
       exposed unrouted copper).
-- [ ] Hand-route the one remaining `unconnected_items` on IC3 pad 3
-      (TPS63070 3V3 output). The Freerouter and automated bridging tools
-      can't navigate the pad-2-pad-3 pinch on this QFN footprint; it's a
-      ~0.5 mm manual track in the GUI.
+- [ ] Confirm `kicad-cli pcb drc --schematic-parity --severity-error`
+      reports **0 violations, 0 unconnected pads, 0 footprint errors**
+      (Phase 18 closed the prior IC3 pad-3 pinch via
+      `phase18_finalize.py:assign_ep_gnd` + `stamp_bridges`).
 - [ ] Verify the three custom footprints (XIAO, SIM7080G, Swarm M138)
       against the vendor mechanical drawing one more time.
+- [ ] Verify the expansion port headers (J4 2×7 + J5 Qwiic) are placed
+      on the west edge with the keepout/silk arrow for pin 1 visible,
+      and that F1 + R24 silk references stay outside the pad areas.
 - [ ] Order the Drone v2 first as a proof-run, then Cell Master and Apex
       from the same gerbers.

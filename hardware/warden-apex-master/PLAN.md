@@ -1067,3 +1067,56 @@ through every regenerated tier BOM:
 
 `VARIANTS.md` mirrors this split under the corresponding blocks (always-on,
 cellular, satellite) so the human-readable stuffing tables stay in sync.
+
+### Phase 18 — Expansion I/O (J4 2×7 header + J5 Qwiic)
+
+Adds plug-and-play GPIO + I²C expansion routed through the existing
+MCP23017 (`U4`) so no main-MCU pins are consumed. See
+[`EXPANSION.md`](EXPANSION.md) for the full pinout, power budget, and
+firmware snippet.
+
+| Part | Role                                  | Position (mm)      |
+|------|---------------------------------------|--------------------|
+| J4   | 2×7 expansion header (2.54 mm)        | (5.00, 54.50) rot 0 |
+| J5   | Qwiic / STEMMA QT (JST-SH)            | (5.00, 48.00) rot 180 |
+| F1   | 500 mA polyfuse on `EXP_VBAT` (J4 pin 2) | (11.50, 56.00) rot 0 |
+| R24  | 10 kΩ pull-up on `EXP_IRQ`            | (11.50, 68.00) rot 0 |
+
+Phase 18 also performed two Flux-legacy cleanups required to re-run
+Freerouting cleanly across the modified board:
+
+- **C27 nudged 1.75 mm north** to `(15.30, 77.00)`. Clears the
+  `courtyards_overlap` error with IC2 and, more importantly, unblocks
+  the MPPSET pin-2 fan-out so the charger's MPPT reference resistor
+  (`R2`) is finally routed.
+- **U3 F.CrtYd shrunk by 0.5 mm on all sides.** The Swarm M138
+  footprint's stock courtyard extends past its module body and was
+  clashing with the decoupling caps `C28` / `C31` sitting at its
+  pins. Physical clearance is unchanged; only the soft courtyard is
+  tightened.
+
+Four previously un-routed nets from Phase 16/17 (`/MPPSET`,
+`/CHG_GATE_HI`, `/SW_B`, `/VAUX`, `/U6_UART_TX`) were picked up by
+this re-route. The only blocker that remained from the Flux layout —
+IC3.16 thermal EP carrying no schematic pin — is now stamped to
+`/GND` in `phase18_finalize.py:assign_ep_gnd` so the pour ties IC3.2
+↔ IC3.15 ↔ EP correctly.
+
+#### Phase 18 orchestration
+
+```bash
+# one-shot: schematic, PCB placement, full reroute, hygiene, DRC
+python3 tools/phase18_add_expansion.py     # schematic: J4/J5/F1/R24 + U4 labels
+python3 tools/phase18_place.py             # PCB: drop footprints, relocate TP4
+python3 tools/phase18_finalize.py          # reroute, EP→GND, GND bridges, refill, DRC
+```
+
+Validation gates (Phase 18 exit):
+
+| Check                                    | Result |
+|------------------------------------------|--------|
+| `kicad-cli sch erc`                      | 0 errors (9 `lib_symbol_mismatch` warnings) |
+| `kicad-cli pcb drc --schematic-parity --severity-error` | **0 violations, 0 unconnected pads, 0 footprint errors** |
+| New expansion parts populated on every tier | `J4`, `J5`, `F1`, `R24` not in any DNP list in `tools/variants.yaml` |
+| Board still supports solar input          | ✓ `SOLAR_IN` net unchanged (C27 vertical shift only) |
+| Fab outputs regenerated                   | `fab/{drone,cell_master,apex}/*v2.zip` + `fab/renders/pcb-top.png` / `pcb-bottom.png` |

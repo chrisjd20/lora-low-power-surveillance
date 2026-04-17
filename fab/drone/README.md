@@ -12,9 +12,9 @@
 - `warden-apex-master-bom-jlc.csv` — JLCPCB assembly BOM
 - `warden-apex-master-bom-full.csv` — enriched BOM with MPN/LCSC/descr
 
-## DNP (21 parts)
+## DNP (24 parts)
 
-IC1, Card1, J1, D1, U5, U3, U6, X1, C23, C24, C25, C26, Q2, Q3, R16, R18, R19, JP1, JP2, JP3, JP4
+IC1, Card1, J1, D1, U5, C29, U3, U6, X1, C23, C24, C25, C26, C30, C31, Q2, Q3, R16, R18, R19, JP1, JP2, JP3, JP4
 
 ## JLCPCB upload
 
