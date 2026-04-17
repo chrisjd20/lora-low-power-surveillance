@@ -220,7 +220,7 @@ def build_tier(tier: str, dnp: list[str], description: str,
     )
 
     # ---- Zip ----
-    zip_path = FAB / f"warden-{tier.replace('_', '-')}-v2.zip"
+    zip_path = FAB / f"warden-{tier.replace('_', '-')}-v3.zip"
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
         for p in tier_dir.rglob("*"):
             if p.is_file():

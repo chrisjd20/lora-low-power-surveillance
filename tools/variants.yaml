@@ -7,6 +7,15 @@
 #
 # DNP ("do not populate"): listed refdes are left UNPOPULATED for the tier.
 # Everything else gets stuffed.
+#
+# Phase 19 added three always-populated charger-section resistors
+# (not listed in any DNP block below -> they are stuffed on every tier):
+#   R20 - 7.15 k, BQ24650 VFB upper divider (sets LiFePO4 3.60 V float)
+#   R21 - 10 k,  BQ24650 TS  upper divider (biases TS to safe ~1.05 V)
+#   R22 - 100 k, BQ24650 MPPSET upper divider (6 V panel V_IN(REG)=5.25 V)
+# Plus a schematic Value change (C5 100 nF -> 1 uF) and several net
+# re-wires (IC3.3 PS/SYNC -> GND, IC3.4 VSEL -> GND, R2.1 CHG_SENSE_NEG
+# -> GND, R4.2/R5.2 GND -> 3V3). No refdes added/removed.
 
 drone:
   description: |

@@ -1120,3 +1120,130 @@ Validation gates (Phase 18 exit):
 | New expansion parts populated on every tier | `J4`, `J5`, `F1`, `R24` not in any DNP list in `tools/variants.yaml` |
 | Board still supports solar input          | ✓ `SOLAR_IN` net unchanged (C27 vertical shift only) |
 | Fab outputs regenerated                   | `fab/{drone,cell_master,apex}/*v2.zip` + `fab/renders/pcb-top.png` / `pcb-bottom.png` |
+
+## Phase 19 — Audit fix-up (four BLOCKING + three non-blocking items)
+
+Triggered by the Phase-14..18 engineering audit. Four catastrophic
+charger/regulator flaws were found in the power block and closed in a
+single schematic + PCB pass; three non-blocking items (pull-up polarity
+on STAT1/2, TPS63070 PS/SYNC default, VAUX cap size) fixed alongside.
+See the audit write-up for the engineering rationale for each item.
+
+### Catastrophic issues closed
+
+1. **BLOCKING-1 — TPS63070 VSEL pinned to 5 V output.**
+   `IC3` pad 4 (`VSEL`) was shorted to the enable signal `/REG_EN`
+   (battery-voltage-level high), which forces the internal 5 V fixed
+   output. First power-up would have driven the `/3V3` rail to 5 V
+   and destroyed `U1` (XIAO ESP32-S3), `U2` (Ra-01), and `IC1`
+   (SIM7080G VDD_EXT). Re-wired `VSEL` -> `/GND` so the chip regulates
+   to 3.3 V.
+
+2. **BLOCKING-2 — BQ24650 VFB missing upper divider.**
+   VFB (pin 8) had only `R1` 10 kΩ to `/GND`; no resistor from
+   `/VBAT_SYS` to VFB. The charger's voltage regulation loop could not
+   close, risking over-voltage / thermal runaway on LiFePO4.
+   Added **`R20` = 7.15 kΩ** between `/VBAT_SYS` and `/CHG_VFB`.
+   V_FLOAT = 2.1 * (1 + 7.15/10) = **3.60 V** (LiFePO4 full charge).
+
+3. **BLOCKING-3 — BQ24650 TS perpetually in over-temp fault.**
+   TS (pin 4) had only `R3` 10 kΩ to `/GND`, so TS ≈ 0 V, below
+   V_HTF = 0.59 V — the charger refused to start. Added **`R21` = 10 kΩ**
+   between `/CHG_REF` (VREF = 2.1 V) and `/TS_BIAS`. V_TS = 2.1 × 10/20 =
+   **1.05 V** — well inside the safe window 0.59..1.54 V.
+   (Swap `R3` for a 10 kΩ NTC at the battery pack to enable real
+   temperature-dependent charge control.)
+
+4. **BLOCKING-4 — BQ24650 MPPSET biased to battery voltage, not a
+   VREF fraction.** `R2` went to `/CHG_SENSE_NEG` ≈ VBAT (above VREF).
+   Re-labelled `R2` pad 1 from `/CHG_SENSE_NEG` to `/GND` so `R2`
+   becomes the MPPSET lower leg, and added **`R22` = 100 kΩ** between
+   `/CHG_REF` and `/MPPSET`. V_MPPSET = 1.05 V → V_IN(REG) = 5 * 1.05 =
+   **5.25 V** (matches 6 V panel MPP).
+
+### Non-blocking fixes bundled in
+
+5. **`R4.2` and `R5.2` flipped from `/GND` to `/3V3`** — proper
+   pull-ups on BQ24650's open-drain STAT1/2 outputs (previously
+   pull-downs, so the signals were always asserted low).
+6. **`IC3.3` PS/SYNC re-wired `/3V3` -> `/GND`** — enables the
+   TPS63070 automatic PFM power-save mode at light load; saves
+   ~18 µA of quiescent current on the system.
+7. **`C5` value 100 nF -> 1 µF** — per TPS63070 datasheet the VAUX
+   internal-bias pin wants ≥ 1 µF. Same `C_0805_2012Metric` footprint.
+
+### Net / pad delta (summary)
+
+| Change | Before | After |
+|---|---|---|
+| `IC3.3` (PS/SYNC) | `/3V3` | `/GND` |
+| `IC3.4` (VSEL) | `/REG_EN` | `/GND` |
+| `R2.1` (MPPSET lower) | `/CHG_SENSE_NEG` | `/GND` |
+| `R4.2` (STAT1 pull) | `/GND` | `/3V3` |
+| `R5.2` (STAT2 pull) | `/GND` | `/3V3` |
+| `R20` (new, 7.15 kΩ) | — | `/VBAT_SYS` ↔ `/CHG_VFB` |
+| `R21` (new, 10 kΩ) | — | `/CHG_REF` ↔ `/TS_BIAS` |
+| `R22` (new, 100 kΩ) | — | `/CHG_REF` ↔ `/MPPSET` |
+| `C5.Value` | 100 nF | 1 µF |
+
+### Routing strategy
+
+Rather than clear every track and let Freerouting rebuild the entire
+board (which produced unpredictable regressions on /GND, /VBAT_SYS,
+and several signal nets), Phase 19 uses a **surgical cleanup**:
+
+- Delete only tracks/vias whose endpoint overlaps a pad with a
+  different net (short-circuit candidates created by the net
+  re-assignment).
+- Keep everything else.
+- Let Freerouting (Docker, 30 passes, `eclipse-temurin:21-jre`)
+  close the small set of new airwires (R20/R21/R22 fan-out,
+  CHG_STAT1/2 pull-up reroute).
+- Hand-stamp the two IC3 EP thermal bridges that Phase 18 originally
+  placed (Freerouting does not re-emit micro-bridges for the EP).
+
+### DRC / ERC state after Phase 19
+
+```
+kicad-cli sch erc --severity-all           # 0 errors, 9 warnings (lib_symbol_mismatch, cosmetic)
+kicad-cli pcb drc --schematic-parity       # 0 violations, 0 unconnected pads, 0 footprint errors
+```
+
+Routing stats: **2286 tracks + 208 vias**, 86 footprints (50 original
+BOM + L1 + RSNS + R20 + R21 + R22 + 4 MH + ~28 Phase-7/14/18 additions
++ PWR_FLAG markers).
+
+### Static fix verification (in-script)
+
+Phase 19 asserts all 11 pad-net mappings landed correctly from both
+the pad level (right after `sync_nets`) and the schematic netlist
+export (after the full reroute). If any one regresses, the script
+exits non-zero:
+
+```
+IC3.3 -> /GND   IC3.4 -> /GND   R2.1 -> /GND
+R4.2 -> /3V3    R5.2 -> /3V3
+R20.1 -> /VBAT_SYS   R20.2 -> /CHG_VFB
+R21.1 -> /CHG_REF    R21.2 -> /TS_BIAS
+R22.1 -> /CHG_REF    R22.2 -> /MPPSET
+```
+
+### Reproducibility
+
+```bash
+python3 tools/phase19_audit_fixes.py     # schematic patch + placement + reroute + DRC
+# -> tools/phase19_finalize.py is run as a subprocess to do the
+#    post-Freerouting EP/GND bridge + zone refill, so the pcbnew
+#    SWIG bindings stay fresh.
+
+python3 tools/phase12_variants.py        # regen fab/<tier>/warden-*-v3.zip
+```
+
+### Carry-forward for fab QA
+
+Added to `VARIANTS.md` pre-fab QA checklist:
+
+- Tune `R20`/`R22` if a different battery chemistry or solar panel
+  is used (only component-value swaps; no rework required).
+- Swap `R3` for a battery-pack NTC thermistor to enable real
+  over-temperature charge cut-off (optional enhancement).

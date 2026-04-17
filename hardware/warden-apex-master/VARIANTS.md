@@ -40,6 +40,11 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | IC2 V\_IN decoupler (100 nF) | C27 | ● | ● | ● |
 | Ra-01 3V3 decoupler (100 nF) | C28 | ● | ● | ● |
 | IC3 3V3 bulk (10 µF) | C32 | ● | ● | ● |
+| **Phase 19 — charger feedback dividers (all tiers)** |         |     |     |     |
+| BQ24650 VFB upper leg (7.15 kΩ, LiFePO4 3.6 V float) | R20 | ● | ● | ● |
+| BQ24650 TS  upper leg (10 kΩ, TS safe-window bias) | R21 | ● | ● | ● |
+| BQ24650 MPPSET upper leg (100 kΩ, 6 V panel V_IN(REG)=5.25 V) | R22 | ● | ● | ● |
+| IC3 VAUX decoupler upsized (100 nF → 1 µF) | C5 | ● | ● | ● |
 
 ### Cellular modem block
 
@@ -166,3 +171,13 @@ Before hitting the JLCPCB "Submit" button:
       and that F1 + R24 silk references stay outside the pad areas.
 - [ ] Order the Drone v2 first as a proof-run, then Cell Master and Apex
       from the same gerbers.
+- [ ] **Phase 19 tuning**: R20/R21/R22 values assume LiFePO4 3.6 V float
+      and a 6 V (~5 V MPP) solar panel. If using a different chemistry
+      or panel, re-tune per the BQ24650 datasheet:
+      V_FLOAT = 2.1 * (1 + R20/R1) with R1 = 10 kΩ;
+      V_IN(REG) = 5 * 2.1 * R2 / (R22 + R2) with R2 = 100 kΩ.
+      No routing change required — only component value swaps.
+- [ ] TS pin (R3 + R21) biases charger to "room temp" with fixed
+      resistors. Replace R3 (10 kΩ) with a 10 kΩ NTC thermistor in
+      thermal contact with the battery pack to enable real
+      over-temperature charge protection (optional).
