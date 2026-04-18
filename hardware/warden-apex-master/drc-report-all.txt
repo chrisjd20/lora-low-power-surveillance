@@ -1,50 +1,7 @@
 ** Drc report for warden-apex-master.kicad_pcb **
-** Created on 2026-04-18T15:37:48-0400 **
+** Created on 2026-04-18T16:28:02-0400 **
 
-** Found 232 DRC violations **
-[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)
-    Rule: netclass 'Default'; error
-    @(70.9125 mm, 80.0000 mm): Pad 2 [/VDD_EXT] of R25 on F.Cu
-    @(72.0875 mm, 80.0000 mm): Pad 1 [/UART1_TX] of R26 on F.Cu
-[clearance]: Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1500 mm)
-    Rule: netclass 'POWER_3V3'; error
-    @(73.9125 mm, 80.0000 mm): Pad 2 [/3V3] of R26 on F.Cu
-    @(75.0875 mm, 80.0000 mm): Pad 1 [/UART1_RX_1V8] of R27 on F.Cu
-[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)
-    Rule: netclass 'Default'; error
-    @(78.0875 mm, 80.0000 mm): Pad 1 [/UART1_RX] of R28 on F.Cu
-    @(76.9125 mm, 80.0000 mm): Pad 2 [/VDD_EXT] of R27 on F.Cu
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(70.0000 mm, 80.0000 mm): Footprint R25
-    @(73.0000 mm, 80.0000 mm): Footprint R26
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(73.0000 mm, 80.0000 mm): Footprint R26
-    @(76.0000 mm, 80.0000 mm): Footprint R27
-[courtyards_overlap]: Courtyards overlap
-    Rule: board setup constraints courtyard; error
-    @(79.0000 mm, 80.0000 mm): Footprint R28
-    @(76.0000 mm, 80.0000 mm): Footprint R27
-[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
-    Local override; error
-    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
-    @(51.1000 mm, 32.7000 mm): Pad 8 [/GND] of IC1 on F.Cu
-[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
-    Local override; error
-    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
-    @(45.6000 mm, 47.3000 mm): Pad 33 [/GND] of IC1 on F.Cu
-[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
-    Local override; error
-    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
-    @(42.2000 mm, 43.3000 mm): Pad 36 [/GND] of IC1 on F.Cu
-[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
-    Local override; error
-    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
-    @(42.2000 mm, 42.2000 mm): Pad 37 [/GND] of IC1 on F.Cu
-[track_dangling]: Track has unconnected end
-    Local override; warning
-    @(21.2037 mm, 78.6821 mm): Track [/GND] on B.Cu, length 4.0629 mm
+** Found 219 DRC violations **
 [track_dangling]: Track has unconnected end
     Local override; warning
     @(53.2794 mm, 45.4594 mm): Track [/3V3] on F.Cu, length 0.0008 mm
@@ -71,10 +28,6 @@
     @(94.9500 mm, 7.9500 mm): Via [/GND] on F.Cu - B.Cu
 [holes_co_located]: Drilled holes co-located
     Local override; warning
-    @(7.9500 mm, 73.9500 mm): Via [/GND] on F.Cu - B.Cu
-    @(7.9500 mm, 73.9500 mm): Via [/GND] on F.Cu - B.Cu
-[holes_co_located]: Drilled holes co-located
-    Local override; warning
     @(85.9500 mm, 37.9500 mm): Via [/GND] on F.Cu - B.Cu
     @(85.9500 mm, 37.9500 mm): Via [/GND] on F.Cu - B.Cu
 [holes_co_located]: Drilled holes co-located
@@ -549,10 +502,6 @@
     Local override; warning
     @(43.9500 mm, 97.9500 mm): Via [/GND] on F.Cu - B.Cu
     @(43.9500 mm, 97.9500 mm): Via [/GND] on F.Cu - B.Cu
-[holes_co_located]: Drilled holes co-located
-    Local override; warning
-    @(16.9500 mm, 7.9500 mm): Via [/GND] on F.Cu - B.Cu
-    @(16.9500 mm, 7.9500 mm): Via [/GND] on F.Cu - B.Cu
 [holes_co_located]: Drilled holes co-located
     Local override; warning
     @(85.9500 mm, 73.9500 mm): Via [/GND] on F.Cu - B.Cu
@@ -814,24 +763,56 @@
     @(30.0000 mm, 53.3200 mm): Reference field of C23
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(30.5000 mm, 76.0000 mm): Reference field of R4
-    @(30.7350 mm, 76.2271 mm): Segment of R3 on F.Silkscreen
+    @(52.8900 mm, 77.8900 mm): Segment of L3 on F.Silkscreen
+    @(55.0000 mm, 77.7000 mm): Reference field of L3
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(13.3900 mm, 74.8500 mm): Segment of D3 on F.Silkscreen
-    @(15.3000 mm, 75.3200 mm): Reference field of C27
+    @(72.5000 mm, 13.6800 mm): Reference field of C28
+    @(72.5500 mm, 4.9000 mm): Segment of U3 on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(34.3500 mm, 72.0000 mm): Reference field of R20
-    @(33.7350 mm, 72.2271 mm): Segment of R2 on F.Silkscreen
+    @(72.7613 mm, 11.2650 mm): Segment of C28 on F.Silkscreen
+    @(72.5500 mm, 4.9000 mm): Segment of U3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(72.7613 mm, 12.7350 mm): Segment of C28 on F.Silkscreen
+    @(72.5500 mm, 4.9000 mm): Segment of U3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(60.6200 mm, 71.9200 mm): Segment of J3 on F.Silkscreen
+    @(60.0000 mm, 72.2000 mm): Reference field of C17
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(60.6200 mm, 71.9200 mm): Segment of J3 on F.Silkscreen
+    @(64.0000 mm, 72.2000 mm): Reference field of C18
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(63.3800 mm, 69.2700 mm): Segment of J3 on F.Silkscreen
+    @(64.0000 mm, 72.2000 mm): Reference field of C18
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(60.6200 mm, 69.2700 mm): Segment of J3 on F.Silkscreen
+    @(60.0000 mm, 72.2000 mm): Reference field of C17
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(66.0000 mm, 60.7000 mm): Reference field of R14
+    @(65.7729 mm, 60.7350 mm): Segment of R13 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(46.5000 mm, 78.0000 mm): Segment of IC3 on F.Silkscreen
+    @(48.0000 mm, 77.7000 mm): Reference field of IC3
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
     @(30.7350 mm, 72.2271 mm): Segment of R1 on F.Silkscreen
     @(30.5000 mm, 72.0000 mm): Reference field of R2
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(46.5000 mm, 78.0000 mm): Segment of IC3 on F.Silkscreen
-    @(48.0000 mm, 77.7000 mm): Reference field of IC3
+    @(30.5000 mm, 76.0000 mm): Reference field of R4
+    @(30.7350 mm, 76.2271 mm): Segment of R3 on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(34.3500 mm, 72.0000 mm): Reference field of R20
+    @(33.7350 mm, 72.2271 mm): Segment of R2 on F.Silkscreen
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
     @(34.3500 mm, 76.0000 mm): Reference field of R21
@@ -862,64 +843,16 @@
     @(30.0000 mm, 56.3200 mm): Reference field of C24
 [silk_overlap]: Silkscreen overlap
     Rule: board setup constraints silk; warning
-    @(66.0000 mm, 60.7000 mm): Reference field of R14
-    @(65.7729 mm, 60.7350 mm): Segment of R13 on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(60.6200 mm, 69.2700 mm): Segment of J3 on F.Silkscreen
-    @(60.0000 mm, 72.2000 mm): Reference field of C17
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(60.6200 mm, 71.9200 mm): Segment of J3 on F.Silkscreen
-    @(60.0000 mm, 72.2000 mm): Reference field of C17
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(63.3800 mm, 69.2700 mm): Segment of J3 on F.Silkscreen
-    @(64.0000 mm, 72.2000 mm): Reference field of C18
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(60.6200 mm, 71.9200 mm): Segment of J3 on F.Silkscreen
-    @(64.0000 mm, 72.2000 mm): Reference field of C18
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(72.5000 mm, 13.6800 mm): Reference field of C28
-    @(72.5500 mm, 4.9000 mm): Segment of U3 on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(72.7613 mm, 11.2650 mm): Segment of C28 on F.Silkscreen
-    @(72.5500 mm, 4.9000 mm): Segment of U3 on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(72.7613 mm, 12.7350 mm): Segment of C28 on F.Silkscreen
-    @(72.5500 mm, 4.9000 mm): Segment of U3 on F.Silkscreen
-[silk_overlap]: Silkscreen overlap
-    Rule: board setup constraints silk; warning
-    @(52.8900 mm, 77.8900 mm): Segment of L3 on F.Silkscreen
-    @(55.0000 mm, 77.7000 mm): Reference field of L3
+    @(13.3900 mm, 74.8500 mm): Segment of D3 on F.Silkscreen
+    @(15.3000 mm, 75.3200 mm): Reference field of C27
 
-** Found 5 unconnected pads **
+** Found 1 unconnected pads **
 [unconnected_items]: Missing connection between items
-    Local override; error
-    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on B.Cu, priority 0
-    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(21.2037 mm, 79.5174 mm): Track [/GND] on F.Cu, length 0.8353 mm
-    @(21.2037 mm, 78.6821 mm): Track [/GND] on B.Cu, length 4.0629 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
+    Local override; warning
     @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
     @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(14.0000 mm, 83.9500 mm): Pad 1 [/CHG_REGN] of C15 on F.Cu
-    @(20.4375 mm, 79.2500 mm): Track [/CHG_REGN] on F.Cu, length 0.6749 mm
-[unconnected_items]: Missing connection between items
-    Local override; error
-    @(70.9375 mm, 75.0000 mm): Track [/UART1_TX] on F.Cu, length 1.6263 mm
-    @(17.5000 mm, 11.5000 mm): Pad 19 [/UART1_TX] of U1 on F.Cu
 
-** Found 121 Footprint errors **
+** Found 119 Footprint errors **
 [footprint_symbol_mismatch]: Value (C31) doesn't match symbol value (220uF).
     Local override; warning
     @(63.0600 mm, 2.9000 mm): Footprint C31
@@ -932,12 +865,6 @@
 [footprint_symbol_mismatch]: LCC-42_SIM7080G doesn't match footprint given by symbol (warden_custom:LCC-42_SIM7080G).
     Local override; warning
     @(50.0000 mm, 40.0000 mm): Footprint IC1
-[net_conflict]: Pad net (/UART1_RX_1V8) doesn't match net given by schematic (/UART1_TX_1V8).
-    Local override; warning
-    @(43.4000 mm, 32.7000 mm): Pad 1 [/UART1_RX_1V8] of IC1 on F.Cu
-[net_conflict]: Pad net (/UART1_TX_1V8) doesn't match net given by schematic (/UART1_RX_1V8).
-    Local override; warning
-    @(44.5000 mm, 32.7000 mm): Pad 2 [/UART1_TX_1V8] of IC1 on F.Cu
 [net_conflict]: No corresponding pin found in schematic.
     Local override; warning
     @(45.6000 mm, 32.7000 mm): Pad 3 [/DUMMY_NET_PRESERVE_68] of IC1 on F.Cu
@@ -1088,25 +1015,25 @@
 [footprint_symbol_mismatch]: Value (R25) doesn't match symbol value (R_0805_2012Metric).
     Local override; warning
     @(70.0000 mm, 80.0000 mm): Footprint R25
-[footprint_symbol_mismatch]: R_0805_2012Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
+[footprint_symbol_mismatch]: R_0603_1608Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
     Local override; warning
     @(70.0000 mm, 80.0000 mm): Footprint R25
 [footprint_symbol_mismatch]: Value (R26) doesn't match symbol value (R_0805_2012Metric).
     Local override; warning
     @(73.0000 mm, 80.0000 mm): Footprint R26
-[footprint_symbol_mismatch]: R_0805_2012Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
+[footprint_symbol_mismatch]: R_0603_1608Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
     Local override; warning
     @(73.0000 mm, 80.0000 mm): Footprint R26
 [footprint_symbol_mismatch]: Value (R27) doesn't match symbol value (R_0805_2012Metric).
     Local override; warning
     @(76.0000 mm, 80.0000 mm): Footprint R27
-[footprint_symbol_mismatch]: R_0805_2012Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
+[footprint_symbol_mismatch]: R_0603_1608Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
     Local override; warning
     @(76.0000 mm, 80.0000 mm): Footprint R27
 [footprint_symbol_mismatch]: Value (R28) doesn't match symbol value (R_0805_2012Metric).
     Local override; warning
     @(79.0000 mm, 80.0000 mm): Footprint R28
-[footprint_symbol_mismatch]: R_0805_2012Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
+[footprint_symbol_mismatch]: R_0603_1608Metric doesn't match footprint given by symbol (Resistor_SMD:R_0805_2012Metric).
     Local override; warning
     @(79.0000 mm, 80.0000 mm): Footprint R28
 [net_conflict]: No corresponding pin found in schematic.

@@ -6,23 +6,23 @@ One board. Three builds. Same gerbers for all tiers.
 
 | Tier | Name | Radios | Est. BOM | DNP parts |
 |---|---|---|---:|---:|
-| 1 | **Drone** | LoRa + BLE/WiFi | ~$35 | 21 |
-| 2 | **Cell Master** | LoRa + BLE/WiFi + Cellular (SIM7080G) | ~$55 | 7 |
+| 1 | **Drone** | LoRa + BLE/WiFi | ~$35 | 24 |
+| 2 | **Cell Master** | LoRa + BLE/WiFi + Cellular (SIM7080G) | ~$55 | 13 |
 | 3 | **Apex** | LoRa + BLE/WiFi + Cellular + Satellite (Swarm M138) | ~$95 | 0 |
 
 All three tiers use the same PCB — identical gerbers, drill, IPC-D-356.
 Only the BOM and pick-and-place file differ. See [`tools/variants.yaml`](../../tools/variants.yaml)
 for the authoritative DNP lists.
 
-Latest validation refresh (2026-04-18, live in-progress state):
+Latest validation refresh (2026-04-18, post-repair state):
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 10 violations, 5 unconnected, 0 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
 - `kicad-cli sch erc --severity-all` -> 22 warnings
-- `kicad-cli pcb drc --schematic-parity --severity-all` -> 232 violations, 5 unconnected, 121 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-all` -> 219 violations, 1 unconnected, 119 parity issues
 - `python3 tools/phase12_variants.py` re-generated all `v3` tier packages under `fab/`
 - KiCad-native BOMs are now tier-filtered too (`fab/<tier>/warden-apex-master-bom-kicad.csv`)
-- UART1 is currently under active rework toward a level-shifted path (`Q4/Q5/R25..R28`) and should be treated as non-final
+- UART1 level-shifter path (`Q4/Q5/R25..R28`) is now routed and parity-clean at `--severity-error`
 - Board outline is now `125 x 125 mm` (asymmetric growth:
   +15 left, +10 right, +5 top, +20 bottom) with `MH1..MH4`
   moved to the new corners.
@@ -94,7 +94,7 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | Q3 N-MOSFET 2N7002 | ○ | ● | ● |
 | R16 100 kΩ gate pull-up | ○ | ● | ● |
 | R17 UART1\_RX pull-down (always populated) | ● | ● | ● |
-| UART1 cellular interface | rework | rework | rework |
+| UART1 cellular interface | ● | ● | ● |
 | **JP_MODEM_RAIL (JP1)** | ⚪ | ⚪ | ⚪ |
 
 The modem rail is gated by **MODEM_EN** (MCP23017 GPB0). Firmware drives
@@ -102,10 +102,10 @@ it HIGH after detecting a modem. JP1 exists as a bypass option if a
 builder prefers a hard-wired rail and wants to omit Q2/Q3 entirely — close
 JP1 and DNP Q2/Q3/R16. Default is firmware-controlled gating.
 
-> **Phase 24 note:** `UART1` remains dedicated to cellular control on
-> XIAO pins `U1.19/U1.18`, but the live board/schematic now include an
-> in-progress level-shift rework (`Q4`, `Q5`, `R25..R28`) and should not
-> be treated as final production routing until DRC returns to error-clean.
+> `UART1` remains dedicated to cellular control on XIAO pins
+> `U1.19/U1.18`; the level-shifter path (`Q4`, `Q5`, `R25..R28`) is
+> retained in the production snapshot and now passes `--severity-error`
+> DRC/parity checks.
 
 ### Expansion I/O (always populated)
 

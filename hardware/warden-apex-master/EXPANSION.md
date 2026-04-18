@@ -10,12 +10,12 @@ All expansion I/O goes through the I/O expander `U4` (MCP23017, I²C
 address `0x20`), so firmware drives loads with a simple register write
 and no main-MCU GPIOs are consumed.
 
-Validation refresh (2026-04-18): expansion circuitry itself remains unchanged,
-but the live board is currently in a broader modem/UART rework pass
-(see `PLAN.md` Phase 24). Current top-level checks are:
+Validation refresh (2026-04-18): expansion circuitry itself remains unchanged
+and the board-level modem/UART repair pass is now closed. Current top-level
+checks are:
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 10 violations, 5 unconnected, 0 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
 
 ```
 West edge (X = -15 mm after Phase 24)

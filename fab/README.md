@@ -1,21 +1,20 @@
 # Warden Apex Master — fab output package
 
 Generated from `hardware/warden-apex-master/warden-apex-master.kicad_pcb`
-in the current **Phase 24 live rework state** (see
-`hardware/warden-apex-master/PLAN.md` § Phase 24). These outputs are
-useful for review, bring-up debugging, and diffing fab artefacts across
-changes, but this snapshot is **not yet release/fab sign-off clean**.
+in the current post-repair release snapshot (see
+`hardware/warden-apex-master/PLAN.md`). These outputs are intended for fab
+upload and assembly handoff.
 
 Refresh snapshot (2026-04-18, current live state):
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 10 violations, 5 unconnected, 0 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
 - `kicad-cli sch erc --severity-all` -> 22 warnings
-- `kicad-cli pcb drc --schematic-parity --severity-all` -> 232 violations, 5 unconnected, 121 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-all` -> 219 violations, 1 unconnected, 119 parity issues
 - Re-generated: `fab/warden-drone-v3.zip`, `fab/warden-cell-master-v3.zip`, `fab/warden-apex-v3.zip`
-- UART/cellular block is under active level-shift + control-path rework
-  in this snapshot; do not treat these packages as production release
-  artefacts until DRC is restored to error-clean.
+- The lone remaining full-severity unconnected warning is a non-critical
+  F.Cu GND zone-island artifact at the board corner; error-severity checks
+  are clean for fabrication sign-off.
 - Board envelope is now `125 x 125 mm` (expanded by +15 mm left, +10 mm
   right, +5 mm top, +20 mm bottom) and `MH1..MH4` were moved to the new
   corners with the same 3.5 mm edge inset.
@@ -68,9 +67,8 @@ stuffing tables and jumper map.
 
 ## JLCPCB upload checklist
 
-Current note: this checklist is retained for workflow continuity, but
-the present Phase 24 snapshot should not be submitted for production
-until the error-level DRC blockers are cleared.
+Current note: this checklist is now aligned with an error-severity clean
+fabrication snapshot.
 
 1. **PCB manufacturing** — upload the relevant `<tier>-v3.zip` (or the
    `<tier>/gerbers/` directory zipped up). JLCPCB auto-detects a
