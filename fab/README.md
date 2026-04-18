@@ -1,8 +1,9 @@
 # Warden Apex Master — fab output package
 
 Generated from `hardware/warden-apex-master/warden-apex-master.kicad_pcb`
-after the **Phase 20 universal-PCB recovery** (see
-`tools/phase20_*.py` and `hardware/warden-apex-master/VARIANTS.md`).
+after the **Phase 21 SIM7080 repair** (see section below) on top of the
+**Phase 20 universal-PCB recovery** (`tools/phase20_*.py` and
+`hardware/warden-apex-master/VARIANTS.md`).
 
 Board specs: **100 mm × 100 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
 plated through-holes only, min trace 0.2 mm, min via 0.3 mm drill /
@@ -11,45 +12,55 @@ In2.Cu (VBAT_SYS plane) / B.Cu.
 
 ## Contents
 
+The authoritative outputs live under one folder per stuffing tier,
+each produced by `tools/phase12_variants.py`:
+
 ```
 fab/
-├── README.md                                   this file
-├── gerbers/                                    Gerber X2 + Excellon drill files
-│   ├── warden-apex-master-F_Cu.gbr             top copper (signals + F.Cu GND pour)
-│   ├── warden-apex-master-GND.gbr              In1.Cu solid GND plane
-│   ├── warden-apex-master-PWR.gbr              In2.Cu VBAT_SYS power plane
-│   ├── warden-apex-master-B_Cu.gbr             bottom copper
-│   ├── warden-apex-master-F_Mask.gbr           top solder mask
-│   ├── warden-apex-master-B_Mask.gbr           bottom solder mask
-│   ├── warden-apex-master-F_Silkscreen.gbr     top silk
-│   ├── warden-apex-master-B_Silkscreen.gbr     bottom silk
-│   ├── warden-apex-master-F_Paste.gbr          top stencil paste
-│   ├── warden-apex-master-B_Paste.gbr          bottom stencil paste
-│   ├── warden-apex-master-Edge_Cuts.gbr        board outline
-│   ├── warden-apex-master-PTH.drl              plated through-holes (Excellon)
-│   ├── warden-apex-master-NPTH.drl             non-plated through-holes
-│   ├── warden-apex-master-PTH-drl_map.pdf      drill map reference
-│   ├── warden-apex-master-NPTH-drl_map.pdf
-│   └── warden-apex-master-job.gbrjob           KiCad job definition
-├── warden-apex-master.d356                     IPC-D-356 bare-board test netlist
-├── warden-apex-master-pos.csv                  KiCad native P&P
-├── warden-apex-master-JLCPCB-pos.csv           JLCPCB-format P&P (Designator, Val, Package, Mid X, Mid Y, Rotation, Layer)
-├── warden-apex-master-bom-kicad.csv            KiCad native BOM
-├── warden-apex-master-JLCPCB-bom.csv           JLCPCB assembly BOM (Comment, Designator, Footprint, LCSC Part #)
-└── warden-apex-master-bom-full.csv             full BOM with MPN, Manufacturer, LCSC, Role annotations
+├── README.md                                    this file
+├── drone/                                       Tier 1: LoRa + BLE only
+├── cell_master/                                 Tier 2: + SIM7080G cellular
+├── apex/                                        Tier 3: + Swarm M138 satellite
+│   ├── gerbers/                                 Gerber X2 + Excellon drill files
+│   │   ├── warden-apex-master-F_Cu.gbr          top copper (signals + F.Cu GND pour)
+│   │   ├── warden-apex-master-GND.gbr           In1.Cu solid GND plane
+│   │   ├── warden-apex-master-PWR.gbr           In2.Cu VBAT_SYS power plane
+│   │   ├── warden-apex-master-B_Cu.gbr          bottom copper
+│   │   ├── warden-apex-master-{F,B}_Mask.gbr    solder mask
+│   │   ├── warden-apex-master-{F,B}_Silkscreen.gbr   silk
+│   │   ├── warden-apex-master-{F,B}_Paste.gbr   stencil paste
+│   │   ├── warden-apex-master-Edge_Cuts.gbr     board outline
+│   │   ├── warden-apex-master-{PTH,NPTH}.drl    Excellon drill files
+│   │   ├── warden-apex-master-{PTH,NPTH}-drl_map.pdf
+│   │   └── warden-apex-master-job.gbrjob        KiCad job definition
+│   ├── warden-apex-master.d356                  IPC-D-356 bare-board test netlist
+│   ├── warden-apex-master-pos.csv               KiCad native P&P
+│   ├── warden-apex-master-pos-jlc.csv           JLCPCB-format P&P
+│   ├── warden-apex-master-bom-kicad.csv         KiCad native BOM
+│   ├── warden-apex-master-bom-jlc.csv           JLCPCB assembly BOM (LCSC)
+│   └── warden-apex-master-bom-full.csv          full BOM with MPN, Manufacturer, LCSC, Role
+├── warden-drone-v3.zip                          upload-ready bundle — Tier 1
+├── warden-cell-master-v3.zip                    upload-ready bundle — Tier 2
+└── warden-apex-v3.zip                           upload-ready bundle — Tier 3
 ```
+
+Gerbers and drill files are byte-identical across tiers — only the BOM
+(`*-bom-jlc.csv`) and pick-and-place file (`*-pos-jlc.csv`) differ.
+See `hardware/warden-apex-master/VARIANTS.md` for the per-tier
+stuffing tables and jumper map.
 
 ## JLCPCB upload checklist
 
-1. **PCB manufacturing** — upload the whole `gerbers/` directory as a
-   zip. JLCPCB auto-detects a 4-layer board from `*-F_Cu.gbr /
-   *-GND.gbr / *-PWR.gbr / *-B_Cu.gbr`. Surface finish: HASL (leaded)
-   is cheapest; ENIG is better for the RF antenna pads if budget allows.
-   Stackup: JLC04161H-7628 or equivalent. Board thickness 1.6 mm.
+1. **PCB manufacturing** — upload the relevant `<tier>-v3.zip` (or the
+   `<tier>/gerbers/` directory zipped up). JLCPCB auto-detects a
+   4-layer board from `*-F_Cu.gbr / *-GND.gbr / *-PWR.gbr /
+   *-B_Cu.gbr`. Surface finish: HASL (leaded) is cheapest; ENIG is
+   better for the RF antenna pads if budget allows. Stackup:
+   JLC04161H-7628 or equivalent. Board thickness 1.6 mm.
 
-2. **SMT assembly** — upload:
-   - P&P:  `warden-apex-master-JLCPCB-pos.csv`
-   - BOM:  `warden-apex-master-JLCPCB-bom.csv`
+2. **SMT assembly** — upload from `fab/<tier>/`:
+   - P&P:  `warden-apex-master-pos-jlc.csv`
+   - BOM:  `warden-apex-master-bom-jlc.csv`
 
    JLCPCB's web form expects columns in the order the files provide.
    LCSC part numbers are pre-populated for:
@@ -70,48 +81,51 @@ fab/
    - DMG9926UDM (Q1) — Diodes Inc. / Digi-Key
    - BAT54HT1G (D3) — Mouser / Digi-Key
 
-## Per-tier packages
-
-`tools/phase12_variants.py` produces a dedicated folder for each tier
-plus a top-level zip bundle:
-
-```
-fab/
-├── drone/          Tier 1: LoRa + BLE only
-├── cell_master/    Tier 2: + SIM7080G cellular
-├── apex/           Tier 3: + Swarm M138 satellite
-├── warden-drone-v3.zip
-├── warden-cell-master-v3.zip
-└── warden-apex-v3.zip
-```
-
-Gerbers and drill files are byte-identical across tiers — only
-the BOM (`*-bom-jlc.csv`), the pick-and-place file (`*-pos-jlc.csv`),
-and the jumper-close instructions differ.  See
-`hardware/warden-apex-master/VARIANTS.md` for the per-tier stuffing
-tables and jumper map.
-
 ## Known caveats — READ BEFORE ORDERING
 
-**1. Phase 20 manual-finish routing (required).**  The Phase 20
-universal-recovery scripts deliberately purge the stale
-`/UART1_TX`, `/UART1_RX`, and extend-points of `/UART2_TX`,
-`/UART2_RX` routing because the original topology was miswired.
-Five signal nets still need an interactive KiCad 9 routing pass
-before gerbers are re-exported:
+**1. Phase 21 SIM7080 / decoupling repair.**  This fab package was
+regenerated after a critical Phase 21 repair pass that fixed the
+`LCC-42_SIM7080G` symbol's pin-to-name mapping (77 pins rewritten to
+match SIMCom SIM7080G datasheet V1.04), re-mapped every `IC1` pad on
+the PCB to the correct net, purged 83 mis-routed legacy traces in the
+IC1 region, and added two new **IC1 local-VBAT decouplers**:
 
-   | Net         | From                   | To                |
-   |-------------|------------------------|-------------------|
-   | /UART1_TX   | XIAO U1.19 (GPIO40)    | SIM7080 IC1.34    |
-   | /UART1_RX   | XIAO U1.18 (GPIO41)    | R17.1 + IC1.40    |
-   | /UART2_TX   | R19.1 (stub endpoint)  | Swarm U3.28       |
-   | /UART2_RX   | R18.1 (stub endpoint)  | Swarm U3.12       |
-   | /SIM_VDD_EXT | (already routed locally IC1.69 ↔ C29.1) | — |
+   | Ref | Value | Footprint | Placement         | Role              |
+   |-----|-------|-----------|-------------------|-------------------|
+   | C33 | 100 nF | 0805     | 43.0,50.2  rot 90 | IC1 HF decoupling |
+   | C34 | 47 µF  | 1206     | 46.5,50.5  rot 90 | IC1 bulk reservoir |
 
-All are low-speed UART signals — 0.20 mm trace on F.Cu or B.Cu with
-one or two vias is sufficient.  No impedance control required.  Use
-KiCad's interactive router (`x` key) and let push-and-shove handle
-the surrounding copper.
+Both are on `/MODEM_VBAT_SW` (POWER_HI netclass, 0.6 mm trace) and
+fanout directly to IC1 pad 34 (VBAT).  All ~60 unused SIM7080 pads
+are intentionally tied to `/GND` with `zone_connect 2` thermal relief
+so the GND pour correctly contacts them instead of shorting through
+the fill.
+
+**2. Manual-finish routing (required).**  The autorouter (Freerouting
+v2.0.1, 300 passes) converged with ~14 distinct nets still airwired
+because of dense pours and the 0.6 mm POWER_HI minimum trace width.
+They need an interactive KiCad 9 routing pass before fabrication:
+
+   | Net            | From                   | To                          |
+   |----------------|------------------------|-----------------------------|
+   | /UART1_TX      | XIAO U1.19             | SIM7080 IC1.2               |
+   | /UART1_RX      | XIAO U1.18 → R17.1     | SIM7080 IC1.1               |
+   | /UART2_TX      | Swarm U3.28            | existing stub @35.65,52.00  |
+   | /UART2_RX      | Swarm U3.12            | R18.1 @41.09,52.00          |
+   | /SIM_CLK       | SIM7080 IC1.16         | Card1.2                     |
+   | /SIM_RST       | SIM7080 IC1.17         | Card1.3                     |
+   | /SIM_DATA      | SIM7080 IC1.15         | Card1.4                     |
+   | /SIM_VDD       | SIM7080 IC1.18         | JP2.1 (and Card1.1 via JP2) |
+   | /SIM_VDD_EXT   | SIM7080 IC1.40         | C29.1 (via on F.Cu→B.Cu)    |
+   | /CELL_RF       | SIM7080 IC1.32         | D1.1 → J1.1 (U.FL)          |
+   | /MODEM_VBAT_SW | TP4.1 / JP1.2 / Q2.3 / Swarm U3 (pins 1, 20, 35, 39) | bus stitching between modem power network nodes |
+
+`/CELL_RF` must be routed as a 50 Ω coplanar waveguide between IC1.32,
+D1 (TVS), and J1 (U.FL) — the RF_50OHM netclass handles width; keep
+the trace length < 20 mm and surround it with stitched GND vias.  All
+others are low-speed (UART / ISO7816 SIM / DC power) and accept a
+simple 0.2 mm (signal) or 0.6 mm (POWER_HI) trace on F.Cu or B.Cu
+with one or two vias.  Use KiCad's interactive router (`x` key).
 
 **2. Custom-footprint datasheet re-verification (required).**
 These five footprints pass ERC but have NOT been cross-checked
@@ -135,12 +149,14 @@ against vendor mechanical drawings:
 **3. RF trace routing** is functional but not impedance-controlled
 coplanar waveguide.  Fine for LTE-M / 433 MHz proof-of-concept.
 
-**4. Stale Phase 5 observations superseded.**  The earlier warnings
-about "29 unconnected_items + 199 net_conflict all being F.Cu GND
-zone fragments" were resolved in Phase 20 by remapping the `GND`
-and `VBAT_SYS` zones to `/GND` and `/VBAT_SYS` (the actual pad
-nets).  Current DRC: after the manual-finish UART routing, only
-one pre-existing warning remains — a single starved-thermal on
-`J4` pin 6 (`/GND`, B.Cu) flagged because the PTH pad has only
-one spoke instead of two.  This is cosmetic and does not affect
-continuity through the solid In1.Cu GND plane.
+**4. DRC snapshot (as shipped).**
+   - 0 shorts, 0 clearance errors, 0 track-crossings
+   - 18 unconnected items — the airwires in the table above
+   - 2 track_dangling — stubs left for the manual `/UART2_*` routing
+   - 1 starved_thermal on J4.6 (`/GND`, B.Cu) — cosmetic; the
+     underlying solid In1.Cu GND plane carries the full return
+   - 3 lib_footprint_mismatch — the hand-authored `C33`, `C34`, and
+     `U3 (Swarm_M138)` footprints intentionally differ from the
+     stock libraries (they carry repair-specific pad/net overrides);
+     safe to ignore.
+   - 44 silk/mask cosmetic warnings (unchanged from prior revisions).

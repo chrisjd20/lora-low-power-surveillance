@@ -1,7 +1,7 @@
 Comment,Designator,Footprint,LCSC Part #
 100k,"R17,R22,R23",Resistor_SMD:R_0805_2012Metric,
 100kΩ,"R2,R15",Resistor_SMD:R_0805_2012Metric,
-100nF,"C1,C2,C3,C4,C19,C20,C21,C22,C27,C28",Capacitor_SMD:C_0805_2012Metric,
+100nF,"C1,C2,C3,C4,C19,C20,C21,C22,C27,C28,C33",Capacitor_SMD:C_0805_2012Metric,
 10k,"R21,R24",Resistor_SMD:R_0805_2012Metric,
 10kΩ,"R1,R3,R4,R5,R10",Resistor_SMD:R_0805_2012Metric,
 10uF,"C13,C14,C15,C16,C17,C18,C32",Capacitor_SMD:C_0805_2012Metric,
@@ -12,6 +12,7 @@ Comment,Designator,Footprint,LCSC Part #
 20m,RSNS,Resistor_SMD:R_2512_6332Metric,
 4.7kΩ,"R13,R14",Resistor_SMD:R_0805_2012Metric,
 4.7uH,L1,Inductor_SMD:L_Taiyo-Yuden_NR-60xx_HandSoldering,
+47uF,C34,Capacitor_SMD:C_1206_3216Metric,
 5002,"TP1,TP2,TP3,TP4,TP5",TestPoint:TestPoint_Pad_D1.5mm,
 500mA_PTC,F1,Fuse:Fuse_0805_2012Metric,
 61300211121,J3,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,

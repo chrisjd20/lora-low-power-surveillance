@@ -12,7 +12,7 @@ Produces, for each tier in tools/variants.yaml:
     warden-apex-master-bom-jlc.csv
     warden-apex-master-bom-full.csv
     README.md
-  fab/warden-<tier>-v2.zip
+  fab/warden-<tier>-v3.zip
 """
 from __future__ import annotations
 import csv
