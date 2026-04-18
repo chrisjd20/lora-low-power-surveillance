@@ -11,8 +11,8 @@ address `0x20`), so firmware drives loads with a simple register write
 and no main-MCU GPIOs are consumed.
 
 Validation refresh (2026-04-18): expansion circuitry remains unchanged after
-the UART1 level-shifter insertion (`U7/C35/C36/R25`) and still sits on a
-board that passes `kicad-cli sch erc --severity-error` and
+the final fabrication recovery and still sits on a board that passes
+`kicad-cli sch erc --severity-error` and
 `kicad-cli pcb drc --schematic-parity --severity-error` with zero errors.
 
 ```

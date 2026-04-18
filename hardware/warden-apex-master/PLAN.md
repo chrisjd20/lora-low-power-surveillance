@@ -1,21 +1,28 @@
 # Warden Apex Master — KiCad rebuild plan
 
-## Refresh snapshot (2026-04-18)
+## Refresh snapshot (2026-04-18, final recovery)
 
 This repository was re-validated from the committed live KiCad design files:
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
 - `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
-- UART1 now passes through a dedicated level-shift path:
-  - `U7` = `TXS0102` (`Package_SO:TSSOP-8_3x3mm_P0.65mm`)
-  - `C35` (3V3 decoupling), `C36` (SIM_VDD_EXT decoupling), `R25` (OE pull-up)
-  - split nets: `UART1_TX/UART1_RX` (3V3 side) and `UART1_TX_1V8/UART1_RX_1V8` (1V8 side)
+- Diagnostic checks from the committed state:
+  - `kicad-cli sch erc --severity-all` -> 9 warnings (library-symbol drift only)
+  - `kicad-cli pcb drc --schematic-parity --severity-all` -> 50 warnings / 0 parity warnings
+- Follow-on parity cleanup:
+  - SIM7080 footprint parity alignment removed all remaining `net_conflict` parity warnings at `--severity-all`
+  - `C31/F1/J4/J5/R24` footprint IDs are now aligned between schematic and PCB so `footprint_symbol_mismatch` parity warnings are cleared
+- UART1 is now aligned as a single-domain direct path (`/UART1_TX`, `/UART1_RX`) between `U1` and `IC1`.
+  The previously divergent translator chain refs (`U7`, `C35`, `C36`, `R25`) were removed from the live schematic so schematic/PCB/fab outputs are consistent.
 - `python3 tools/phase12_variants.py` re-generated all three tier outputs:
   - `fab/warden-drone-v3.zip`
   - `fab/warden-cell-master-v3.zip`
   - `fab/warden-apex-v3.zip`
-- `tools/phase12_variants.py` now filters `warden-apex-master-bom-kicad.csv`
-  per tier (matching the existing JLC/full BOM and P&P filtering behavior)
+- Per-tier BOM/POS consistency check after regeneration:
+  - `drone`: BOM refs == POS refs (excluding intentional non-placeables)
+  - `cell_master`: BOM refs == POS refs (excluding intentional non-placeables)
+  - `apex`: BOM refs == POS refs (excluding intentional non-placeables)
+- `warden-apex-master.kicad_pro` now enforces `"missing_footprint": "error"` so future missing-footprint regressions are blocker-visible in `--severity-error`.
 - Cleanup removed stale generated state files:
   - `hardware/warden-apex-master/warden-apex-master.kicad_prl`
   - `hardware/warden-apex-master/fp-info-cache`

@@ -30,10 +30,10 @@
 #   - R17 stays populated on every tier (UART1_RX pull-down; harmless
 #     on Drone, meaningful when IC1 is stuffed).
 #
-# Phase 21 UART level-shift insertion (all-tier population):
-#   - U7 (TXS0102), C35 (3V3 decoupling), C36 (SIM_VDD_EXT decoupling),
-#     and R25 (OE pull-up) are intentionally omitted from every DNP list
-#     so the translator path is always populated on drone/cell_master/apex.
+# UART1 is currently a direct path on all tiers (`U1` <-> `IC1` on
+# `/UART1_TX` + `/UART1_RX`). The experimental translator chain refs
+# (`U7`, `C35`, `C36`, `R25`) were removed from the live schematic so the
+# generated BOM/POS outputs remain tier-consistent with the committed PCB.
 
 drone:
   description: |

@@ -15,8 +15,8 @@ Refresh snapshot (2026-04-18):
 - `kicad-cli sch erc --severity-error` -> 0 errors
 - `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
 - Re-generated: `fab/warden-drone-v3.zip`, `fab/warden-cell-master-v3.zip`, `fab/warden-apex-v3.zip`
-- UART1 now routes through `U7` (`TXS0102`) with `C35`/`C36` decoupling and
-  `R25` OE pull-up; this translator path is populated on all tiers.
+- UART1 is committed as a direct path (`/UART1_TX`, `/UART1_RX`) between `U1`
+  and `IC1` on all tiers; per-tier BOM/POS outputs are internally consistent.
 
 Board specs: **100 mm × 100 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
 plated through-holes only, min trace 0.2 mm, min via 0.3 mm drill /
@@ -172,7 +172,5 @@ intentional / cosmetic:
    - 3 lib_footprint_mismatch — the hand-authored `C33`, `C34`, and
      `U3 (Swarm_M138)` footprints intentionally differ from the stock
      libraries because they carry repair-specific pad/net overrides.
-   - 52 schematic-parity warnings (`net_conflict`,
-     `footprint_symbol_mismatch`) covering the same repair-era
-     library mismatches and power-symbol silkscreen-vs-net labels;
-     none represent an electrical defect.
+   - 0 schematic-parity warnings (follow-on parity cleanup aligned the
+     remaining SIM7080 and footprint-ID mismatches).
