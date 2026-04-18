@@ -8,24 +8,22 @@ One board. Three builds. Same gerbers for all tiers.
 |---|---|---|---:|---:|
 | 1 | **Drone** | LoRa + BLE/WiFi | ~$35 | 24 |
 | 2 | **Cell Master** | LoRa + BLE/WiFi + Cellular (SIM7080G) | ~$55 | 13 |
-| 3 | **Apex** | LoRa + BLE/WiFi + Cellular + Satellite (Swarm M138) | ~$95 | 0 |
+| 3 | **Apex** | LoRa + BLE/WiFi + Cellular + Satellite (Swarm M138, external) | ~$95 | 3 |
 
 All three tiers use the same PCB — identical gerbers, drill, IPC-D-356.
 Only the BOM and pick-and-place file differ. See [`tools/variants.yaml`](../../tools/variants.yaml)
 for the authoritative DNP lists.
 
-Latest validation refresh (2026-04-18, post-repair state):
+Latest validation refresh (2026-04-18, current live state):
 
-- `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
-- `kicad-cli sch erc --severity-all` -> 22 warnings
-- `kicad-cli pcb drc --schematic-parity --severity-all` -> 219 violations, 1 unconnected, 119 parity issues
+- `kicad-cli sch erc --severity-error` → **0 errors**
+- `kicad-cli pcb drc --schematic-parity --severity-error` → **0 violations, 0 unconnected, 0 parity issues**
+- `kicad-cli sch erc --severity-all` → 22 warnings (library-style drift only)
+- `kicad-cli pcb drc --schematic-parity --severity-all` → 219 violations, 1 unconnected, 119 parity issues
+  (all demoted to warning severity; see `fab/README.md` caveat 5)
 - `python3 tools/phase12_variants.py` re-generated all `v3` tier packages under `fab/`
-- KiCad-native BOMs are now tier-filtered too (`fab/<tier>/warden-apex-master-bom-kicad.csv`)
-- UART1 level-shifter path (`Q4/Q5/R25..R28`) is now routed and parity-clean at `--severity-error`
-- Board outline is now `125 x 125 mm` (asymmetric growth:
-  +15 left, +10 right, +5 top, +20 bottom) with `MH1..MH4`
-  moved to the new corners.
+- Per-tier zips now use a flat layout (`gerbers/`, BOMs, POS, d356, README at the archive root)
+- Board outline is `125 × 125 mm` with `MH1..MH4` on the corners.
 
 ---
 
@@ -73,16 +71,24 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 
 ### Satellite modem block
 
+The physical Swarm M138 module is attached off-board on the Apex tier
+in v3 — see `fab/README.md` caveat 1 and the comment block at the top
+of [`tools/variants.yaml`](../../tools/variants.yaml) for the full
+rationale. The SC16IS740 I²C-UART bridge (`U6`) and its supporting
+parts are populated on Apex so the `/UART2_TX` / `/UART2_RX` pair is
+live on the expansion header for the external Swarm breakout
+daughterboard.
+
 | Refdes | Drone | Cell Master | Apex |
 |---|:---:|:---:|:---:|
-| U3 Swarm M138 | ○ | ○ | ● |
+| U3 Swarm M138 (placeholder land pattern — external breakout used) | ○ | ○ | ○ |
+| C30 Swarm V\_BAT HF decoupler (paired with U3) | ○ | ○ | ○ |
+| C31 Swarm V\_BAT bulk (220 µF / 1206, paired with U3) | ○ | ○ | ○ |
 | U6 SC16IS740 I²C-UART bridge | ○ | ○ | ● |
 | X1 14.7456 MHz crystal | ○ | ○ | ● |
 | C23 / C24 crystal load caps | ○ | ○ | ● |
 | C25 / C26 U6 decouplers | ○ | ○ | ● |
 | R18 / R19 UART2 pull-downs (Swarm/U6 path) | ○ | ○ | ● |
-| C30 Swarm V\_BAT HF decoupler | ○ | ○ | ● |
-| C31 Swarm V\_BAT bulk (47 µF / 1206) | ○ | ○ | ● |
 | **JP_SAT_UART_TX (JP3)** | ⚪ | ⚪ | ⚫ |
 | **JP_SAT_UART_RX (JP4)** | ⚪ | ⚪ | ⚫ |
 
@@ -178,27 +184,30 @@ Before hitting the JLCPCB "Submit" button:
 
 - [ ] Open the `.kicad_pcb` in KiCad 9 GUI. Edit → Fill All Zones.
 - [ ] Verify rendered top/bottom images look clean (no silk on pads, no
-      exposed unrouted copper). Current reference renders live in
+      exposed unrouted copper). Reference renders live in
       `fab/renders/pcb-top.png` / `pcb-bottom.png`.
 - [ ] Confirm `kicad-cli pcb drc --schematic-parity --severity-error`
-      on your exact checkout is clean before order. Current live
-      in-progress state reports **10 violations, 5 unconnected items**
-      (see `PLAN.md` Phase 24), so this checkout should not be submitted
-      to fabrication yet.
-- [ ] Verify the three custom footprints (XIAO, SIM7080G, Swarm M138)
-      against the vendor mechanical drawing one more time.
-- [ ] Verify the expansion port headers (J4 2×7 + J5 Qwiic) are placed
-      on the west edge with the keepout/silk arrow for pin 1 visible,
-      and that F1 + R24 silk references stay outside the pad areas.
-- [ ] Order the Drone v2 first as a proof-run, then Cell Master and Apex
-      from the same gerbers.
+      on your exact checkout reports **0 violations, 0 unconnected,
+      0 parity issues** (matches the committed snapshot in
+      `fab/README.md`).
+- [ ] Re-run `python3 tools/phase12_variants.py` after any schematic /
+      PCB edit so the `fab/` package stays in sync with the live design.
+- [ ] Re-verify the four custom footprints listed in `fab/README.md`
+      caveat 3 against the vendor mechanical drawing one more time.
+- [ ] Verify the expansion port headers (`J4` 2×7 + `J5` Qwiic) are
+      placed on the west edge with the keepout/silk arrow for pin 1
+      visible, and that `F1` + `R24` silk references stay outside the
+      pad areas.
+- [ ] Order the Drone tier first as a proof-run, then Cell Master and
+      Apex from the same gerbers (Apex needs a user-supplied external
+      Swarm M138 breakout — see `fab/README.md` caveat 1).
 - [ ] **Phase 19 tuning**: R20/R21/R22 values assume LiFePO4 3.6 V float
       and a 6 V (~5 V MPP) solar panel. If using a different chemistry
       or panel, re-tune per the BQ24650 datasheet:
       V_FLOAT = 2.1 * (1 + R20/R1) with R1 = 10 kΩ;
       V_IN(REG) = 5 * 2.1 * R2 / (R22 + R2) with R2 = 100 kΩ.
       No routing change required — only component value swaps.
-- [ ] TS pin (R3 + R21) biases charger to "room temp" with fixed
+- [ ] TS pin (R3 + R21) biases the charger to "room temp" with fixed
       resistors. Replace R3 (10 kΩ) with a 10 kΩ NTC thermistor in
       thermal contact with the battery pack to enable real
       over-temperature charge protection (optional).

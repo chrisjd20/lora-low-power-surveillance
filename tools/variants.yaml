@@ -32,8 +32,29 @@
 #
 # UART1 is currently a direct path on all tiers (`U1` <-> `IC1` on
 # `/UART1_TX` + `/UART1_RX`). The experimental translator chain refs
-# (`U7`, `C35`, `C36`, `R25`) were removed from the live schematic so the
+# (`U7`, `C35`, `C36`) were removed from the live schematic so the
 # generated BOM/POS outputs remain tier-consistent with the committed PCB.
+# R25/R26/R27/R28/Q4/Q5 remain on all tiers as a soft UART1-translator
+# sub-assembly; R25/R27 act as 1V8-side pull-ups when Q4/Q5 level-shift.
+#
+# Swarm M138 on-board integration (Phase 21, Apex):
+# The Swarm M138 satellite modem is a 51.0 x 30.0 x 5.3 mm mPCIe card and
+# does not fit the 125 x 125 mm carrier board once the XIAO (U1), LoRa
+# module (U2), SIM7080G (IC1), Nano-SIM holder (Card1), and charger
+# section are placed. The committed `warden_custom:Swarm_M138` land
+# pattern is a 42.5 x 19.6 mm stub footprint and cannot mate with the
+# actual mPCIe gold-finger edge connector.
+#
+# Resolution for v3: U3 + its two dedicated decouplers (C30, C31) are
+# DNP on every tier. The satellite option for the Apex tier is delivered
+# via an external Swarm M138 carrier board (e.g., SparkFun SPX-20107 or
+# equivalent mPCIe breakout) wired to the on-board SC16IS740 I2C-UART
+# bridge (U6) through the solder jumpers JP3/JP4 and the expansion
+# header, which already breaks out /UART2_TX, /UART2_RX,
+# /MODEM_VBAT_SW, and /GND. This keeps one universal PCB buildable as
+# all three tiers with only BOM/P&P differences and leaves the U3/C30/C31
+# pads in place as reserved positions for a future on-board integration
+# once a correctly-sized mPCIe-receptacle land pattern is available.
 
 drone:
   description: |
@@ -98,4 +119,18 @@ apex:
     Default solder-jumper config: JP1 OPEN (Q2 gates modem rail under firmware),
     JP2 CLOSED (SIM VCC connected), JP3 CLOSED (SC16→Swarm TX),
     JP4 CLOSED (Swarm→SC16 RX).
-  dnp: []
+
+    The Swarm M138 (U3) and its dedicated decouplers (C30, C31) are DNP on
+    every tier (including Apex) because the committed `warden_custom:Swarm_M138`
+    land pattern does not match the real 51.0 x 30.0 mm mPCIe module. The
+    on-board SC16IS740 I2C-UART bridge (U6), crystal (X1, C23, C24), U6
+    decouplers (C25, C26), and the Swarm UART jumpers (JP3/JP4) ARE populated
+    on Apex and expose the Swarm interface on the expansion header for an
+    external Swarm breakout daughterboard.
+  dnp:
+    # Satellite on-board integration deferred to external breakout; see
+    # top-of-file note. The SC16IS740 bridge and its support parts stay
+    # populated so the Swarm signals are available off-board.
+    - U3       # Swarm M138 (footprint placeholder, see header note)
+    - C30      # Swarm V_BAT HF decoupler (paired with U3)
+    - C31      # Swarm V_BAT bulk (paired with U3)

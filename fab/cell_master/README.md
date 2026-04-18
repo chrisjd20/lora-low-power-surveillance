@@ -1,6 +1,8 @@
 # Warden Cell Master (Tier 2 — LoRa + BLE/WiFi + Cellular)
 
-
+Tier 2. LoRa + BLE/WiFi + Cellular (SIM7080G). Town-wide gateway. ~$55.
+Default solder-jumper config: JP1 OPEN (firmware-gated modem rail),
+JP2 CLOSED (SIM VCC connected), JP3/JP4 OPEN (Swarm absent).
 
 ## Files
 

@@ -106,12 +106,16 @@ void setup() {
 
 ## DRC / validation
 
-- Historical Phase 18 result remains: expansion add-on itself landed
-  clean when introduced.
-- Current live-state validation (Phase 24 rework context, after zone
-  boundary refill):
-  - ERC (`--severity-error`): 0 errors
-  - DRC (`--severity-error`): 10 violations, 5 unconnected, 0 parity issues
+- Historical Phase 18 result remains: the expansion add-on itself
+  landed clean when introduced.
+- Current live-state validation (2026-04-18 fabrication-readiness
+  refresh):
+  - ERC (`--severity-error`) → 0 errors
+  - DRC (`--schematic-parity --severity-error`) → 0 violations,
+    0 unconnected, 0 parity issues
 - All three assembly tiers (`drone`, `cell_master`, `apex`) still
   populate `J4` / `J5` / `F1` / `R24` by default, so expansion I/O
-  availability per tier is unchanged.
+  availability per tier is unchanged. On the Apex tier, `/UART2_TX`,
+  `/UART2_RX`, and `/MODEM_VBAT_SW` on the expansion header are the
+  integration point for the external Swarm M138 mPCIe breakout (see
+  `fab/README.md` caveat 1 and `VARIANTS.md`).

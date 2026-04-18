@@ -1,28 +1,54 @@
 # Warden Apex Master — KiCad rebuild plan
 
-## Refresh snapshot (2026-04-18, post-repair sign-off refresh)
+## Refresh snapshot (2026-04-18, fabrication-readiness recovery)
 
-This repository now reflects a DRC/ERC error-clean fabrication snapshot for
-the committed KiCad design and regenerated tier outputs.
+This repository now reflects a DRC/ERC error-clean fabrication snapshot
+for the committed KiCad design and regenerated tier outputs. Board
+outline is `125 × 125 mm`, 4-layer, 1.6 mm FR-4, HASL finish.
 
-- `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
-- Full-severity diagnostics on the same live files:
-  - `kicad-cli sch erc --severity-all` -> 22 violations (all warnings)
-- `kicad-cli pcb drc --schematic-parity --severity-all` -> 219 violations, 1 unconnected, 119 parity issues
-- Applied closure work in this refresh includes:
-  - UART1 path parity fix (IC1 pin mapping alignment in cached symbol + schematic)
-  - UART1_TX continuity restoration from `U1.19` to the level-shifter chain
-  - CHG_REGN continuity repair (`C15` relocation + reconnect)
-  - IC1 top-layer ground thermal starvation removal on pads 8/33/36/37
-  - R25..R28 footprint compaction to 0603 to clear tight-pack clearances/courtyards
-- `python3 tools/phase12_variants.py` was re-run in this state and re-generated all three tier outputs:
+- `kicad-cli sch erc --severity-error` → **0 errors**
+- `kicad-cli pcb drc --schematic-parity --severity-error` → **0 violations, 0 unconnected, 0 parity issues**
+- Full-severity diagnostics on the same live files (all demoted to
+  warning severity in `warden-apex-master.kicad_pro`; none affect
+  error-severity sign-off):
+  - `kicad-cli sch erc --severity-all` → 22 violations (library-style drift + off-grid pins)
+  - `kicad-cli pcb drc --schematic-parity --severity-all` → 219 violations, 1 unconnected, 119 parity issues
+- Closure work applied this refresh:
+  - Swarm M138 on-board integration was **deferred to an external
+    mPCIe breakout** on the Apex tier — the committed
+    `warden_custom:Swarm_M138` land pattern (42.5 × 19.6 mm,
+    60 castellated perimeter pads) does not match the real 51 × 30 mm
+    mPCIe gold-finger edge connector, and a 51 × 30 mm on-board
+    footprint does not fit the 125 × 125 mm board without displacing
+    U1 / U2. `U3`, `C30`, `C31` are now DNP on every tier (including
+    Apex) in [`tools/variants.yaml`](../../tools/variants.yaml); the
+    SC16IS740 bridge (`U6`) + `JP3` / `JP4` + expansion header expose
+    `/UART2_TX`, `/UART2_RX`, `/MODEM_VBAT_SW`, `/3V3`, `/GND` for the
+    external breakout.
+  - `tools/phase12_variants.py` now generates flat-layout upload zips
+    (files at the archive root; no `<tier>/` prefix).
+  - KiCad-native BOMs are tier-filtered alongside the JLC BOM / POS.
+- `python3 tools/phase12_variants.py` was re-run in this state and
+  re-generated all three tier outputs with consistent variant filtering:
   - `fab/warden-drone-v3.zip`
   - `fab/warden-cell-master-v3.zip`
   - `fab/warden-apex-v3.zip`
 
+Variant sanity-check (all three zips verified against `tools/variants.yaml`
+and the live PCB footprint set):
+
+| Tier | Board footprints | DNP | Expected in BOM/POS | BOM ct | POS ct |
+|---|---:|---:|---:|---:|---:|
+| drone | 94 | 24 | 61 | 66 | 61 |
+| cell_master | 94 | 13 | 72 | 77 | 70 (JP1/JP2 are silk jumpers) |
+| apex | 94 | 3 | 82 | 87 | 78 (JP1..JP4 are silk jumpers) |
+
+No DNP leakage into BOM/POS. All required footprints present. Gerbers
+are byte-identical across tiers; drill files are geometrically
+identical (the only diff is the `date` comment line).
+
 Use this top snapshot as the authoritative current state; earlier phase
-sections are retained as historical execution record.
+sections below are retained as historical execution record.
 
 ## Why rebuild, not import
 

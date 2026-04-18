@@ -1,6 +1,9 @@
 # Warden Drone (Tier 1 — LoRa + BLE/WiFi)
 
-
+Tier 1. LoRa + BLE/WiFi only. Distributed sensor node. ~$35.
+No cellular, no satellite, no modem rail, no I2C-UART bridge.
+Default solder-jumper config: JP1 OPEN (no modem rail), JP2 OPEN
+(SIM holder disconnected), JP3 / JP4 irrelevant (both modems DNP).
 
 ## Files
 

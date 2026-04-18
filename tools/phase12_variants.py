@@ -31,29 +31,77 @@ FAB  = ROOT / "fab"
 
 
 def load_variants() -> dict:
-    """Hand-parse tools/variants.yaml (no yaml import dep)."""
+    """Hand-parse tools/variants.yaml (no yaml import dep).
+
+    Recognises:
+      <tier>:
+        description: |
+          multi-line text
+          more text
+        dnp:
+          - REF   # optional comment
+          - REF
+          - []   -> empty DNP list
+    """
     out = {}
     text = (ROOT / "tools/variants.yaml").read_text()
-    # Very simple parser: tier is top-level key (unindented), 'dnp:' sublist
     current: str | None = None
-    in_dnp = False
+    mode: str | None = None  # None | 'desc' | 'dnp'
+    desc_lines: list[str] = []
     for raw in text.splitlines():
-        if not raw.strip() or raw.lstrip().startswith("#"):
+        stripped = raw.strip()
+        # Skip pure-comment lines but keep blank lines inside description blocks
+        if stripped.startswith("#"):
             continue
+        if not stripped and mode != "desc":
+            continue
+        # Top-level tier key: unindented identifier ending with ':'
         if raw[:1].isalpha() and raw.rstrip().endswith(":"):
+            if current is not None and mode == "desc":
+                out[current]["description"] = "\n".join(desc_lines).rstrip()
             current = raw.split(":", 1)[0].strip()
             out[current] = {"dnp": [], "description": ""}
-            in_dnp = False
-        elif raw.strip().startswith("dnp:"):
-            in_dnp = True
-        elif raw.strip().startswith("description:"):
-            in_dnp = False
-        elif in_dnp and raw.strip().startswith("-"):
-            ref = raw.strip().lstrip("- ").split("#")[0].strip()
-            if ref:
-                out[current]["dnp"].append(ref)
-        elif in_dnp and not raw.strip().startswith("-"):
-            in_dnp = False
+            mode = None
+            desc_lines = []
+            continue
+        if current is None:
+            continue
+        # Start of 'description:' block
+        if re.match(r"^\s{2}description:\s*\|", raw):
+            if mode == "desc":
+                out[current]["description"] = "\n".join(desc_lines).rstrip()
+            mode = "desc"
+            desc_lines = []
+            continue
+        # Start of 'dnp:' list (possibly empty via '[]')
+        m_dnp = re.match(r"^\s{2}dnp:\s*(\[\])?\s*$", raw)
+        if m_dnp:
+            if mode == "desc":
+                out[current]["description"] = "\n".join(desc_lines).rstrip()
+            mode = "dnp"
+            desc_lines = []
+            continue
+        if mode == "desc":
+            # Any line indented 4+ spaces belongs to the description
+            if raw.startswith("    ") or not stripped:
+                desc_lines.append(raw[4:] if raw.startswith("    ") else "")
+                continue
+            # Otherwise fall through: close the description block
+            out[current]["description"] = "\n".join(desc_lines).rstrip()
+            mode = None
+            desc_lines = []
+        if mode == "dnp":
+            m = re.match(r"^\s{4}-\s+([A-Za-z0-9_]+)", raw)
+            if m:
+                out[current]["dnp"].append(m.group(1))
+                continue
+            # Lines that are 4-space-indented comments stay in-block
+            if raw.startswith("    #"):
+                continue
+            # Non-list line -> end of dnp block
+            mode = None
+    if current is not None and mode == "desc":
+        out[current]["description"] = "\n".join(desc_lines).rstrip()
     return out
 
 
@@ -241,11 +289,13 @@ def build_tier(tier: str, dnp: list[str], description: str,
     )
 
     # ---- Zip ----
+    # Flat layout: paths are relative to the tier directory so uploaders see
+    # `gerbers/`, `warden-apex-master-bom-jlc.csv`, etc. at the archive root.
     zip_path = FAB / f"warden-{tier.replace('_', '-')}-v3.zip"
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
-        for p in tier_dir.rglob("*"):
+        for p in sorted(tier_dir.rglob("*")):
             if p.is_file():
-                z.write(p, arcname=str(p.relative_to(FAB)))
+                z.write(p, arcname=str(p.relative_to(tier_dir)))
     print(f"  [ok] {tier}: {zip_path.name} ({zip_path.stat().st_size // 1024} KB)")
 
 
