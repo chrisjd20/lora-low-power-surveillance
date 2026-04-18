@@ -60,7 +60,7 @@ def load_variants() -> dict:
 def parse_netlist_bom() -> list[dict]:
     """Return list of {ref, value, footprint, mpn, lcsc, descr} from the
     schematic netlist export."""
-    # Export netlist in KiCad Sexpr form
+    (ROOT / "build").mkdir(exist_ok=True)
     subprocess.run(
         ["kicad-cli", "sch", "export", "netlist",
          "--format", "kicadsexpr",

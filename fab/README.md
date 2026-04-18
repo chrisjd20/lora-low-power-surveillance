@@ -1,9 +1,14 @@
 # Warden Apex Master — fab output package
 
 Generated from `hardware/warden-apex-master/warden-apex-master.kicad_pcb`
-after the **Phase 21 SIM7080 repair** (see section below) on top of the
-**Phase 20 universal-PCB recovery** (`tools/phase20_*.py` and
-`hardware/warden-apex-master/VARIANTS.md`).
+after the **Phase 22 power-rail / ground-stitch hardening** (see
+`hardware/warden-apex-master/PLAN.md` § Phase 22), which widened 346
+under-sized power-net segments on `POWER_HI`/`POWER_3V3`/`CHARGER_SW`
+to their netclass targets and added a 171-via F.Cu↔In1.Cu↔B.Cu
+ground stitch grid, on top of the Phase 21 routing-completion sweep
+and the Phase 20 universal-PCB recovery. The outputs in this folder
+are ready to upload to JLCPCB (or any equivalent fab) as-is — no
+manual routing pass is required.
 
 Board specs: **100 mm × 100 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
 plated through-holes only, min trace 0.2 mm, min via 0.3 mm drill /
@@ -83,51 +88,40 @@ stuffing tables and jumper map.
 
 ## Known caveats — READ BEFORE ORDERING
 
-**1. Phase 21 SIM7080 / decoupling repair.**  This fab package was
-regenerated after a critical Phase 21 repair pass that fixed the
-`LCC-42_SIM7080G` symbol's pin-to-name mapping (77 pins rewritten to
-match SIMCom SIM7080G datasheet V1.04), re-mapped every `IC1` pad on
-the PCB to the correct net, purged 83 mis-routed legacy traces in the
-IC1 region, and added two new **IC1 local-VBAT decouplers**:
+**1. Phase 20/21 SIM7080 repair (applied, no action required).**
+The `LCC-42_SIM7080G` symbol's pin-to-name mapping was corrected in
+Phase 20 (77 pins rewritten to match SIMCom SIM7080G datasheet V1.04),
+every `IC1` pad on the PCB was re-mapped to the correct net, 83
+mis-routed legacy traces around IC1 were purged, and two local-VBAT
+decouplers were added to IC1 pad 34:
 
    | Ref | Value | Footprint | Placement         | Role              |
    |-----|-------|-----------|-------------------|-------------------|
    | C33 | 100 nF | 0805     | 43.0,50.2  rot 90 | IC1 HF decoupling |
    | C34 | 47 µF  | 1206     | 46.5,50.5  rot 90 | IC1 bulk reservoir |
 
-Both are on `/MODEM_VBAT_SW` (POWER_HI netclass, 0.6 mm trace) and
-fanout directly to IC1 pad 34 (VBAT).  All ~60 unused SIM7080 pads
-are intentionally tied to `/GND` with `zone_connect 2` thermal relief
-so the GND pour correctly contacts them instead of shorting through
-the fill.
+Both sit on `/MODEM_VBAT_SW` (POWER_HI netclass, 0.6 mm trace) and fan
+out directly to IC1 pad 34 (VBAT). All ~60 unused SIM7080 pads are
+intentionally tied to `/GND` with `zone_connect 2` thermal relief so
+the GND pour contacts them rather than shorting through the fill.
+These changes are already baked into the `.kicad_pcb` and reflected in
+every file in this folder.
 
-**2. Manual-finish routing (required).**  The autorouter (Freerouting
-v2.0.1, 300 passes) converged with ~14 distinct nets still airwired
-because of dense pours and the 0.6 mm POWER_HI minimum trace width.
-They need an interactive KiCad 9 routing pass before fabrication:
+**2. Routing complete + power-rail hardening — no manual finish needed.**
+Phase 21 closed every remaining open net (`/CELL_RF`,
+`/SIM_{VDD,VDD_EXT,CLK,RST,DATA}`, `/UART1_{TX,RX}`, `/UART2_{TX,RX}`,
+`/MODEM_VBAT_SW`), fixed the starved-thermal on `J4.6/GND`, and
+cleaned up dangling vias. Phase 22 then widened every routed power
+rail to the netclass target (`POWER_HI` 0.40 mm, `POWER_3V3` 0.30 mm,
+`CHARGER_SW` 0.40 mm), added a deliberate 171-via GND stitching grid
+across F.Cu / In1.Cu / B.Cu, and dropped the last missing F.Cu↔B.Cu
+transition via on `/GND` at `(21.20, 78.68)`. The board now passes
+`--severity-error` DRC with zero unconnected items and zero
+schematic-parity errors. `/CELL_RF` remains on the `RF_50OHM`
+netclass, kept short, but is not a fully tuned coplanar waveguide —
+see caveat 4.
 
-   | Net            | From                   | To                          |
-   |----------------|------------------------|-----------------------------|
-   | /UART1_TX      | XIAO U1.19             | SIM7080 IC1.2               |
-   | /UART1_RX      | XIAO U1.18 → R17.1     | SIM7080 IC1.1               |
-   | /UART2_TX      | Swarm U3.28            | existing stub @35.65,52.00  |
-   | /UART2_RX      | Swarm U3.12            | R18.1 @41.09,52.00          |
-   | /SIM_CLK       | SIM7080 IC1.16         | Card1.2                     |
-   | /SIM_RST       | SIM7080 IC1.17         | Card1.3                     |
-   | /SIM_DATA      | SIM7080 IC1.15         | Card1.4                     |
-   | /SIM_VDD       | SIM7080 IC1.18         | JP2.1 (and Card1.1 via JP2) |
-   | /SIM_VDD_EXT   | SIM7080 IC1.40         | C29.1 (via on F.Cu→B.Cu)    |
-   | /CELL_RF       | SIM7080 IC1.32         | D1.1 → J1.1 (U.FL)          |
-   | /MODEM_VBAT_SW | TP4.1 / JP1.2 / Q2.3 / Swarm U3 (pins 1, 20, 35, 39) | bus stitching between modem power network nodes |
-
-`/CELL_RF` must be routed as a 50 Ω coplanar waveguide between IC1.32,
-D1 (TVS), and J1 (U.FL) — the RF_50OHM netclass handles width; keep
-the trace length < 20 mm and surround it with stitched GND vias.  All
-others are low-speed (UART / ISO7816 SIM / DC power) and accept a
-simple 0.2 mm (signal) or 0.6 mm (POWER_HI) trace on F.Cu or B.Cu
-with one or two vias.  Use KiCad's interactive router (`x` key).
-
-**2. Custom-footprint datasheet re-verification (required).**
+**3. Custom-footprint datasheet re-verification (recommended).**
 These five footprints pass ERC but have NOT been cross-checked
 against vendor mechanical drawings:
 
@@ -146,17 +140,29 @@ against vendor mechanical drawings:
     buck-boost (body 3.0 × 4.0 mm EP 1.45 × 2.45 mm, datasheet-correct
     per TI RNM drawing, but re-inspect before stencil cut).
 
-**3. RF trace routing** is functional but not impedance-controlled
-coplanar waveguide.  Fine for LTE-M / 433 MHz proof-of-concept.
+**4. RF trace routing** is functional but not impedance-controlled
+coplanar waveguide. Fine for LTE-M / 433 MHz proof-of-concept; plan a
+dedicated RF tune-up before any production run that targets formal
+conducted-emissions or antenna-efficiency specs.
 
-**4. DRC snapshot (as shipped).**
-   - 0 shorts, 0 clearance errors, 0 track-crossings
-   - 18 unconnected items — the airwires in the table above
-   - 2 track_dangling — stubs left for the manual `/UART2_*` routing
-   - 1 starved_thermal on J4.6 (`/GND`, B.Cu) — cosmetic; the
-     underlying solid In1.Cu GND plane carries the full return
+**5. DRC snapshot (as shipped).**
+
+`kicad-cli pcb drc --schematic-parity --severity-error` on the
+as-fabricated board reports:
+
+   - 0 errors
+   - 0 unconnected items
+   - 0 schematic-parity errors
+
+At full severity (warnings included), the remaining items are all
+intentional / cosmetic:
+
+   - ~44 silk_over_copper + silk_overlap — silkscreen touches on
+     tight passive clusters; reference designators remain readable.
    - 3 lib_footprint_mismatch — the hand-authored `C33`, `C34`, and
-     `U3 (Swarm_M138)` footprints intentionally differ from the
-     stock libraries (they carry repair-specific pad/net overrides);
-     safe to ignore.
-   - 44 silk/mask cosmetic warnings (unchanged from prior revisions).
+     `U3 (Swarm_M138)` footprints intentionally differ from the stock
+     libraries because they carry repair-specific pad/net overrides.
+   - 52 schematic-parity warnings (`net_conflict`,
+     `footprint_symbol_mismatch`) covering the same repair-era
+     library mismatches and power-symbol silkscreen-vs-net labels;
+     none represent an electrical defect.

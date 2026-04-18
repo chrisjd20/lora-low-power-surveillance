@@ -18,3 +18,5 @@ __pycache__/
 
 ## Scratch
 /tmp/
+build/
+prompt*.txt

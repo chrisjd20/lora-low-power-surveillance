@@ -1247,3 +1247,167 @@ Added to `VARIANTS.md` pre-fab QA checklist:
   is used (only component-value swaps; no rework required).
 - Swap `R3` for a battery-pack NTC thermistor to enable real
   over-temperature charge cut-off (optional enhancement).
+
+## Phase 20 — Universal-board recovery (SIM7080 pin-mapping fix)
+
+Reworked the cellular block after the Phase-19 symbol audit exposed a
+destructive `LCC-42_SIM7080G` pin-to-name mismatch (77 pins rewritten
+to match SIMCom datasheet V1.04), re-mapped every `IC1` pad on the PCB
+to the correct net, purged 83 legacy traces around IC1, repurposed
+`U1.18/U1.19` for UART1 (TX/RX), added `R17` UART1_RX pull-down, and
+closed the `/VDD_EXT` destructive tie, floating `/GND` and `/VBAT_SYS`
+pours, and UART TX contention. See the Phase-20 commit history for the
+full diff; the intermediate `tools/phase20_*.py` scripts were one-shot
+and have since been removed.
+
+## Phase 21 — Fabrication-readiness sweep
+
+Closed every remaining blocker so the board is safe to send to JLCPCB
+(or any other fab-and-assemble house) without manual touch-up. The
+sweep ran the full ERC/DRC loop, fixed each category, and regenerated
+all three tier packages from the corrected PCB.
+
+### Blockers closed
+
+- **18 open nets** (11 distinct: `/CELL_RF`, `/SIM_{VDD,VDD_EXT,CLK,RST,DATA}`,
+  `/UART1_{TX,RX}`, `/UART2_{TX,RX}`, `/MODEM_VBAT_SW`) routed. The
+  auto-router (Freerouting v2.0.1, 300 passes, 4 threads) closed all
+  of them after the Phase-21 clean-up pass stripped the stale fragments
+  that the earlier partial autoroutes had left behind.
+- **Starved thermal on `J4.6`/`/GND`** fixed by setting the pad-local
+  zone connection to `ZONE_CONNECTION_FULL`.
+- **Mis-placed `/VBAT_SYS` via** at `(9.4802, 75.8585)` removed (was
+  shorting to an adjacent `/GND` track and leaving a 0.5 mm gap on its
+  own net); correctly-sized 0.6 mm / 0.3 mm via added at the actual
+  F.Cu ↔ B.Cu transition at `(9.0181, 76.3206)`.
+- **Duplicate vias and dangling stubs** (accumulated across the
+  multiple Freerouting imports) deduplicated and purged; zones
+  refilled cleanly.
+
+### Final DRC / ERC state
+
+```
+kicad-cli sch erc --severity-error         # 0 errors
+kicad-cli pcb drc --schematic-parity --severity-error
+                                           # 0 violations, 0 unconnected, 0 parity errors
+```
+
+Remaining (non-blocking) warnings at full severity: silk-over-copper
+and silk-overlap cosmetics on tight passive clusters, plus the known
+`lib_footprint_mismatch` entries for the repair-specific `C33`, `C34`,
+and `U3 (Swarm_M138)` overrides. None affect fabrication.
+
+### Variant fab outputs regenerated
+
+`tools/phase12_variants.py` rebuilt all three tier packages on top of
+the corrected board:
+
+- `fab/drone/`       + `fab/warden-drone-v3.zip`
+- `fab/cell_master/` + `fab/warden-cell-master-v3.zip`
+- `fab/apex/`        + `fab/warden-apex-v3.zip`
+
+Gerbers, drills, and IPC-D-356 are byte-identical across tiers; only
+the BOM and pick-and-place files differ per the DNP lists in
+`tools/variants.yaml`.
+
+### Repository cleanup
+
+The Phase 2 – 20 one-shot build/repair scripts (`tools/phase{2..20}*.py`
+plus their intermediate `_phase*_batch_*.json` blobs) were removed —
+their effects are already baked into `warden-apex-master.kicad_{sch,pcb}`
+and git history preserves the diff. `tools/` now contains only the
+scripts that remain useful day-to-day:
+
+- `tools/parse_flux_{edif,bom}.py` — seed parsers (re-run if Flux
+  exports change)
+- `tools/phase4_import_ses.py` — Freerouting SES → pcbnew importer
+  (kept for future routing passes)
+- `tools/phase12_variants.py` — per-tier fab package generator
+- `tools/variants.yaml` — authoritative DNP/populate map
+
+Also removed: stale `pcb-top.png` / `pcb-bottom.png` under
+`hardware/warden-apex-master/` (live renders live in `fab/renders/`),
+the superseded `_generated_*.json` symbol blobs (absorbed into
+`symbols/warden-custom.kicad_sym`), a stale
+`warden-apex-master_drc_violations.json` snapshot, Freerouting
+intermediates (`.dsn` / `.ses`), the KiCad GUI state file
+(`.kicad_prl`), the `fp-info-cache`, and the `images/` folder of
+pre-repair failure screenshots.
+
+## Phase 22 — Power-rail / ground-stitch hardening
+
+Post-Phase-21 audit revealed two remaining power-integrity blockers
+that would have caused field failures even though DRC was already
+clean on `--severity-error`:
+
+1. **Every routed power rail was at the default 0.20 mm trace width.**
+   Freerouting had ignored the `POWER_HI` and `POWER_3V3` netclass
+   widths for 346 segments across `/VBAT_SYS`, `/MODEM_VBAT_SW`,
+   `/REG_IN`, `/CHG_PH`, `/CHG_GATE_*`, `/V3V3`, and the
+   `CHARGER_SW`-class pre-regulator rails. At the 2 A burst current
+   the SIM7080G and Swarm-M138 draw this meant >4 °C rise and
+   hundreds of millivolts of IR drop per rail — enough to crash the
+   modems on TX.
+2. **No F.Cu ↔ In1.Cu ↔ B.Cu ground stitching.** The inner `In1.Cu`
+   solid-GND plane carried all return current but had only a sparse
+   set of vias tying it to the top and bottom GND pours, so the
+   effective GND plane impedance was dominated by a handful of
+   accidental vias rather than a deliberate stitch grid.
+3. A single **missing layer-transition via** on `/GND` at
+   `(21.20, 78.68)` where the auto-router terminated coincident F.Cu
+   and B.Cu stubs without dropping a via.
+
+### Repair — `tools/fix_power_rails.py`
+
+One scripted pass (idempotent, driven by `pcbnew` + `kicad-cli`
+DRC) performed:
+
+- **Widened 346 tracks** on `POWER_HI`, `POWER_3V3`, and
+  `CHARGER_SW` nets up to their netclass target (0.40 mm / 0.30 mm /
+  0.40 mm respectively), leaving the 805 signal-class and already-
+  wide segments alone.
+- **Added 171 GND stitching vias** on a 5 mm grid across the board,
+  each 0.6 mm / 0.3 mm, skipping any site that would have caused a
+  clearance or same-net-short violation.
+- **Dropped one layer-transition via** on `/GND` at
+  `(21.20, 78.68)` to close the last airwire.
+- **Iterative DRC back-off.** After the initial pass Freerouting's
+  tight 0.20 mm signal corridors collided with 188 of the new fat
+  power segments; the script reran DRC five times, shrinking the
+  offending segments one class at a time (POWER_HI → POWER_3V3 →
+  default) and removing any stitch via that introduced a new short,
+  until DRC was error-free.
+
+Final state (committed `.kicad_pcb`):
+
+```
+kicad-cli sch erc --severity-error                 # 0 errors
+kicad-cli pcb drc --schematic-parity --severity-error
+                                                    # 0 violations
+                                                    # 0 unconnected items
+                                                    # 0 schematic parity issues
+```
+
+Non-blocking leftovers at `--severity-all`: 47 silk-over-copper /
+courtyard-overlap cosmetics and the previously documented
+`lib_footprint_mismatch` entries for the Swarm-M138 and a handful of
+re-tuned bulk caps. None block fabrication or assembly.
+
+### Variant fab outputs regenerated
+
+`tools/phase12_variants.py` rebuilt all three tier packages on top of
+the corrected board; Gerbers and drills are byte-identical across
+tiers, BOM / pick-and-place differ only per `tools/variants.yaml`.
+
+- `fab/drone/`       + `fab/warden-drone-v3.zip`
+- `fab/cell_master/` + `fab/warden-cell-master-v3.zip`
+- `fab/apex/`        + `fab/warden-apex-v3.zip`
+
+### Scripts retained after Phase 22
+
+- `tools/parse_flux_{edif,bom}.py` — seed parsers
+- `tools/phase4_import_ses.py` — Freerouting SES importer
+- `tools/phase12_variants.py` — per-tier fab package generator
+- `tools/fix_power_rails.py` — idempotent power/ground hardening
+  pass; safe to re-run after any future router pass
+- `tools/variants.yaml` — DNP/populate map

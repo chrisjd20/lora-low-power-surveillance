@@ -153,7 +153,7 @@ ESP_LOGI("boot", "Warden Tier: %s", tier);
 ## JLCPCB upload instructions (per tier)
 
 1. **Gerbers** (same for all tiers): upload `fab/<tier>/gerbers/` zipped,
-   or use `fab/warden-<tier>-v2.zip`.
+   or use `fab/warden-<tier>-v3.zip`.
 2. **SMT assembly** for that tier:
    - P&P: `warden-apex-master-pos-jlc.csv`
    - BOM: `warden-apex-master-bom-jlc.csv`
@@ -167,23 +167,19 @@ Before hitting the JLCPCB "Submit" button:
 
 - [ ] Open the `.kicad_pcb` in KiCad 9 GUI. Edit → Fill All Zones.
 - [ ] Verify rendered top/bottom images look clean (no silk on pads, no
-      exposed unrouted copper).
+      exposed unrouted copper). Current reference renders live in
+      `fab/renders/pcb-top.png` / `pcb-bottom.png`.
 - [ ] Confirm `kicad-cli pcb drc --schematic-parity --severity-error`
-      reports **0 violations, 0 unconnected pads, 0 footprint errors**
-      (Phase 18 closed the prior IC3 pad-3 pinch via
-      `phase18_finalize.py:assign_ep_gnd` + `stamp_bridges`; Phase 20
-      closed the destructive `VDD_EXT` tie, floating GND/VBAT pours,
-      and UART TX contention - see `tools/phase20_*`).
-- [ ] **Phase 20 manual-finish routing**: open the PCB in KiCad 9 and
-      interactively route the five signal nets the Phase 20 scripts
-      deliberately left unrouted, then re-run DRC:
-      - `/UART1_TX` : XIAO U1.19 → SIM7080 IC1.34
-      - `/UART1_RX` : XIAO U1.18 → R17.1 → SIM7080 IC1.40
-      - `/UART2_TX` : R19.1 → Swarm U3.28 (extends the existing stub)
-      - `/UART2_RX` : R18.1 → Swarm U3.12 (extends the existing stub)
-      All five are low-speed UART signals; 0.20 mm trace on F.Cu or
-      B.Cu with one or two vias is sufficient. No impedance control
-      required.
+      reports **0 violations, 0 unconnected pads, 0 footprint errors**.
+      The Phase 21 fabrication-readiness sweep closed every remaining
+      open net (`/CELL_RF`, `/SIM_*`, `/UART1_*`, `/UART2_*`,
+      `/MODEM_VBAT_SW`), the starved-thermal on `J4.6/GND`, and the
+      mis-placed `/VBAT_SYS` via; Phase 22 then widened 346 power-rail
+      segments to their `POWER_HI`/`POWER_3V3`/`CHARGER_SW` netclass
+      targets and added a 171-via F.Cu↔In1.Cu↔B.Cu ground-stitch grid.
+      No manual routing is required before fab. Full-severity DRC
+      still emits cosmetic silk-overlap and `lib_footprint_mismatch`
+      warnings on `C33`/`C34`/`U3`; these are intentional and safe.
 - [ ] Verify the three custom footprints (XIAO, SIM7080G, Swarm M138)
       against the vendor mechanical drawing one more time.
 - [ ] Verify the expansion port headers (J4 2×7 + J5 Qwiic) are placed
