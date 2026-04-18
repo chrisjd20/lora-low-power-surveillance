@@ -1,0 +1,70 @@
+** Drc report for warden-apex-master.kicad_pcb **
+** Created on 2026-04-18T15:37:36-0400 **
+
+** Found 10 DRC violations **
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)
+    Rule: netclass 'Default'; error
+    @(70.9125 mm, 80.0000 mm): Pad 2 [/VDD_EXT] of R25 on F.Cu
+    @(72.0875 mm, 80.0000 mm): Pad 1 [/UART1_TX] of R26 on F.Cu
+[clearance]: Clearance violation (netclass 'POWER_3V3' clearance 0.2000 mm; actual 0.1500 mm)
+    Rule: netclass 'POWER_3V3'; error
+    @(73.9125 mm, 80.0000 mm): Pad 2 [/3V3] of R26 on F.Cu
+    @(75.0875 mm, 80.0000 mm): Pad 1 [/UART1_RX_1V8] of R27 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm)
+    Rule: netclass 'Default'; error
+    @(78.0875 mm, 80.0000 mm): Pad 1 [/UART1_RX] of R28 on F.Cu
+    @(76.9125 mm, 80.0000 mm): Pad 2 [/VDD_EXT] of R27 on F.Cu
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(70.0000 mm, 80.0000 mm): Footprint R25
+    @(73.0000 mm, 80.0000 mm): Footprint R26
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(73.0000 mm, 80.0000 mm): Footprint R26
+    @(76.0000 mm, 80.0000 mm): Footprint R27
+[courtyards_overlap]: Courtyards overlap
+    Rule: board setup constraints courtyard; error
+    @(79.0000 mm, 80.0000 mm): Footprint R28
+    @(76.0000 mm, 80.0000 mm): Footprint R27
+[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
+    Local override; error
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+    @(51.1000 mm, 32.7000 mm): Pad 8 [/GND] of IC1 on F.Cu
+[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
+    Local override; error
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+    @(45.6000 mm, 47.3000 mm): Pad 33 [/GND] of IC1 on F.Cu
+[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
+    Local override; error
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+    @(42.2000 mm, 43.3000 mm): Pad 36 [/GND] of IC1 on F.Cu
+[starved_thermal]: Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)
+    Local override; error
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+    @(42.2000 mm, 42.2000 mm): Pad 37 [/GND] of IC1 on F.Cu
+
+** Found 5 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on B.Cu, priority 0
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(21.2037 mm, 79.5174 mm): Track [/GND] on F.Cu, length 0.8353 mm
+    @(21.2037 mm, 78.6821 mm): Track [/GND] on B.Cu, length 4.0629 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+    @(-14.5000 mm, -4.5000 mm): Zone [/GND] on F.Cu, priority 0
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(14.0000 mm, 83.9500 mm): Pad 1 [/CHG_REGN] of C15 on F.Cu
+    @(20.4375 mm, 79.2500 mm): Track [/CHG_REGN] on F.Cu, length 0.6749 mm
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(70.9375 mm, 75.0000 mm): Track [/UART1_TX] on F.Cu, length 1.6263 mm
+    @(17.5000 mm, 11.5000 mm): Pad 19 [/UART1_TX] of U1 on F.Cu
+
+** Found 0 Footprint errors **
+
+** End of Report **

@@ -1,24 +1,26 @@
 # Warden Apex Master — fab output package
 
 Generated from `hardware/warden-apex-master/warden-apex-master.kicad_pcb`
-after the **Phase 22 power-rail / ground-stitch hardening** (see
-`hardware/warden-apex-master/PLAN.md` § Phase 22), which widened 346
-under-sized power-net segments on `POWER_HI`/`POWER_3V3`/`CHARGER_SW`
-to their netclass targets and added a 171-via F.Cu↔In1.Cu↔B.Cu
-ground stitch grid, on top of the Phase 21 routing-completion sweep
-and the Phase 20 universal-PCB recovery. The outputs in this folder
-are ready to upload to JLCPCB (or any equivalent fab) as-is — no
-manual routing pass is required.
+in the current **Phase 24 live rework state** (see
+`hardware/warden-apex-master/PLAN.md` § Phase 24). These outputs are
+useful for review, bring-up debugging, and diffing fab artefacts across
+changes, but this snapshot is **not yet release/fab sign-off clean**.
 
-Refresh snapshot (2026-04-18):
+Refresh snapshot (2026-04-18, current live state):
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 10 violations, 5 unconnected, 0 parity issues
+- `kicad-cli sch erc --severity-all` -> 22 warnings
+- `kicad-cli pcb drc --schematic-parity --severity-all` -> 232 violations, 5 unconnected, 121 parity issues
 - Re-generated: `fab/warden-drone-v3.zip`, `fab/warden-cell-master-v3.zip`, `fab/warden-apex-v3.zip`
-- UART1 is committed as a direct path (`/UART1_TX`, `/UART1_RX`) between `U1`
-  and `IC1` on all tiers; per-tier BOM/POS outputs are internally consistent.
+- UART/cellular block is under active level-shift + control-path rework
+  in this snapshot; do not treat these packages as production release
+  artefacts until DRC is restored to error-clean.
+- Board envelope is now `125 x 125 mm` (expanded by +15 mm left, +10 mm
+  right, +5 mm top, +20 mm bottom) and `MH1..MH4` were moved to the new
+  corners with the same 3.5 mm edge inset.
 
-Board specs: **100 mm × 100 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
+Board specs: **125 mm × 125 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
 plated through-holes only, min trace 0.2 mm, min via 0.3 mm drill /
 0.6 mm diameter.  Stackup assumed: F.Cu / In1.Cu (GND plane) /
 In2.Cu (VBAT_SYS plane) / B.Cu.
@@ -66,6 +68,10 @@ stuffing tables and jumper map.
 
 ## JLCPCB upload checklist
 
+Current note: this checklist is retained for workflow continuity, but
+the present Phase 24 snapshot should not be submitted for production
+until the error-level DRC blockers are cleared.
+
 1. **PCB manufacturing** — upload the relevant `<tier>-v3.zip` (or the
    `<tier>/gerbers/` directory zipped up). JLCPCB auto-detects a
    4-layer board from `*-F_Cu.gbr / *-GND.gbr / *-PWR.gbr /
@@ -105,10 +111,10 @@ every `IC1` pad on the PCB was re-mapped to the correct net, 83
 mis-routed legacy traces around IC1 were purged, and two local-VBAT
 decouplers were added to IC1 pad 34:
 
-   | Ref | Value | Footprint | Placement         | Role              |
-   |-----|-------|-----------|-------------------|-------------------|
-   | C33 | 100 nF | 0805     | 43.0,50.2  rot 90 | IC1 HF decoupling |
-   | C34 | 47 µF  | 1206     | 46.5,50.5  rot 90 | IC1 bulk reservoir |
+   | Ref | Value (live) | Footprint | Placement         | Role              |
+   |-----|--------------|-----------|-------------------|-------------------|
+   | C33 | 100 nF       | 0805      | 43.0,50.2  rot 90 | IC1 HF decoupling |
+   | C34 | bulk cap (see BOM) | 1206 | 46.5,50.5  rot 90 | IC1 local reservoir |
 
 Both sit on `/MODEM_VBAT_SW` (POWER_HI netclass, 0.6 mm trace) and fan
 out directly to IC1 pad 34 (VBAT). All ~60 unused SIM7080 pads are
@@ -117,19 +123,13 @@ the GND pour contacts them rather than shorting through the fill.
 These changes are already baked into the `.kicad_pcb` and reflected in
 every file in this folder.
 
-**2. Routing complete + power-rail hardening — no manual finish needed.**
-Phase 21 closed every remaining open net (`/CELL_RF`,
-`/SIM_{VDD,VDD_EXT,CLK,RST,DATA}`, `/UART1_{TX,RX}`, `/UART2_{TX,RX}`,
-`/MODEM_VBAT_SW`), fixed the starved-thermal on `J4.6/GND`, and
-cleaned up dangling vias. Phase 22 then widened every routed power
-rail to the netclass target (`POWER_HI` 0.40 mm, `POWER_3V3` 0.30 mm,
-`CHARGER_SW` 0.40 mm), added a deliberate 171-via GND stitching grid
-across F.Cu / In1.Cu / B.Cu, and dropped the last missing F.Cu↔B.Cu
-transition via on `/GND` at `(21.20, 78.68)`. The board now passes
-`--severity-error` DRC with zero unconnected items and zero
-schematic-parity errors. `/CELL_RF` remains on the `RF_50OHM`
-netclass, kept short, but is not a fully tuned coplanar waveguide —
-see caveat 4.
+**2. Routing hardening history + current status.**
+Phase 21/22 closed major historical routing and power-integrity
+blockers (open nets, power-rail width compliance, GND stitch density),
+but the current Phase 24 live edits re-opened error-level PCB issues.
+At this snapshot, `--severity-error` DRC is **not clean** (10
+violations, 5 unconnected), so further cleanup is required before
+production fab submit.
 
 **3. Custom-footprint datasheet re-verification (recommended).**
 These five footprints pass ERC but have NOT been cross-checked
@@ -155,22 +155,20 @@ coplanar waveguide. Fine for LTE-M / 433 MHz proof-of-concept; plan a
 dedicated RF tune-up before any production run that targets formal
 conducted-emissions or antenna-efficiency specs.
 
-**5. DRC snapshot (as shipped).**
+**5. DRC snapshot (current live state).**
 
 `kicad-cli pcb drc --schematic-parity --severity-error` on the
-as-fabricated board reports:
+current live board reports:
 
-   - 0 errors
-   - 0 unconnected items
+   - 10 violations
+   - 5 unconnected items
    - 0 schematic-parity errors
 
-At full severity (warnings included), the remaining items are all
-intentional / cosmetic:
+At full severity (`--severity-all`):
 
-   - ~44 silk_over_copper + silk_overlap — silkscreen touches on
-     tight passive clusters; reference designators remain readable.
-   - 3 lib_footprint_mismatch — the hand-authored `C33`, `C34`, and
-     `U3 (Swarm_M138)` footprints intentionally differ from the stock
-     libraries because they carry repair-specific pad/net overrides.
-   - 0 schematic-parity warnings (follow-on parity cleanup aligned the
-     remaining SIM7080 and footprint-ID mismatches).
+   - 232 violations
+   - 5 unconnected items
+   - 121 schematic-parity issues
+
+These are not publish-ready cosmetic-only leftovers; treat this as an
+engineering rework snapshot.

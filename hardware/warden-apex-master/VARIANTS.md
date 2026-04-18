@@ -14,13 +14,18 @@ All three tiers use the same PCB — identical gerbers, drill, IPC-D-356.
 Only the BOM and pick-and-place file differ. See [`tools/variants.yaml`](../../tools/variants.yaml)
 for the authoritative DNP lists.
 
-Latest validation refresh (2026-04-18):
+Latest validation refresh (2026-04-18, live in-progress state):
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
-- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 10 violations, 5 unconnected, 0 parity issues
+- `kicad-cli sch erc --severity-all` -> 22 warnings
+- `kicad-cli pcb drc --schematic-parity --severity-all` -> 232 violations, 5 unconnected, 121 parity issues
 - `python3 tools/phase12_variants.py` re-generated all `v3` tier packages under `fab/`
 - KiCad-native BOMs are now tier-filtered too (`fab/<tier>/warden-apex-master-bom-kicad.csv`)
-- UART1 is currently a direct `U1 <-> IC1` path on all tiers (`/UART1_TX`, `/UART1_RX`)
+- UART1 is currently under active rework toward a level-shifted path (`Q4/Q5/R25..R28`) and should be treated as non-final
+- Board outline is now `125 x 125 mm` (asymmetric growth:
+  +15 left, +10 right, +5 top, +20 bottom) with `MH1..MH4`
+  moved to the new corners.
 
 ---
 
@@ -89,7 +94,7 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | Q3 N-MOSFET 2N7002 | ○ | ● | ● |
 | R16 100 kΩ gate pull-up | ○ | ● | ● |
 | R17 UART1\_RX pull-down (always populated) | ● | ● | ● |
-| UART1 direct path (`U1.19/U1.18` <-> `IC1.2/IC1.1`) | ● | ● | ● |
+| UART1 cellular interface | rework | rework | rework |
 | **JP_MODEM_RAIL (JP1)** | ⚪ | ⚪ | ⚪ |
 
 The modem rail is gated by **MODEM_EN** (MCP23017 GPB0). Firmware drives
@@ -97,15 +102,10 @@ it HIGH after detecting a modem. JP1 exists as a bypass option if a
 builder prefers a hard-wired rail and wants to omit Q2/Q3 entirely — close
 JP1 and DNP Q2/Q3/R16. Default is firmware-controlled gating.
 
-> **Phase 20 note:** `UART1` is dedicated to the cellular modem and
-> routes through XIAO pins `GPIO40` (U1.19, TX) and `GPIO41` (U1.18, RX).
-> These pins previously carried the boot-strap JTAG signals; Phase 20
-> explicitly repurposes them and removes their `no_connect` flags.
-> `R17` is the `UART1_RX` pull-down that keeps U1.18 quiet when the SIM
-> isn't driving. It is populated on every tier because it is benign on
-> Drone and required on Cell Master / Apex.
-> The translator-chain experiment (`U7`, `C35`, `C36`, `R25`) was removed from
-> the committed live schematic so tier outputs stay BOM/POS/PCB-consistent.
+> **Phase 24 note:** `UART1` remains dedicated to cellular control on
+> XIAO pins `U1.19/U1.18`, but the live board/schematic now include an
+> in-progress level-shift rework (`Q4`, `Q5`, `R25..R28`) and should not
+> be treated as final production routing until DRC returns to error-clean.
 
 ### Expansion I/O (always populated)
 
@@ -181,16 +181,10 @@ Before hitting the JLCPCB "Submit" button:
       exposed unrouted copper). Current reference renders live in
       `fab/renders/pcb-top.png` / `pcb-bottom.png`.
 - [ ] Confirm `kicad-cli pcb drc --schematic-parity --severity-error`
-      reports **0 violations, 0 unconnected pads, 0 footprint errors**.
-      The Phase 21 fabrication-readiness sweep closed every remaining
-      open net (`/CELL_RF`, `/SIM_*`, `/UART1_*`, `/UART2_*`,
-      `/MODEM_VBAT_SW`), the starved-thermal on `J4.6/GND`, and the
-      mis-placed `/VBAT_SYS` via; Phase 22 then widened 346 power-rail
-      segments to their `POWER_HI`/`POWER_3V3`/`CHARGER_SW` netclass
-      targets and added a 171-via F.Cu↔In1.Cu↔B.Cu ground-stitch grid.
-      No manual routing is required before fab. Full-severity DRC
-      still emits cosmetic silk-overlap and `lib_footprint_mismatch`
-      warnings on `C33`/`C34`/`U3`; these are intentional and safe.
+      on your exact checkout is clean before order. Current live
+      in-progress state reports **10 violations, 5 unconnected items**
+      (see `PLAN.md` Phase 24), so this checkout should not be submitted
+      to fabrication yet.
 - [ ] Verify the three custom footprints (XIAO, SIM7080G, Swarm M138)
       against the vendor mechanical drawing one more time.
 - [ ] Verify the expansion port headers (J4 2×7 + J5 Qwiic) are placed

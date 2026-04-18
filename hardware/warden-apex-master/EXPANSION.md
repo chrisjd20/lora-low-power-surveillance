@@ -1,22 +1,24 @@
 # Warden Apex Master — Expansion I/O (Phase 18)
 
-Two ports live on the **west edge** of the board, stacked between the
-PIR header (`H1`) and the BQ24650 input-cap column (`C15`/`C27`). Both
-are reachable through the enclosure window designed for the PIR
-ribbon; you can exit with a 14-conductor ribbon or a standard Qwiic
-cable without re-routing.
+Two ports live in the **west-side expansion zone** of the board, stacked
+between the PIR header (`H1`) and the BQ24650 input-cap column
+(`C15`/`C27`). After Phase 24 outline growth, these parts keep their
+electrical placement but are now inset ~20 mm from the new west edge
+(mechanical envelope expanded around them).
 
 All expansion I/O goes through the I/O expander `U4` (MCP23017, I²C
 address `0x20`), so firmware drives loads with a simple register write
 and no main-MCU GPIOs are consumed.
 
-Validation refresh (2026-04-18): expansion circuitry remains unchanged after
-the final fabrication recovery and still sits on a board that passes
-`kicad-cli sch erc --severity-error` and
-`kicad-cli pcb drc --schematic-parity --severity-error` with zero errors.
+Validation refresh (2026-04-18): expansion circuitry itself remains unchanged,
+but the live board is currently in a broader modem/UART rework pass
+(see `PLAN.md` Phase 24). Current top-level checks are:
+
+- `kicad-cli sch erc --severity-error` -> 0 errors
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 10 violations, 5 unconnected, 0 parity issues
 
 ```
-West edge (X = 0 mm)
+West edge (X = -15 mm after Phase 24)
  │
  │  H1   PIR header      Y=34.0 mm   (existing)
  │
@@ -104,9 +106,12 @@ void setup() {
 
 ## DRC / validation
 
-- Phase 18 final DRC: **0 violations, 0 unconnected pads**.
-- ERC remains at **0 errors** (9 cosmetic `lib_symbol_mismatch`
-  warnings on cached symbols — the same set as pre-Phase 18).
-- All three assembly tiers (`drone`, `cell_master`, `apex`) populate
-  J4 / J5 / F1 / R24 by default — expansion I/O is available on every
-  tier without re-spinning fabrication.
+- Historical Phase 18 result remains: expansion add-on itself landed
+  clean when introduced.
+- Current live-state validation (Phase 24 rework context, after zone
+  boundary refill):
+  - ERC (`--severity-error`): 0 errors
+  - DRC (`--severity-error`): 10 violations, 5 unconnected, 0 parity issues
+- All three assembly tiers (`drone`, `cell_master`, `apex`) still
+  populate `J4` / `J5` / `F1` / `R24` by default, so expansion I/O
+  availability per tier is unchanged.

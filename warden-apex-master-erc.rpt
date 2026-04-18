@@ -1,0 +1,63 @@
+ERC report (2026-04-18T14:06:10-0400, Encoding UTF8)
+
+***** Sheet /
+[label_dangling]: Label not connected to anything
+    ; error
+    @(215.90 mm, 153.67 mm): Label 'UART1_TX'
+[lib_symbol_mismatch]: Symbol 'Ai-Thinker-Ra-01' doesn't match copy in library 'RF_Module'
+    ; warning
+    @(101.60 mm, 152.40 mm): Symbol U2 [Ai-Thinker-Ra-01]
+[lib_symbol_mismatch]: Symbol 'XIAO_ESP32S3_Sense' doesn't match copy in library 'warden_custom'
+    ; warning
+    @(203.20 mm, 152.40 mm): Symbol U1 [XIAO_ESP32S3_Sense]
+[lib_symbol_mismatch]: Symbol 'SMN-305_SIM' doesn't match copy in library 'warden_custom'
+    ; warning
+    @(50.80 mm, 254.00 mm): Symbol Card1 [SMN-305_SIM]
+[lib_symbol_mismatch]: Symbol 'AO3401A' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(259.08 mm, 58.42 mm): Symbol Q2 [AO3401A]
+[lib_symbol_mismatch]: Symbol 'SIM7080G' doesn't match copy in library 'warden_custom'
+    ; warning
+    @(101.60 mm, 254.00 mm): Symbol IC1 [SIM7080G]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(279.40 mm, 58.42 mm): Symbol Q3 [2N7002]
+[no_connect_connected]: A pin with a “no connection” flag is connected
+    ; warning
+    @(88.90 mm, 279.40 mm): Symbol IC1 Pin 39 [PWRKEY, Passive, Line]
+    @(88.90 mm, 279.40 mm): No Connect
+[lib_symbol_mismatch]: Symbol 'Swarm_M138' doesn't match copy in library 'warden_custom'
+    ; warning
+    @(177.80 mm, 254.00 mm): Symbol U3 [Swarm_M138]
+[lib_symbol_mismatch]: Symbol 'MAX98357A' doesn't match copy in library 'Audio'
+    ; warning
+    @(304.80 mm, 152.40 mm): Symbol IC4 [MAX98357A]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(300.00 mm, 181.19 mm): Symbol R26 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(294.92 mm, 200.00 mm): Symbol Q4 Pin 1 [G, Input, Line]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(300.00 mm, 200.00 mm): Symbol Q4 [2N7002]
+[lib_symbol_mismatch]: Symbol 'TPS63070' doesn't match copy in library 'warden_custom'
+    ; warning
+    @(355.60 mm, 76.20 mm): Symbol IC3 [TPS63070]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(300.00 mm, 211.19 mm): Symbol R25 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(320.00 mm, 181.19 mm): Symbol R28 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(314.92 mm, 200.00 mm): Symbol Q5 Pin 1 [G, Input, Line]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(320.00 mm, 200.00 mm): Symbol Q5 [2N7002]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(320.00 mm, 211.19 mm): Symbol R27 Pin 1 [Passive, Line]
+
+ ** ERC messages: 19  Errors 1  Warnings 18
