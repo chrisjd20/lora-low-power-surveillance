@@ -10,6 +10,14 @@ and the Phase 20 universal-PCB recovery. The outputs in this folder
 are ready to upload to JLCPCB (or any equivalent fab) as-is — no
 manual routing pass is required.
 
+Refresh snapshot (2026-04-18):
+
+- `kicad-cli sch erc --severity-error` -> 0 errors
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
+- Re-generated: `fab/warden-drone-v3.zip`, `fab/warden-cell-master-v3.zip`, `fab/warden-apex-v3.zip`
+- UART1 now routes through `U7` (`TXS0102`) with `C35`/`C36` decoupling and
+  `R25` OE pull-up; this translator path is populated on all tiers.
+
 Board specs: **100 mm × 100 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
 plated through-holes only, min trace 0.2 mm, min via 0.3 mm drill /
 0.6 mm diameter.  Stackup assumed: F.Cu / In1.Cu (GND plane) /
@@ -49,8 +57,10 @@ fab/
 └── warden-apex-v3.zip                           upload-ready bundle — Tier 3
 ```
 
-Gerbers and drill files are byte-identical across tiers — only the BOM
-(`*-bom-jlc.csv`) and pick-and-place file (`*-pos-jlc.csv`) differ.
+Gerbers and drill files are byte-identical across tiers — only assembly
+artifacts differ by tier (`*-bom-kicad.csv`, `*-bom-jlc.csv`,
+`*-bom-full.csv`, `*-pos.csv`, `*-pos-jlc.csv`), all filtered from the
+same DNP source in `tools/variants.yaml`.
 See `hardware/warden-apex-master/VARIANTS.md` for the per-tier
 stuffing tables and jumper map.
 

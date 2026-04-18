@@ -162,6 +162,27 @@ def build_tier(tier: str, dnp: list[str], description: str,
         "--ref-range-delimiter", "",
         str(SCH),
     ], check=False)
+    # Filter KiCad-native BOM by per-tier DNP refs so all outputs
+    # (KiCad BOM, JLC BOM, full BOM, POS) are variant-consistent.
+    if bom_kicad.exists():
+        with bom_kicad.open(newline="") as f:
+            reader = csv.DictReader(f)
+            fieldnames = reader.fieldnames or []
+            rows = list(reader)
+        filtered_rows = []
+        for row in rows:
+            refs = [r.strip() for r in row.get("Reference", "").split(",") if r.strip()]
+            keep_refs = [r for r in refs if r not in dnp]
+            if not keep_refs:
+                continue
+            row["Reference"] = ",".join(keep_refs)
+            if "QUANTITY" in row:
+                row["QUANTITY"] = str(len(keep_refs))
+            filtered_rows.append(row)
+        with bom_kicad.open("w", newline="") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(filtered_rows)
 
     # Filter KiCad BOM + produce JLCPCB BOM
     bom_jlc = tier_dir / "warden-apex-master-bom-jlc.csv"

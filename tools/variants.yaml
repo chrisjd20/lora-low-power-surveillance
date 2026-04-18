@@ -29,6 +29,11 @@
 #     SC16IS740 bridge (U6) plus solder jumpers JP3 / JP4.
 #   - R17 stays populated on every tier (UART1_RX pull-down; harmless
 #     on Drone, meaningful when IC1 is stuffed).
+#
+# Phase 21 UART level-shift insertion (all-tier population):
+#   - U7 (TXS0102), C35 (3V3 decoupling), C36 (SIM_VDD_EXT decoupling),
+#     and R25 (OE pull-up) are intentionally omitted from every DNP list
+#     so the translator path is always populated on drone/cell_master/apex.
 
 drone:
   description: |

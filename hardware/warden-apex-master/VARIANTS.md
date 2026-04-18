@@ -14,6 +14,14 @@ All three tiers use the same PCB — identical gerbers, drill, IPC-D-356.
 Only the BOM and pick-and-place file differ. See [`tools/variants.yaml`](../../tools/variants.yaml)
 for the authoritative DNP lists.
 
+Latest validation refresh (2026-04-18):
+
+- `kicad-cli sch erc --severity-error` -> 0 errors
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
+- `python3 tools/phase12_variants.py` re-generated all `v3` tier packages under `fab/`
+- KiCad-native BOMs are now tier-filtered too (`fab/<tier>/warden-apex-master-bom-kicad.csv`)
+- UART1 level-shifter chain (`U7`, `C35`, `C36`, `R25`) is populated on all three tiers
+
 ---
 
 ## Stuffing tables
@@ -81,6 +89,7 @@ Legend:  ● = populate, ○ = DNP (leave empty), ⚫ = solder-bridge closed, �
 | Q3 N-MOSFET 2N7002 | ○ | ● | ● |
 | R16 100 kΩ gate pull-up | ○ | ● | ● |
 | R17 UART1\_RX pull-down (always populated) | ● | ● | ● |
+| U7 + C35/C36 + R25 UART1 level-shifter chain | ● | ● | ● |
 | **JP_MODEM_RAIL (JP1)** | ⚪ | ⚪ | ⚪ |
 
 The modem rail is gated by **MODEM_EN** (MCP23017 GPB0). Firmware drives
@@ -95,6 +104,8 @@ JP1 and DNP Q2/Q3/R16. Default is firmware-controlled gating.
 > `R17` is the `UART1_RX` pull-down that keeps U1.18 quiet when the SIM
 > isn't driving. It is populated on every tier because it is benign on
 > Drone and required on Cell Master / Apex.
+> Phase 23 adds `U7` (`TXS0102`) with `C35/C36/R25` so UART1 is translated
+> between XIAO 3V3 I/O and SIM7080G 1V8 I/O on every tier.
 
 ### Expansion I/O (always populated)
 

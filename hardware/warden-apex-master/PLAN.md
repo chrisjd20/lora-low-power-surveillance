@@ -1,5 +1,26 @@
 # Warden Apex Master — KiCad rebuild plan
 
+## Refresh snapshot (2026-04-18)
+
+This repository was re-validated from the committed live KiCad design files:
+
+- `kicad-cli sch erc --severity-error` -> 0 errors
+- `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
+- UART1 now passes through a dedicated level-shift path:
+  - `U7` = `TXS0102` (`Package_SO:TSSOP-8_3x3mm_P0.65mm`)
+  - `C35` (3V3 decoupling), `C36` (SIM_VDD_EXT decoupling), `R25` (OE pull-up)
+  - split nets: `UART1_TX/UART1_RX` (3V3 side) and `UART1_TX_1V8/UART1_RX_1V8` (1V8 side)
+- `python3 tools/phase12_variants.py` re-generated all three tier outputs:
+  - `fab/warden-drone-v3.zip`
+  - `fab/warden-cell-master-v3.zip`
+  - `fab/warden-apex-v3.zip`
+- `tools/phase12_variants.py` now filters `warden-apex-master-bom-kicad.csv`
+  per tier (matching the existing JLC/full BOM and P&P filtering behavior)
+- Cleanup removed stale generated state files:
+  - `hardware/warden-apex-master/warden-apex-master.kicad_prl`
+  - `hardware/warden-apex-master/fp-info-cache`
+  - `tools/fix_power_rails.py` (one-shot script; effects are baked into the committed board)
+
 ## Why rebuild, not import
 
 The original Flux design was exported as IPC‑2581, ODB++, GENCAD, EDIF and
@@ -1408,6 +1429,4 @@ tiers, BOM / pick-and-place differ only per `tools/variants.yaml`.
 - `tools/parse_flux_{edif,bom}.py` — seed parsers
 - `tools/phase4_import_ses.py` — Freerouting SES importer
 - `tools/phase12_variants.py` — per-tier fab package generator
-- `tools/fix_power_rails.py` — idempotent power/ground hardening
-  pass; safe to re-run after any future router pass
 - `tools/variants.yaml` — DNP/populate map
