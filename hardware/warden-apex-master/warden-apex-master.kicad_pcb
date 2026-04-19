@@ -710,11 +710,11 @@
 	(footprint "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 		(layer "F.Cu")
 		(uuid "035263a9-e323-4e12-bede-695bf93c0bf6")
-		(at 85.170769 111.206339)
+		(at 82 114 90)
 		(descr "Through hole straight pin header, 1x02, 2.54mm pitch, single row")
 		(tags "Through hole pin header THT 1x02 2.54mm single row")
 		(property "Reference" "J3"
-			(at 0 -2.3 0)
+			(at 0 -2.3 90)
 			(layer "F.SilkS")
 			(uuid "de742da5-3da5-4660-aa1a-94cad6685593")
 			(effects
@@ -725,7 +725,7 @@
 			)
 		)
 		(property "Value" "61300211121"
-			(at 0 4.92 0)
+			(at 0 4.92 90)
 			(layer "F.Fab")
 			(uuid "7972db47-f226-435e-9e02-0dd8a4c6f425")
 			(effects
@@ -736,7 +736,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fe777db8-521e-45af-9e88-412490fe199e")
@@ -748,7 +748,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "cbf0a2d6-25bb-4283-82e2-7c4cb879f92c")
@@ -781,14 +781,14 @@
 			(uuid "9f8bc236-3315-43a0-b53b-c2167352feb6")
 		)
 		(fp_line
-			(start -1.38 1.27)
-			(end -1.38 3.92)
+			(start 1.38 1.27)
+			(end 1.38 3.92)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "c529f46f-7023-411e-bbf9-80f4dc10eb45")
+			(uuid "ce6fc1ac-7254-48f8-ab0c-d008fc563099")
 		)
 		(fp_line
 			(start -1.38 1.27)
@@ -801,6 +801,16 @@
 			(uuid "d683b723-2611-4791-850d-cb43e28bc547")
 		)
 		(fp_line
+			(start -1.38 1.27)
+			(end -1.38 3.92)
+			(stroke
+				(width 0.12)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "c529f46f-7023-411e-bbf9-80f4dc10eb45")
+		)
+		(fp_line
 			(start -1.38 3.92)
 			(end 1.38 3.92)
 			(stroke
@@ -809,16 +819,6 @@
 			)
 			(layer "F.SilkS")
 			(uuid "9d5b8485-28eb-4978-a98f-ca2a5dd4ecac")
-		)
-		(fp_line
-			(start 1.38 1.27)
-			(end 1.38 3.92)
-			(stroke
-				(width 0.12)
-				(type solid)
-			)
-			(layer "F.SilkS")
-			(uuid "ce6fc1ac-7254-48f8-ab0c-d008fc563099")
 		)
 		(fp_rect
 			(start -1.77 -1.77)
@@ -832,24 +832,14 @@
 			(uuid "8a703b7d-7841-46e5-8907-0d06fdbe6821")
 		)
 		(fp_line
-			(start -1.27 -0.635)
-			(end -0.635 -1.27)
+			(start 1.27 -1.27)
+			(end 1.27 3.81)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "3dccda7b-6fe2-49a1-8ea2-b6466715425e")
-		)
-		(fp_line
-			(start -1.27 3.81)
-			(end -1.27 -0.635)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(layer "F.Fab")
-			(uuid "44efb531-6bfe-4400-ab3b-a293c3cd4252")
+			(uuid "b1fabd72-f862-4c2e-adce-93ef83614318")
 		)
 		(fp_line
 			(start -0.635 -1.27)
@@ -862,14 +852,14 @@
 			(uuid "566f0e61-3483-4a16-9b45-ff4d5d6834e1")
 		)
 		(fp_line
-			(start 1.27 -1.27)
-			(end 1.27 3.81)
+			(start -1.27 -0.635)
+			(end -0.635 -1.27)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "F.Fab")
-			(uuid "b1fabd72-f862-4c2e-adce-93ef83614318")
+			(uuid "3dccda7b-6fe2-49a1-8ea2-b6466715425e")
 		)
 		(fp_line
 			(start 1.27 3.81)
@@ -881,8 +871,18 @@
 			(layer "F.Fab")
 			(uuid "f0f2c166-3fbb-4175-8ae9-457149ffa7d2")
 		)
+		(fp_line
+			(start -1.27 3.81)
+			(end -1.27 -0.635)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "44efb531-6bfe-4400-ab3b-a293c3cd4252")
+		)
 		(fp_text user "${REFERENCE}"
-			(at 0 1.27 90)
+			(at 0 1.27 180)
 			(layer "F.Fab")
 			(uuid "bd1c234d-7726-4a74-b9de-794c01ed5d2f")
 			(effects
@@ -893,7 +893,7 @@
 			)
 		)
 		(pad "1" thru_hole rect
-			(at 0 0)
+			(at 0 0 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -902,7 +902,7 @@
 			(uuid "18575cc9-5b7c-40dd-98ea-3096e75709f8")
 		)
 		(pad "2" thru_hole circle
-			(at 0 2.54)
+			(at 0 2.54 90)
 			(size 1.7 1.7)
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
@@ -6714,7 +6714,7 @@
 	(footprint "warden_custom:Swarm_M138"
 		(layer "F.Cu")
 		(uuid "5c61c73e-0736-4cf3-a612-4c62e4e2dd70")
-		(at 90.786475 75.118322 90)
+		(at 95.786475 75.118322 90)
 		(descr "Swarm M138 satellite modem — 42.5x19.6 mm, 60 perimeter pads (1.27 mm pitch, Swarm M138 Hardware Manual v1.1)")
 		(tags "Swarm_M138")
 		(property "Reference" "U3"
