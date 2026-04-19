@@ -16,6 +16,7 @@ checks are:
 
 - `kicad-cli sch erc --severity-error` -> 0 errors
 - `kicad-cli pcb drc --schematic-parity --severity-error` -> 0 violations, 0 unconnected, 0 parity issues
+- `kicad-cli pcb drc --schematic-parity --severity-all` -> 231 warnings, 28 unconnected warnings, 126 parity warnings
 
 ```
 West edge (X = -15 mm after Phase 24)

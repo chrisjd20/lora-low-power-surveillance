@@ -8,9 +8,9 @@ Refresh snapshot (2026-04-18, current live state):
 
 - `kicad-cli sch erc --severity-error` → **0 errors**
 - `kicad-cli pcb drc --schematic-parity --severity-error` → **0 violations, 0 unconnected, 0 parity issues**
-- `kicad-cli sch erc --severity-all` → 22 warnings (library-style drift only)
-- `kicad-cli pcb drc --schematic-parity --severity-all` → 219 violations, 1 unconnected, 119 parity issues
-  (all demoted to warning severity; see the Known Caveats section below)
+- `kicad-cli sch erc --severity-all` → 13 warnings (`lib_symbol_mismatch`, `endpoint_off_grid`)
+- `kicad-cli pcb drc --schematic-parity --severity-all` → 231 violations, 28 unconnected, 126 parity issues
+  (warning-only classes; see the Known Caveats section below)
 - Re-generated: `fab/warden-drone-v3.zip`, `fab/warden-cell-master-v3.zip`, `fab/warden-apex-v3.zip`
 
 Board specs: **125 mm × 125 mm, 4-layer, 1.6 mm FR-4, HASL finish**,
@@ -168,11 +168,10 @@ dedicated RF tune-up before any production run that targets formal
 conducted-emissions or antenna-efficiency specs.
 
 **5. Full-severity DRC warnings are intentional.**
-The full-severity DRC report lists ~165 `holes_co_located` warnings
-(duplicated GND-stitching vias left by the autorouter), 103
-`net_conflict` warnings on the preserved SIM7080 pads, 44 silk / library
-cosmetic warnings, and 2 sub-millimetre `track_dangling` stubs on the
-`/3V3` and `/CHG_REGN` nets. These are all demoted to warning severity
-in `warden-apex-master.kicad_pro` and do not affect error-severity
-sign-off. They are listed here so nobody is surprised when they open
-the design in the GUI.
+The latest full-severity DRC report lists 165 `holes_co_located`
+warnings, 106 `net_conflict` warnings (mostly no-corresponding-pin
+preserve pads on legacy module footprints), 28 `unconnected_items`
+warnings, plus silk/library cosmetics (`silk_over_copper`,
+`silk_overlap`, `footprint_symbol_mismatch`, `lib_footprint_mismatch`).
+These are warning-class only in `warden-apex-master.kicad_pro` and do
+not affect error-severity sign-off.

@@ -18,9 +18,9 @@ Latest validation refresh (2026-04-18, current live state):
 
 - `kicad-cli sch erc --severity-error` → **0 errors**
 - `kicad-cli pcb drc --schematic-parity --severity-error` → **0 violations, 0 unconnected, 0 parity issues**
-- `kicad-cli sch erc --severity-all` → 22 warnings (library-style drift only)
-- `kicad-cli pcb drc --schematic-parity --severity-all` → 219 violations, 1 unconnected, 119 parity issues
-  (all demoted to warning severity; see `fab/README.md` caveat 5)
+- `kicad-cli sch erc --severity-all` → 13 warnings (`lib_symbol_mismatch`, `endpoint_off_grid`)
+- `kicad-cli pcb drc --schematic-parity --severity-all` → 231 violations, 28 unconnected, 126 parity issues
+  (warning-only classes; see `fab/README.md` caveat 5)
 - `python3 tools/phase12_variants.py` re-generated all `v3` tier packages under `fab/`
 - Per-tier zips now use a flat layout (`gerbers/`, BOMs, POS, d356, README at the archive root)
 - Board outline is `125 × 125 mm` with `MH1..MH4` on the corners.
