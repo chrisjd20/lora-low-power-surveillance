@@ -14249,6 +14249,7 @@
 			)
 		)
 	)
+	
 	(footprint "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical"
 		(layer "F.Cu")
 		(uuid "b60818f7-b9e8-43c2-a694-bb00d580611b")
@@ -16096,6 +16097,7 @@
 			)
 		)
 	)
+	
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "daf0ea6a-88e9-437a-8a86-61d316635961")

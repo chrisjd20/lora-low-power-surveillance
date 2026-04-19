@@ -1,0 +1,48 @@
+ERC report (2026-04-18T21:22:59-0400, Encoding UTF8)
+
+***** Sheet /
+[lib_symbol_mismatch]: Symbol 'Ai-Thinker-Ra-01' doesn't match copy in library 'RF_Module'
+    ; warning
+    @(101.60 mm, 152.40 mm): Symbol U2 [Ai-Thinker-Ra-01]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(76.20 mm, 228.60 mm): Symbol Q6 [2N7002]
+[lib_symbol_mismatch]: Symbol 'AO3401A' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(259.08 mm, 58.42 mm): Symbol Q2 [AO3401A]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(279.40 mm, 58.42 mm): Symbol Q3 [2N7002]
+[lib_symbol_mismatch]: Symbol 'MAX98357A' doesn't match copy in library 'Audio'
+    ; warning
+    @(304.80 mm, 152.40 mm): Symbol IC4 [MAX98357A]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(300.00 mm, 181.19 mm): Symbol R26 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(294.92 mm, 200.00 mm): Symbol Q4 Pin 1 [G, Input, Line]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(300.00 mm, 200.00 mm): Symbol Q4 [2N7002]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(300.00 mm, 211.19 mm): Symbol R25 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(320.00 mm, 181.19 mm): Symbol R28 Pin 1 [Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(314.92 mm, 200.00 mm): Symbol Q5 Pin 1 [G, Input, Line]
+[lib_symbol_mismatch]: Symbol '2N7002' doesn't match copy in library 'Transistor_FET'
+    ; warning
+    @(320.00 mm, 200.00 mm): Symbol Q5 [2N7002]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(320.00 mm, 211.19 mm): Symbol R27 Pin 1 [Passive, Line]
+[no_connect_connected]: A pin with a “no connection” flag is connected
+    ; warning
+    @(373.38 mm, 236.22 mm): Symbol U4 Pin 2 [GPB1, Bidirectional, Line]
+    @(373.38 mm, 236.22 mm): No Connect
+
+ ** ERC messages: 14  Errors 0  Warnings 14

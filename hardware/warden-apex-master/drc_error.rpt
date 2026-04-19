@@ -1,0 +1,22 @@
+** Drc report for warden-apex-master.kicad_pcb **
+** Created on 2026-04-18T21:23:01-0400 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 6 Footprint errors **
+[missing_footprint]: Missing footprint C35 (100nF)
+    Local override; error
+[missing_footprint]: Missing footprint C36 (100nF)
+    Local override; error
+[missing_footprint]: Missing footprint Q6 (2N7002)
+    Local override; error
+[missing_footprint]: Missing footprint R29 (10k)
+    Local override; error
+[missing_footprint]: Missing footprint R30 (47k)
+    Local override; error
+[missing_footprint]: Missing footprint R31 (10k)
+    Local override; error
+
+** End of Report **

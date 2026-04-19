@@ -18,7 +18,7 @@
         (font (size 1.27 1.27))
       )
     )
-    (property "Footprint" "Package_DFN_QFN:QFN-15-1EP_3x4mm_P0.5mm_EP1.45x2.45mm"
+    (property "Footprint" "warden_custom:TPS63070_RNM0015A"
       (at 0 -5.08 0)
       (effects
         (font (size 1.27 1.27))
@@ -58,7 +58,7 @@
       (pin passive line
         (at -12.7 8.89 0)
         (length 2.54)
-        (name "VOUT_1"
+        (name "PS/SYNC"
           (effects (font (size 1.27 1.27)))
         )
         (number "1"
@@ -68,7 +68,7 @@
       (pin passive line
         (at -12.7 6.35 0)
         (length 2.54)
-        (name "PGND"
+        (name "PG"
           (effects (font (size 1.27 1.27)))
         )
         (number "2"
@@ -78,7 +78,7 @@
       (pin passive line
         (at -12.7 3.81 0)
         (length 2.54)
-        (name "PS/S"
+        (name "VAUX"
           (effects (font (size 1.27 1.27)))
         )
         (number "3"
@@ -88,7 +88,7 @@
       (pin passive line
         (at -12.7 1.27 0)
         (length 2.54)
-        (name "VSEL"
+        (name "GND"
           (effects (font (size 1.27 1.27)))
         )
         (number "4"
@@ -98,7 +98,7 @@
       (pin passive line
         (at -12.7 -1.27 0)
         (length 2.54)
-        (name "L1"
+        (name "FB"
           (effects (font (size 1.27 1.27)))
         )
         (number "5"
@@ -108,7 +108,7 @@
       (pin passive line
         (at -12.7 -3.81 0)
         (length 2.54)
-        (name "L2"
+        (name "FB2"
           (effects (font (size 1.27 1.27)))
         )
         (number "6"
@@ -118,7 +118,7 @@
       (pin passive line
         (at -12.7 -6.35 0)
         (length 2.54)
-        (name "VIN_2"
+        (name "VOUT"
           (effects (font (size 1.27 1.27)))
         )
         (number "7"
@@ -128,7 +128,7 @@
       (pin passive line
         (at -12.7 -8.89 0)
         (length 2.54)
-        (name "VIN_1"
+        (name "VOUT"
           (effects (font (size 1.27 1.27)))
         )
         (number "8"
@@ -138,7 +138,7 @@
       (pin passive line
         (at 12.7 7.62 180)
         (length 2.54)
-        (name "EN"
+        (name "L2"
           (effects (font (size 1.27 1.27)))
         )
         (number "9"
@@ -148,7 +148,7 @@
       (pin passive line
         (at 12.7 5.08 180)
         (length 2.54)
-        (name "FB2"
+        (name "PGND"
           (effects (font (size 1.27 1.27)))
         )
         (number "10"
@@ -158,7 +158,7 @@
       (pin passive line
         (at 12.7 2.54 180)
         (length 2.54)
-        (name "FB"
+        (name "L1"
           (effects (font (size 1.27 1.27)))
         )
         (number "11"
@@ -168,7 +168,7 @@
       (pin passive line
         (at 12.7 0 180)
         (length 2.54)
-        (name "PG"
+        (name "VIN"
           (effects (font (size 1.27 1.27)))
         )
         (number "12"
@@ -178,7 +178,7 @@
       (pin passive line
         (at 12.7 -2.54 180)
         (length 2.54)
-        (name "VAUX"
+        (name "VIN"
           (effects (font (size 1.27 1.27)))
         )
         (number "13"
@@ -188,7 +188,7 @@
       (pin passive line
         (at 12.7 -5.08 180)
         (length 2.54)
-        (name "VOUT_2"
+        (name "EN"
           (effects (font (size 1.27 1.27)))
         )
         (number "14"
@@ -198,7 +198,7 @@
       (pin passive line
         (at 12.7 -7.62 180)
         (length 2.54)
-        (name "GND"
+        (name "VSEL"
           (effects (font (size 1.27 1.27)))
         )
         (number "15"
